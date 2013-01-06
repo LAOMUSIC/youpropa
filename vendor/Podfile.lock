@@ -1,0 +1,38 @@
+
+PODS:
+- AFNetworking (1.0)
+- RestKit (0.20.0b1):
+  - RestKit/Core (= 0.20.0b1)
+- RestKit/Core (0.20.0b1):
+  - RestKit/CoreData
+  - RestKit/Network
+  - RestKit/ObjectMapping
+- RestKit/CoreData (0.20.0b1)
+- RestKit/Network (0.20.0b1):
+  - AFNetworking (= 1.0)
+  - RestKit/ObjectMapping
+  - RestKit/Support
+  - SOCKit
+- RestKit/ObjectMapping (0.20.0b1)
+- RestKit/Support (0.20.0b1)
+- SOCKit (1.0)
+
+DEPENDENCIES:
+- RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
+
+EXTERNAL SOURCES:
+  RestKit:
+    :git: https://github.com/RestKit/RestKit.git
+    :branch: development
+
+SPEC CHECKSUMS:
+  AFNetworking: 204f4b3d3a3ea7b38737c3fbf2646ba8c9719eea
+  RestKit: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  RestKit/Core: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  RestKit/CoreData: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  RestKit/Network: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  RestKit/ObjectMapping: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  RestKit/Support: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
+  SOCKit: 9d71b00c699cf5aa2989d6aa12f3392b048123db
+
+COCOAPODS: 0.16.0
