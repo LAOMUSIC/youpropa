@@ -48,10 +48,17 @@ class TAXModalPickerView < UIView
   #    view        - The view that will contain the control.
   #    callback    - The block that will receive the result of the user action. 
   def presentInView(view, withBlock:callback)
-
-    self.frame = view.bounds;
+    #view.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+    
+    self.frame = CGRectMake(0, 0, 
+                      UIScreen.mainScreen.applicationFrame.size.width,
+                      UIScreen.mainScreen.applicationFrame.size.height - 85)  
+    #self.frame = UIScreen.mainScreen.applicationFrame
+    
     self.callbackBlock = callback;
     
+    puts self.bounds.size
+
     @panel.removeFromSuperview if @panel
     @backdropView.removeFromSuperview if @backdropView
     
@@ -81,6 +88,7 @@ class TAXModalPickerView < UIView
                                @backdropView.alpha = 1
                              end,
                            completion: lambda do |finished|
+                               
                              end
                            )
 

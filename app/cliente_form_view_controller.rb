@@ -11,6 +11,8 @@ class ClienteFormViewController < UITableViewController
   outlet :comune_text_field
   outlet :provincia_text_field
   outlet :cliente_tipo_text_field
+  outlet :indirizzo_text_field
+  outlet :cap_text_field
 
   def viewDidLoad
     @cliente = Cliente.new
@@ -18,13 +20,16 @@ class ClienteFormViewController < UITableViewController
   end
 
   def viewWillAppear(animated)
+    super true
     load_cliente if cliente_id
   end
 
   def pickClienteTipo
-    self.resignFirstResponder
-
+    self.view.endEditing(true)
     saveItem.enabled = false
+    #tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+    puts self.view.frame
+    
     pickerView = TAXModalPickerView.alloc.initWithValues(TIPI_CLIENTI)
     
     if @cliente_tipo_text_field.text == ""
@@ -43,9 +48,13 @@ class ClienteFormViewController < UITableViewController
   end
 
   def pickProvincia
-    self.resignFirstResponder
-
+    self.view.endEditing(true)
     saveItem.enabled = false
+    
+    puts self.view.frame
+
+    #tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+    
     pickerView = TAXModalPickerView.alloc.initWithValues(["BO", "MO", "RA", "RE"])
     
     if @provincia_text_field.text == ""
@@ -72,6 +81,8 @@ class ClienteFormViewController < UITableViewController
     @cliente.comune    = comune_text_field.text
     @cliente.provincia = provincia_text_field.text
     @cliente.cliente_tipo = cliente_tipo_text_field.text
+    @cliente.indirizzo = indirizzo_text_field.text
+    @cliente.cap = cap_text_field.text
 
     if @cliente.remote_id
       update_cliente
@@ -99,6 +110,8 @@ class ClienteFormViewController < UITableViewController
                                                 comune_text_field.text = result.firstObject.comune || ""
                                                 provincia_text_field.text = result.firstObject.provincia || ""
                                                 cliente_tipo_text_field.text = result.firstObject.cliente_tipo || ""
+                                                indirizzo_text_field.text = result.firstObject.indirizzo || ""
+                                                cap_text_field.text = result.firstObject.cap || ""
                                               end,
                               failure: lambda do |operation, error|
                                                 App.delegate.alert error.localizedDescription
