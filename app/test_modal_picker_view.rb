@@ -27,4 +27,8 @@ class TestModalPickerView < UIViewController
     )
   end
 
+  def killApp
+    exit(0)
+  end
+
 end

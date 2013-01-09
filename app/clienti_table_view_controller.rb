@@ -117,11 +117,10 @@ class ClientiTableViewController < UITableViewController
   end
 
   def filterClientiForTerm(text)
-    @searchResults = @clienti.select do |c| 
+    @searchResults = @clienti.select do |c|
+      index = "#{c.nome} #{c.comune} #{c.frazione}".downcase  
       condition = text.downcase
-      c.comune.downcase.include?( condition ) ||
-        c.nome.downcase.include?( condition) ||
-          c.frazione.downcase.include? (condition)
+      index.include?( condition )
     end  
     view.reloadData
   end

@@ -14,3 +14,4 @@ gem 'bubble-wrap'
 gem "ib"
 gem "teacup"
 gem "motion-gravatar"
+gem "motion-addressbook"

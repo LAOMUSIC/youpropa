@@ -33,6 +33,8 @@ GEM
       thor (>= 0.15.4)
       xcodeproj (>= 0.4.0)
     json (1.7.6)
+    motion-addressbook (0.1.3)
+      bubble-wrap
     motion-cocoapods (1.2.1)
       cocoapods (>= 0.14.0)
     motion-gravatar (0.0.3)
@@ -67,6 +69,7 @@ DEPENDENCIES
   formotion
   geomotion
   ib
+  motion-addressbook
   motion-gravatar
   rubymotion_generators
   sugarcube
