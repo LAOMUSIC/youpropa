@@ -2,13 +2,13 @@ include SugarCube::Adjust
 
 class AppDelegate
 
-  BASE_URL = "http://localhost:3000"
+  BASE_URL = "http://todopropa.com"
 
   attr_accessor :window, :backend
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     init_restkit
-    debug_restkit
+    #debug_restkit
     login
     add_response_mapping(cliente_mapping, "cliente")
     add_response_mapping(cliente_mapping, "clienti")

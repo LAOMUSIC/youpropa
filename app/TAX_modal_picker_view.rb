@@ -159,6 +159,7 @@ class TAXModalPickerView < UIView
     sep =     UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target:nil, action:nil)
     btnDone = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemDone, target:self, action:"onDone:")
 
+    btnDone.title = "Ok"
     toolbar.items = [ btnCancel, sep, btnDone]
     toolbar
   end

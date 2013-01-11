@@ -57,7 +57,7 @@ class ClientiTableViewController < UITableViewController
   # Storyboard methods
   def prepareForSegue(segue, sender:sender)
 
-    if segue.identifier.isEqualToString("showForm")
+    if segue.identifier.isEqualToString("displayCliente")
       cliente = nil
       if (self.searchDisplayController.isActive)
         indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
@@ -66,14 +66,11 @@ class ClientiTableViewController < UITableViewController
         indexPath = self.tableView.indexPathForCell(sender)
         cliente = self.tableView.cellForRowAtIndexPath(indexPath).cliente
       end  
-      segue.destinationViewController.cliente_id = cliente.remote_id
+      segue.destinationViewController.cliente = cliente
+      cliente = nil
     end
+
   end
-
-
-
-
-
 
   # UITableViewController methods
 
