@@ -21,17 +21,17 @@ class EditStatoViewController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
 
-    # if @recipe.type
-    #   previousIndexPath = NSIndexPath.indexPathForRow(@recipeTypes.index(@recipe.type), inSection:0)
-    #   cell = tableView.cellForRowAtIndexPath(previousIndexPath)
-    #   cell.accessoryType = UITableViewCellAccessoryNone
-    # end
-    # tableView.cellForRowAtIndexPath(indexPath).accessoryType = UITableViewCellAccessoryCheckmark
-    # @recipe.type = @recipeTypes[indexPath.row]
-    # tableView.deselectRowAtIndexPath(indexPath, animated:true)
+    if @appunto.stato
+      previousIndexPath = NSIndexPath.indexPathForRow(STATUS.index(@appunto.stato), inSection:0)
+      cell = tableView.cellForRowAtIndexPath(previousIndexPath)
+      cell.accessoryType = UITableViewCellAccessoryNone
+    end
+    
+    tableView.cellForRowAtIndexPath(indexPath).accessoryType = UITableViewCellAccessoryCheckmark
+    tableView.deselectRowAtIndexPath(indexPath, animated:true)
 
-    cell = tableView.cellForRowAtIndexPath(indexPath)
-    text = cell.textLabel.text
+    text = @appunto.stato = STATUS[indexPath.row]
+
     error = Pointer.new(:object)
     success = @statoChangedBlock.call(text, error)
     if (success) 

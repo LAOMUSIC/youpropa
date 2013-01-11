@@ -89,33 +89,13 @@ class AppuntoFormViewController < UITableViewController
     end
   end
 
-  #   } else if ([[segue identifier] isEqualToString:@"selectRecipeType"]) {
-  #     [self prepareForSelectTypeSegue:segue sender:sender];
-  #   } else if ([[segue identifier] isEqualToString:@"selectNumberOfServings"]) {
-  #     [self prepareForSetServingsSegue:segue sender:sender];
-  #   } else if ([[segue identifier] isEqualToString:@"selectLastUsed"]) {
-  #     [self prepareForSetDateSegue:segue sender:sender];
-  #   } else if ([[segue identifier] isEqualToString:@"selectAuthor"]) {
-  #     [self prepareForSelectAuthorSegue:segue sender:sender];
-  #   } else if ([[segue identifier] isEqualToString:@"selectIngredients"]) {
-  #     [self prepareForSelectIngredientsSegue:segue sender:sender];
-  #   } else if ([[segue identifier] isEqualToString:@"editDescription"]) {
-  #     [self prepareForDirectionsSegue:segue sender:sender];
-  #   } else {
-  #     ALog(@"Unknown segue: %@", [segue identifier]);
-  #   }
-  # }
-
-
-
   def save(sender)
-    # NSManagedObjectContext *moc = [[self recipeMO] managedObjectContext];
-    # if ([[self recipeMO] isInserted]) {
-    #   [moc deleteObject:[self recipeMO]];
-    # } else {
-    #   [moc refreshObject:[self recipeMO] mergeChanges:NO];
-    # }
-    self.navigationController.popViewControllerAnimated(true)
+    @appunto.stato = @appunto.stato.split(" ").join("_")
+    if @appunto.remote_id
+      update_appunto
+    else
+      create_appunto
+    end
   end
 
   def cancel(sender)
@@ -127,5 +107,31 @@ class AppuntoFormViewController < UITableViewController
     # }
     self.navigationController.popViewControllerAnimated(true)
   end
+
+  private
+
+    def create_appunto
+      puts "Creating new appunto #{@appunto.cliente_nome}"
+      App.delegate.backend.postObject(@appunto, path:nil, parameters:nil,
+                                 success: lambda do |operation, result|
+                                            self.navigationController.popViewControllerAnimated true 
+                                          end,
+                                 failure: lambda do |operation, error|
+                                                   App.alert error.localizedDescription
+                                                 end)
+    end
+
+    def update_appunto
+      puts "Updating name for #{@appunto.remote_id} to #{@appunto.cliente_nome}"
+      App.delegate.backend.putObject(@appunto, path:nil, parameters:nil,
+                                success: lambda do |operation, result|
+                                                  puts "updated"
+                                                  self.navigationController.popViewControllerAnimated true
+                                                end,
+                                failure: lambda do |operation, error|
+                                                  App.alert error.localizedDescription
+                                                end)
+    end
+
 
 end
