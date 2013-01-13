@@ -2,7 +2,7 @@ class ClienteDetailViewController < UIViewController
 
   extend IB
 
-  attr_accessor :cliente
+  attr_accessor :cliente, :popoverViewController
 
   outlet :nomeLabel
   outlet :indirizzoLabel
@@ -13,12 +13,17 @@ class ClienteDetailViewController < UIViewController
   outlet :callButton
 
   def viewDidLoad
+    super
 
   end
 
   def viewWillAppear(animated)
     super
     load_cliente if @cliente
+  end
+
+  def shouldAutorotateToInterfaceOrientation(orientation)
+    true
   end
 
   def load_cliente
@@ -35,6 +40,9 @@ class ClienteDetailViewController < UIViewController
       emailButton.alpha = 0.5
     end
 
+    if self.popoverViewController
+      self.popoverViewController.dismissPopoverAnimated(true)
+    end  
   end
 
   def prepareForSegue(segue, sender:sender)
@@ -42,7 +50,13 @@ class ClienteDetailViewController < UIViewController
       segue.destinationViewController.cliente_id = @cliente.remote_id
     end
     if segue.identifier.isEqualToString("nuovoAppunto")
-      segue.destinationViewController.cliente = @cliente
+      
+      if Device.ipad?
+        puts segue.destinationViewController
+        segue.destinationViewController.visibleViewController.cliente = @cliente
+      else
+        segue.destinationViewController.cliente = @cliente
+      end
     end
   end
 
@@ -60,6 +74,21 @@ class ClienteDetailViewController < UIViewController
     url = NSURL.URLWithString("mailto://#{@cliente.email}")
     UIApplication.sharedApplication.openURL(url);
   end  
+
+
+
+  # splitView delegates
+
+  def splitViewController(svc, willHideViewController:vc, withBarButtonItem:barButtonItem, forPopoverController:pc)
+    barButtonItem.title = "Clienti"
+    self.navigationItem.setLeftBarButtonItem(barButtonItem)
+    self.popoverViewController = pc
+  end
+  
+  def splitViewController(svc, willShowViewController:avc, invalidatingBarButtonItem:barButtonItem) 
+    self.navigationItem.setLeftBarButtonItems([], animated:false)
+    self.popoverViewController = nil
+  end
 
 
 end

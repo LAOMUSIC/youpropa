@@ -2,16 +2,20 @@ class ClientiTableViewController < UITableViewController
   
   extend IB
 
-  attr_accessor :searchResults, :refreshHeaderView
+  attr_accessor :searchResults, :refreshHeaderView, :detailViewController
 
   outlet :searchBar
 
   def viewDidLoad
+    super
     @clienti = []
     @searchResults = []
     view.dataSource = view.delegate = self
     setupPullToRefresh
     setupSearchBar
+    if Device.ipad?
+      self.detailViewController = self.splitViewController.viewControllers.lastObject.topViewController
+    end
     true
   end
 
@@ -24,6 +28,10 @@ class ClientiTableViewController < UITableViewController
   def viewWillAppear(animated)
     puts "grabbing all clienti"
     loadFromBackend
+  end
+
+  def shouldAutorotateToInterfaceOrientation(orientation)
+    true
   end
 
   def setupPullToRefresh
@@ -95,12 +103,19 @@ class ClientiTableViewController < UITableViewController
     return cell
   end
 
-  # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-  #   cell = tableView.cellForRowAtIndexPath(indexPath)
-  #   if (tableView != self.tableView)
-  #     self.performSegueWithIdentifier("showForm", sender:cell)
-  #   end    
-  # end
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    
+    if Device.ipad?
+      if (self.searchDisplayController.isActive)
+        object = @searchResults[indexPath.row];
+      else
+        object = @clienti[indexPath.row];
+      end
+      self.detailViewController.cliente = object
+      self.detailViewController.load_cliente
+    end
+ 
+  end
 
   # UISearchBar UISearchDisplayController methods
   def searchDisplayController(controller, shouldReloadTableForSearchString:searchString)

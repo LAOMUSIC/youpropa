@@ -12,9 +12,9 @@ class ClienteViewController < UIViewController
 
 
 
-  def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
-    true
-  end
+  # def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
+  #   true
+  # end
 
   # def viewWillAppear(animated)
   #   #load_cliente if cliente_id

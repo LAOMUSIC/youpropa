@@ -10,6 +10,11 @@ class TestModalPickerView < UIViewController
 
   def viewDidLoad
     super
+
+    edit = UITextField.alloc.initWithFrame([[10,200], [120,44]])
+    self.view.addSubview(edit)
+
+
     @pickResultLabel.text = TIPI_CLIENTI[0]
 
     # tapRecognizer = UITapGestureRecognizer.alloc.initWithTarget(@pickResultLabel, action:"sendPick")

@@ -8,10 +8,10 @@ source "https://rubygems.org"
 gem 'rubymotion_generators'
 gem 'sugarcube'
 gem 'geomotion'
-gem 'formotion'
+#gem 'formotion'
 gem 'afmotion'
 gem 'bubble-wrap'
 gem "ib"
-gem "teacup"
+#gem "teacup"
 gem "motion-gravatar"
 gem "motion-addressbook"

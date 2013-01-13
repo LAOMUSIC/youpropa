@@ -540,7 +540,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="da fare" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="KgU-eq-Gpr">
-                                                    <rect key="frame" x="178" y="11" width="92" height="21"/>
+                                                    <rect key="frame" x="217" y="11" width="53" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -578,65 +578,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9F-eK-054" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956" y="1422"/>
-        </scene>
-        <!--Cliente View Controller-->
-        <scene sceneID="gFb-vo-99e">
-            <objects>
-                <viewController id="zov-6i-sBj" customClass="ClienteViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ca6-J6-A7g">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="waR-t5-r8P">
-                                <rect key="frame" x="20" y="192" width="280" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="zov-6i-sBj" id="p3q-tZ-zDk"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u6J-op-pbc">
-                                <rect key="frame" x="20" y="244" width="280" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="save_button_pressed:" destination="zov-6i-sBj" eventType="touchUpInside" id="62k-xG-lVv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SDq-hb-uwG">
-                                <rect key="frame" x="20" y="311" width="280" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="delete_button_pressed:" destination="zov-6i-sBj" eventType="touchUpInside" id="Xu7-kZ-b1N"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fvB-A3-Tj4"/>
-                    <connections>
-                        <outlet property="name_text_field" destination="waR-t5-r8P" id="beH-AO-JAf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKD-Ab-xaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="733" y="205"/>
         </scene>
         <!--AppuntiTV-->
         <scene sceneID="0gD-7w-F82">
@@ -725,76 +666,10 @@
             </objects>
             <point key="canvasLocation" x="-554" y="112"/>
         </scene>
-        <!--Test Modal Picker View - Item-->
-        <scene sceneID="H93-ag-R9j">
-            <objects>
-                <viewController id="zc7-UE-NiV" customClass="TestModalPickerView" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Gba-hw-Ha5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V4U-2w-iKZ">
-                                <rect key="frame" x="96" y="31" width="204" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bym-b8-lxZ" appends="YES" id="2TD-aS-Hft"/>
-                                </connections>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qt3-mG-rE4">
-                                <rect key="frame" x="20" y="20" width="55" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Pick">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendPick" destination="zc7-UE-NiV" eventType="touchUpInside" id="0Db-3T-3lh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="58Q-HV-ysz">
-                                <rect key="frame" x="20" y="82" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Kill app">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="killApp" destination="zc7-UE-NiV" eventType="touchUpInside" id="I7b-Dd-1hN"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qLM-DB-Qc5"/>
-                    <connections>
-                        <outlet property="pickResultLabel" destination="V4U-2w-iKZ" id="hpc-Og-7g9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kte-UN-Osr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="bym-b8-lxZ">
-                    <connections>
-                        <action selector="sendPick" destination="zc7-UE-NiV" id="xuY-6n-uQp"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-959" y="1055"/>
-        </scene>
         <!--Navigation Controller - Clienti-->
         <scene sceneID="fgv-lu-Axi">
             <objects>
-                <navigationController title="Clienti" id="s3X-XS-bzm" sceneMemberID="viewController">
+                <navigationController title="Clienti" definesPresentationContext="YES" id="s3X-XS-bzm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Clienti" id="GpB-Wu-Lfy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NzS-JR-IvB">
@@ -823,7 +698,6 @@
                     <connections>
                         <segue destination="s3X-XS-bzm" kind="relationship" relationship="viewControllers" id="eVK-8I-ahv"/>
                         <segue destination="mk5-M3-ND0" kind="relationship" relationship="viewControllers" id="J2k-1G-ebC"/>
-                        <segue destination="zc7-UE-NiV" kind="relationship" relationship="viewControllers" id="IYI-xW-TGj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Hu-SJ-3UX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1028,8 +902,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntoFormViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="create_appunto"/>
                 <relationship kind="action" name="load_appunto"/>
                 <relationship kind="action" name="save:"/>
+                <relationship kind="action" name="update_appunto"/>
                 <relationship kind="action" name="viewDidLoad"/>
                 <relationship kind="action" name="viewWillAppear:"/>
             </relationships>
@@ -1077,22 +953,6 @@
                 <relationship kind="outlet" name="saveItem"/>
             </relationships>
         </class>
-        <class className="ClienteViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClienteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="create_cliente"/>
-                <relationship kind="action" name="delete_button_pressed:"/>
-                <relationship kind="action" name="delete_cliente"/>
-                <relationship kind="action" name="load_cliente"/>
-                <relationship kind="action" name="save_button_pressed:"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="textFieldShouldReturn:"/>
-                <relationship kind="action" name="update_cliente"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="name_text_field"/>
-            </relationships>
-        </class>
         <class className="ClientiTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ClientiTableViewController.h"/>
             <relationships>
@@ -1119,15 +979,6 @@
                 <relationship kind="action" name="close:"/>
             </relationships>
         </class>
-        <class className="TestModalPickerView" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestModalPickerView.h"/>
-            <relationships>
-                <relationship kind="action" name="killApp"/>
-                <relationship kind="action" name="sendPick"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="outlet" name="pickResultLabel"/>
-            </relationships>
-        </class>
         <class className="TextEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TextEditViewController.h"/>
             <relationships>
@@ -1148,6 +999,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="puy-cX-y5n"/>
+        <segue reference="bLA-y0-CF2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -105,7 +105,12 @@ class AppuntoFormViewController < UITableViewController
     # } else {
     #   [moc refreshObject:[self recipeMO] mergeChanges:NO];
     # }
-    self.navigationController.popViewControllerAnimated(true)
+
+    if Device.ipad?
+      self.dismissViewControllerAnimated(true, completion:nil)
+    else
+      self.navigationController.popViewControllerAnimated(true)
+    end
   end
 
   private
@@ -114,7 +119,11 @@ class AppuntoFormViewController < UITableViewController
       puts "Creating new appunto #{@appunto.cliente_nome}"
       App.delegate.backend.postObject(@appunto, path:nil, parameters:nil,
                                  success: lambda do |operation, result|
-                                            self.navigationController.popViewControllerAnimated true 
+                                                if Device.ipad?
+                                                  self.dismissViewControllerAnimated(true, completion:nil)
+                                                else
+                                                  self.navigationController.popViewControllerAnimated(true)
+                                                end
                                           end,
                                  failure: lambda do |operation, error|
                                                    App.alert error.localizedDescription
@@ -126,7 +135,11 @@ class AppuntoFormViewController < UITableViewController
       App.delegate.backend.putObject(@appunto, path:nil, parameters:nil,
                                 success: lambda do |operation, result|
                                                   puts "updated"
-                                                  self.navigationController.popViewControllerAnimated true
+                                                 if Device.ipad?
+                                                    self.dismissViewControllerAnimated(true, completion:nil)
+                                                  else
+                                                    self.navigationController.popViewControllerAnimated(true)
+                                                  end
                                                 end,
                                 failure: lambda do |operation, error|
                                                   App.alert error.localizedDescription

@@ -7,6 +7,9 @@ class AppDelegate
   attr_accessor :window, :backend
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+
+    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+
     init_restkit
     #debug_restkit
     login
@@ -21,6 +24,21 @@ class AppDelegate
     add_route_set(Appunto, "api/v1/appunti", "api/v1/appunti/:remote_id")
 
     AFNetworkActivityIndicatorManager.sharedManager.enabled = true
+
+
+
+    if Device.ipad?
+      storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPad", bundle:nil)
+      @window.rootViewController = storyboard.instantiateInitialViewController
+      splitViewController = self.window.rootViewController
+      navigationController = splitViewController.viewControllers.lastObject
+      splitViewController.delegate = navigationController.topViewController
+    else
+      storyboard = UIStoryboard.storyboardWithName("Example", bundle:nil)
+      @window.rootViewController = storyboard.instantiateInitialViewController
+    end
+
+    @window.makeKeyAndVisible
     true
   end
 
@@ -142,4 +160,5 @@ class AppDelegate
     backend.router.routeSet.addRoute(delete_route)
     backend.router.routeSet.addRoute(post_route)
   end
+
 end
