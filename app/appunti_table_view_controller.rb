@@ -14,14 +14,11 @@ class AppuntiTableViewController < UITableViewController
     @appunti = []
     @searchResults = []
     view.dataSource = view.delegate = self
+
+    self.navigationItem.rightBarButtonItem = self.editButtonItem
+
     setupPullToRefresh
     setupSearchBar
-
-    # self.title = "Appunti"
-    # self.navigationItem.leftBarButtonItem = UIBarButtonItem.alloc.initWithCustomView(self.activityIndicatorView)
-    # self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemRefresh, target:self, action: 'reload')
-    # self.tableView.rowHeight = 70
-    # self.reload
   end
 
   def viewDidAppear(animated)
@@ -39,30 +36,30 @@ class AppuntiTableViewController < UITableViewController
   #   super
   # end
   
+ # def edit(sender)
+ #   self.setEditing(true, animated:true)
+ # end
 
 
-  def reload
-    # self.activityIndicatorView.startAnimating
-    # self.navigationItem.rightBarButtonItem.enabled = true
+  # Storyboard methods
+  def prepareForSegue(segue, sender:sender)
 
-    # Appunto.fetchTodopropaAppunti do |appunti, error|
-    #   if (error)
-    #     UIAlertView.alloc.initWithTitle("Error",
-    #       message:error.localizedDescription,
-    #       delegate:nil,
-    #       cancelButtonTitle:nil,
-    #       otherButtonTitles:"OK", nil).show
-    #   else
-    #     self.appunti = appunti
-    #   end
+    if segue.identifier.isEqualToString("displayAppunto")
+      appunto = nil
+      if (self.searchDisplayController.isActive)
+        indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
+        appunto = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).appunto
+      else
+        indexPath = self.tableView.indexPathForCell(sender)
+        appunto = self.tableView.cellForRowAtIndexPath(indexPath).appunto
+      end
+      puts "status #{appunto.status}  "
+      segue.destinationViewController.appunto = appunto
+      appunto = nil
+    end
 
-    #   self.activityIndicatorView.stopAnimating
-    #   self.navigationItem.rightBarButtonItem.enabled = true
-      
-    #   doneReloadingTableViewData
-
-    # end
   end
+
 
   def setupPullToRefresh
     @refreshHeaderView ||= begin
@@ -92,15 +89,6 @@ class AppuntiTableViewController < UITableViewController
                                                 end)
   end
 
-  # def loadView
-  #   super
-  #   self.activityIndicatorView = UIActivityIndicatorView.alloc.initWithActivityIndicatorStyle(UIActivityIndicatorViewStyleWhite)
-  #   self.activityIndicatorView.hidesWhenStopped = true
-  # end
-
-
-
-
   # UITableViewDelegate
 
   def tableView(tableView, numberOfRowsInSection:section)
@@ -124,15 +112,29 @@ class AppuntiTableViewController < UITableViewController
     cell
   end
 
-  # def tableView(tableView, willDisplayCell:cell, forRowAtIndexPath:indexPath)
-  #   if cell.appunto.stato == "completato"
-  #     cell.backgroundColor = UIColor.groupTableViewBackgroundColor
-  #   end  
-  # end
+  def tableView(tableView, commitEditingStyle:editing_style, forRowAtIndexPath:indexPath)
+    if editing_style == UITableViewCellEditingStyleDelete
+      editing_style = "UITableViewCellEditingStyleDelete"
+      
+      #@appunti.delete_at(index_path.row)
+      delete_appunto(self.tableView.cellForRowAtIndexPath(indexPath).appunto)
+      #@appunti.delete_at(index_path.row)
+      @appunti.delete_at(indexPath.row)
+      self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimationAutomatic)
 
-  # def tableView(tableView, heightForRowAtIndexPath:indexPath)
-  #   AppuntoCell.heightForCellWithPost(@appunti[indexPath.row])
-  # end
+    end
+  end
+
+  def delete_appunto(appunto)
+    puts "Deleting cliente #{appunto.remote_id}"
+    App.delegate.backend.deleteObject(appunto, path:nil, parameters:nil,
+                              success: lambda do |operation, result|
+                                          puts "deleted"  
+                                       end,
+                              failure: lambda do |operation, error|
+                                                App.alert error.localizedDescription
+                                              end)
+  end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     tableView.deselectRowAtIndexPath(indexPath, animated:true)

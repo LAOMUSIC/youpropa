@@ -80,7 +80,7 @@ class ClienteDetailViewController < UIViewController
   # splitView delegates
 
   def splitViewController(svc, willHideViewController:vc, withBarButtonItem:barButtonItem, forPopoverController:pc)
-    barButtonItem.title = "Clienti"
+    barButtonItem.title = "Menu"
     self.navigationItem.setLeftBarButtonItem(barButtonItem)
     self.popoverViewController = pc
   end

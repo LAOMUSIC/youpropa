@@ -11,11 +11,11 @@ class TestModalPickerView < UIViewController
   def viewDidLoad
     super
 
-    edit = UITextField.alloc.initWithFrame([[10,200], [120,44]])
-    self.view.addSubview(edit)
+    # edit = UITextField.alloc.initWithFrame([[10,200], [120,44]])
+    # self.view.addSubview(edit)
 
 
-    @pickResultLabel.text = TIPI_CLIENTI[0]
+    # @pickResultLabel.text = TIPI_CLIENTI[0]
 
     # tapRecognizer = UITapGestureRecognizer.alloc.initWithTarget(@pickResultLabel, action:"sendPick")
     # @pickResultLabel.addGestureRecognizer(tapRecognizer)
@@ -34,6 +34,10 @@ class TestModalPickerView < UIViewController
 
   def killApp
     exit(0)
+  end
+
+  def login
+    App.delegate.login
   end
 
 end

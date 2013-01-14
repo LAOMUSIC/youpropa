@@ -1,28 +1,28 @@
 class EditStatoViewController < UITableViewController
 
-  STATUS = ['da fare', 'in sospeso', 'completato']
+  STATUSES = ['da fare', 'in sospeso', 'completato']
 
   attr_accessor :statoChangedBlock, :appunto
 
 
   def tableView(tableView, numberOfRowsInSection:section)
-    STATUS.size
+    STATUSES.size
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
     unless cell = tableView.dequeueReusableCellWithIdentifier('statoCell')
       cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier:'statoCell')
     end
-    stato = STATUS[indexPath.row]
-    cell.textLabel.text = stato
-    cell.accessoryType = UITableViewCellAccessoryCheckmark if stato == @appunto.stato
+    status = STATUSES[indexPath.row]
+    cell.textLabel.text = status
+    cell.accessoryType = UITableViewCellAccessoryCheckmark if status == @appunto.status.split("_").join(" ")
     cell
   end
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
 
-    if @appunto.stato
-      previousIndexPath = NSIndexPath.indexPathForRow(STATUS.index(@appunto.stato), inSection:0)
+    if @appunto.status
+      previousIndexPath = NSIndexPath.indexPathForRow(STATUSES.index(@appunto.status.split("_").join(" ")), inSection:0)
       cell = tableView.cellForRowAtIndexPath(previousIndexPath)
       cell.accessoryType = UITableViewCellAccessoryNone
     end
@@ -30,7 +30,7 @@ class EditStatoViewController < UITableViewController
     tableView.cellForRowAtIndexPath(indexPath).accessoryType = UITableViewCellAccessoryCheckmark
     tableView.deselectRowAtIndexPath(indexPath, animated:true)
 
-    text = @appunto.stato = STATUS[indexPath.row]
+    text = @appunto.status = STATUSES[indexPath.row].split(" ").join("_")
 
     error = Pointer.new(:object)
     success = @statoChangedBlock.call(text, error)

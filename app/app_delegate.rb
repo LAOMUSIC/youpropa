@@ -117,7 +117,7 @@ class AppDelegate
       mapping.addAttributeMappingsFromDictionary(id: "remote_id",
                                                  destinatario: "destinatario",
                                                  note: "note",
-                                                 status: "stato",
+                                                 status: "status",
                                                  telefono: "telefono",
                                                  cliente_id: "cliente_id",
                                                  created_at: "created_at",

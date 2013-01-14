@@ -3,23 +3,35 @@ class AppuntoFormViewController < UITableViewController
   attr_accessor :appunto, :cliente
 
   def viewDidLoad
-    @appunto = Appunto.new(stato: "da fare")
+    
     true
   end
 
   def viewWillAppear(animated)
     super
+    
+    unless @appunto 
+      @appunto = Appunto.new(status: "da fare")
+      puts "new appunto"
+    end
+    
     if @cliente
       @appunto.cliente_id = @cliente.remote_id
       @appunto.cliente_nome = @cliente.nome
     end
+
+
+    puts @appunto.cliente_nome
+    puts @appunto.status
+
     load_appunto
+
   end
 
   def load_appunto
     table = self.tableView
     
-    (0..2).each do |index|
+    (0..3).each do |index|
       
       path = NSIndexPath.indexPathForRow(index, inSection:0)
       cell = table.cellForRowAtIndexPath(path)
@@ -32,6 +44,8 @@ class AppuntoFormViewController < UITableViewController
         when 2
           temp = cell.viewWithTag(1123)
           temp.setText(@appunto.note)
+        when 3
+          cell.detailTextLabel.text = @appunto.status.split("_").join(" ")
       end
     end
   end
@@ -73,7 +87,7 @@ class AppuntoFormViewController < UITableViewController
         path = NSIndexPath.indexPathForRow(3, inSection:0)
         cell = self.tableView.cellForRowAtIndexPath(path)
         cell.detailTextLabel.setText(text)
-        @appunto.stato = text
+        @appunto.status = text
         return true
       end
     )
@@ -90,7 +104,8 @@ class AppuntoFormViewController < UITableViewController
   end
 
   def save(sender)
-    @appunto.stato = @appunto.stato.split(" ").join("_")
+
+    @appunto.status = @appunto.status.split(" ").join("_")
     if @appunto.remote_id
       update_appunto
     else
