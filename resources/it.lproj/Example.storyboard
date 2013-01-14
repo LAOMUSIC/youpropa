@@ -634,14 +634,7 @@
                             <outlet property="delegate" destination="6ig-9A-ven" id="686-vh-UuA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Appunti" id="P8T-9q-jc5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ljH-A1-Rjn">
-                            <connections>
-                                <action selector="edit:" destination="6ig-9A-ven" id="9Ig-mV-jh4"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fAb-7E-Ycr"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Appunti" id="P8T-9q-jc5"/>
                     <connections>
                         <outlet property="searchBar" destination="sgq-Gg-8Bk" id="RwC-FM-yYb"/>
                         <outlet property="searchDisplayController" destination="fwE-tn-xlC" id="9ft-GL-tHO"/>

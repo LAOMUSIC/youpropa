@@ -634,10 +634,7 @@
                             <outlet property="delegate" destination="6ig-9A-ven" id="686-vh-UuA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Appunti" id="P8T-9q-jc5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Ub9-Pi-2Og"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ghs-9X-mKk"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Appunti" id="P8T-9q-jc5"/>
                     <connections>
                         <outlet property="searchBar" destination="sgq-Gg-8Bk" id="RwC-FM-yYb"/>
                         <outlet property="searchDisplayController" destination="fwE-tn-xlC" id="9ft-GL-tHO"/>
@@ -929,6 +926,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntiTableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="doneReloadingTableViewData"/>
+                <relationship kind="action" name="edit:"/>
                 <relationship kind="action" name="filterAppuntiForTerm:"/>
                 <relationship kind="action" name="loadFromBackend"/>
                 <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
