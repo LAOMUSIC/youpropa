@@ -102,6 +102,41 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="6wl-gQ-nFM">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="jOD-04-Ka8">
+                                        <rect key="frame" x="0.0" y="120" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKI-8P-Saw">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="XTN-Dz-7JN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                    <state key="normal" title="Login">
+                                                        <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="login:" destination="M6B-dL-xhB" eventType="touchUpInside" id="fCI-Yk-ose"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="UKI-8P-Saw" firstAttribute="centerY" secondItem="jOD-04-Ka8" secondAttribute="centerY" type="default" id="HjZ-CU-PYI"/>
+                                            <constraint firstItem="UKI-8P-Saw" firstAttribute="centerX" secondItem="jOD-04-Ka8" secondAttribute="centerX" type="default" id="kxK-pb-vZ1"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="M6B-dL-xhB" id="BTr-aR-cNd"/>
@@ -710,13 +745,13 @@
         <class className="AppuntiTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntiTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="delete_appunto:"/>
                 <relationship kind="action" name="doneReloadingTableViewData"/>
                 <relationship kind="action" name="filterAppuntiForTerm:"/>
                 <relationship kind="action" name="loadFromBackend"/>
                 <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
                 <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
                 <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reload"/>
                 <relationship kind="action" name="reloadTableViewDataSource"/>
                 <relationship kind="action" name="scrollViewDidScroll:"/>
                 <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
@@ -797,6 +832,7 @@
         <class className="MenuViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
             <relationships>
+                <relationship kind="action" name="login:"/>
                 <relationship kind="action" name="viewDidLoad"/>
             </relationships>
         </class>

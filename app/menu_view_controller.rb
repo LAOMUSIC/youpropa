@@ -10,5 +10,9 @@ class MenuViewController < UITableViewController
     true
   end
 
+  def login(sender)
+    App.delegate.login
+  end
+
 
 end
