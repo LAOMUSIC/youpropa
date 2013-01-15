@@ -1,1 +1,1 @@
-rvm gemset use youpropa
+rvm use 1.9.3@youpropa --create
