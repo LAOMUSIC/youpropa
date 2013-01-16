@@ -101,15 +101,26 @@ class AppuntiTableViewController < UITableViewController
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
 
-    cell = self.tableView.dequeueReusableCellWithIdentifier("AppuntoCell")
-    cell || AppuntoCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier:"AppuntoCell")
+    # cell = self.tableView.dequeueReusableCellWithIdentifier("AppuntoCell")
+    # cell || AppuntoCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier:"AppuntoCell")
     
+    @@identifier ||= "Cell"
+    cell = tableView.dequeueReusableCellWithIdentifier(@@identifier) || begin
+      cell = AppuntoTableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier:@@identifier)
+      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
+      cell
+    end
+
     if (tableView == self.tableView)
       cell.appunto = @appunti[indexPath.row]
     else
       cell.appunto = @searchResults[indexPath.row]
     end
     cell
+  end
+
+  def tableView(tableView, heightForRowAtIndexPath:indexPath)
+    AppuntoTableViewCell.heightForCellWithAppunto(@appunti[indexPath.row])
   end
 
   def tableView(tableView, commitEditingStyle:editing_style, forRowAtIndexPath:indexPath)

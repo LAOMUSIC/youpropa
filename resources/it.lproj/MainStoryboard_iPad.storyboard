@@ -38,10 +38,14 @@
         <!--Navigation Controller-->
         <scene sceneID="50">
             <objects>
-                <navigationController id="42" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="42" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="43">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="EaT-db-s56">
+                        <rect key="frame" x="0.0" y="724" width="703" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="mIp-eZ-aPr" kind="relationship" relationship="rootViewController" id="3eW-tx-TbU"/>
                     </connections>
@@ -111,11 +115,13 @@
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKI-8P-Saw">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKI-8P-Saw">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="XTN-Dz-7JN"/>
+                                                        <constraint firstAttribute="height" constant="44" id="gqz-0B-pvm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="Login">
                                                         <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -238,7 +244,7 @@
             <objects>
                 <viewController id="mIp-eZ-aPr" customClass="ClienteDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="frx-Q3-J2G">
-                        <rect key="frame" x="0.0" y="64" width="703" height="704"/>
+                        <rect key="frame" x="0.0" y="64" width="703" height="660"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nome Cliente" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfV-aA-1AO">
@@ -331,12 +337,13 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="oiU-KF-QpB"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Scheda Cliente" id="zIC-t9-nPP">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="xTB-1t-A8y"/>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="callButton" destination="Err-7J-pp4" id="47O-kc-eTf"/>
                         <outlet property="cittaLabel" destination="C05-jJ-fvt" id="6Xv-2G-Dt9"/>
@@ -353,24 +360,28 @@
         <!--Navigation Controller-->
         <scene sceneID="hwX-mG-BBy">
             <objects>
-                <navigationController definesPresentationContext="YES" id="BSd-ms-mcv" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="BSd-ms-mcv" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CBU-oa-NeQ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Zoi-BD-0OK">
+                        <rect key="frame" x="0.0" y="576" width="540" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="pVn-GO-9Om" kind="relationship" relationship="rootViewController" id="UGd-jf-LWh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oT-aL-aCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1288" y="322"/>
+            <point key="canvasLocation" x="1181" y="370"/>
         </scene>
         <!--Appunto Form View Controller-->
         <scene sceneID="NNj-xa-r9y">
             <objects>
                 <tableViewController id="pVn-GO-9Om" customClass="AppuntoFormViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ooB-DR-2Kk">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -451,7 +462,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="4ZK-Hm-sL0" firstAttribute="leading" secondItem="RGe-t9-Cbd" secondAttribute="leading" constant="40" id="oql-em-9H2"/>
+                                            <constraint firstItem="4ZK-Hm-sL0" firstAttribute="leading" secondItem="RGe-t9-Cbd" secondAttribute="leading" constant="40" id="8KH-hH-eYp"/>
                                             <constraint firstItem="4ZK-Hm-sL0" firstAttribute="top" secondItem="RGe-t9-Cbd" secondAttribute="top" constant="4" id="xjQ-oa-lLy"/>
                                         </constraints>
                                         <connections>
@@ -518,7 +529,7 @@
             <objects>
                 <viewController id="7r3-i7-cLW" customClass="TextEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oWb-ne-Ulq">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="512"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="axl-oN-LAO">
@@ -574,7 +585,7 @@
             <objects>
                 <viewController id="8R2-B8-WJn" customClass="TextEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rkp-lM-ygB">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="512"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-sV-GIY">
@@ -624,7 +635,7 @@
             <objects>
                 <tableViewController id="Kts-a4-Qbr" customClass="EditStatoViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="xOa-nI-RrI">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="512"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -689,28 +700,12 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AppuntoCell" textLabel="g38-sG-gJX" detailTextLabel="zyE-ru-CiC" style="IBUITableViewCellStyleValue1" id="pBM-DA-k7Z" customClass="AppuntoCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pBM-DA-k7Z" customClass="AppuntoCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g38-sG-gJX">
-                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zyE-ru-CiC">
-                                            <rect key="frame" x="266" y="11" width="44" height="21"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -741,124 +736,6 @@
             <point key="canvasLocation" x="1360" y="-717"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AppuntiTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntiTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="delete_appunto:"/>
-                <relationship kind="action" name="doneReloadingTableViewData"/>
-                <relationship kind="action" name="filterAppuntiForTerm:"/>
-                <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
-                <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reloadTableViewDataSource"/>
-                <relationship kind="action" name="scrollViewDidScroll:"/>
-                <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
-                <relationship kind="action" name="setupPullToRefresh"/>
-                <relationship kind="action" name="setupSearchBar"/>
-                <relationship kind="action" name="viewDidAppear:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="searchBar"/>
-            </relationships>
-        </class>
-        <class className="AppuntoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntoCell.h"/>
-            <relationships>
-                <relationship kind="action" name="layoutSubviews"/>
-            </relationships>
-        </class>
-        <class className="AppuntoFormViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntoFormViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="create_appunto"/>
-                <relationship kind="action" name="load_appunto"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="update_appunto"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-            </relationships>
-        </class>
-        <class className="ClienteCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClienteCell.h"/>
-        </class>
-        <class className="ClienteDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClienteDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="load_cliente"/>
-                <relationship kind="action" name="makeCall:"/>
-                <relationship kind="action" name="navigate:"/>
-                <relationship kind="action" name="sendEmail:"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="callButton"/>
-                <relationship kind="outlet" name="cittaLabel"/>
-                <relationship kind="outlet" name="emailButton"/>
-                <relationship kind="outlet" name="indirizzoLabel"/>
-                <relationship kind="outlet" name="navigaButton"/>
-                <relationship kind="outlet" name="nomeLabel"/>
-            </relationships>
-        </class>
-        <class className="ClientiTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClientiTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneReloadingTableViewData"/>
-                <relationship kind="action" name="filterClientiForTerm:"/>
-                <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
-                <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reloadTableViewDataSource"/>
-                <relationship kind="action" name="scrollViewDidScroll:"/>
-                <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
-                <relationship kind="action" name="setupPullToRefresh"/>
-                <relationship kind="action" name="setupSearchBar"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="viewDidAppear:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="searchBar"/>
-            </relationships>
-        </class>
-        <class className="EditStatoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditStatoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TAXSplitViewControllerRotating" superclassName="UISplitViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TAXSplitViewControllerRotating.h"/>
-            <relationships>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-            </relationships>
-        </class>
-        <class className="TextEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="handleTextCompletion"/>
-                <relationship kind="action" name="textFieldShouldReturn:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="textField"/>
-                <relationship kind="outlet" name="textView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
