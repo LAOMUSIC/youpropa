@@ -101,38 +101,30 @@ class AppuntiTableViewController < UITableViewController
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
 
-    # cell = self.tableView.dequeueReusableCellWithIdentifier("AppuntoCell")
-    # cell || AppuntoCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier:"AppuntoCell")
-    
-    @@identifier ||= "Cell"
-    cell = tableView.dequeueReusableCellWithIdentifier(@@identifier) || begin
-      cell = AppuntoTableViewCell.alloc.initWithStyle(UITableViewCellStyleSubtitle, reuseIdentifier:@@identifier)
-      cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
-      cell
-    end
+    cell = self.tableView.dequeueReusableCellWithIdentifier("appuntoTableViewCell")
+    cell ||= AppuntoTableViewCell.alloc.initWithStyle(UITableViewCellStyleCustom,
+                                            reuseIdentifier:"appuntoTableViewCell")
 
     if (tableView == self.tableView)
       cell.appunto = @appunti[indexPath.row]
     else
       cell.appunto = @searchResults[indexPath.row]
     end
+    puts "cellForRowAtIndexPath #{indexPath.row}"
     cell
   end
 
   def tableView(tableView, heightForRowAtIndexPath:indexPath)
+    puts "heightForRowAtIndexPath #{indexPath.row}"
     AppuntoTableViewCell.heightForCellWithAppunto(@appunti[indexPath.row])
   end
 
   def tableView(tableView, commitEditingStyle:editing_style, forRowAtIndexPath:indexPath)
     if editing_style == UITableViewCellEditingStyleDelete
       editing_style = "UITableViewCellEditingStyleDelete"
-      
-      #@appunti.delete_at(index_path.row)
       delete_appunto(self.tableView.cellForRowAtIndexPath(indexPath).appunto)
-      #@appunti.delete_at(index_path.row)
       @appunti.delete_at(indexPath.row)
       self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimationAutomatic)
-
     end
   end
 

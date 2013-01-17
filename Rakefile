@@ -7,7 +7,9 @@ Bundler.require
 Motion::Project::App.setup do |app|
   app.name = 'youpropapp'
 
-  app.device_family = [:iphone, :ipad]
+  app.info_plist['UIMainStoryboardFile'] = 'MainStoryboard_iPhone'
+
+  #app.device_family = [:iphone, :ipad]
   
   app.provisioning_profile = '/Users/paolotax/Library/MobileDevice/Provisioning Profiles/EA8F07F2-DB5C-43D5-A722-BEF7C43408FB.mobileprovision' 
   app.codesign_certificate = 'iPhone Developer: Paolo Tassinari (9L6JUZD52Q)' 
