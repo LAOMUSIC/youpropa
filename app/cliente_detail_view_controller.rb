@@ -7,13 +7,24 @@ class ClienteDetailViewController < UIViewController
   outlet :nomeLabel
   outlet :indirizzoLabel
   outlet :cittaLabel
-
+  outlet :nuovoAppuntoButton
   outlet :navigaButton
   outlet :emailButton
   outlet :callButton
 
   def viewDidLoad
     super
+
+    self.nuovoAppuntoButton.text = "Nuovo Appunto"
+    self.nuovoAppuntoButton.textColor = UIColor.whiteColor
+    self.nuovoAppuntoButton.textShadowColor = UIColor.darkGrayColor
+    self.nuovoAppuntoButton.tintColor = UIColor.colorWithRed(0.45, green:0, blue:0, alpha:1)
+    self.nuovoAppuntoButton.highlightedTintColor = UIColor.colorWithRed(0.75, green:0, blue:0, alpha:1)
+    #self.nuovoAppuntoButton.rightAccessoryImage = [UIImage imageNamed:@"arrow"];
+
+    self.navigaButton.text = "Naviga"
+    self.emailButton.text  = "Email"
+    self.callButton.text   = "Chiama"
 
   end
 
@@ -33,11 +44,11 @@ class ClienteDetailViewController < UIViewController
 
     if cliente.telefono.blank?
       callButton.enabled = false
-      callButton.alpha = 0.5
+      #callButton.alpha = 0.5
     end
     if cliente.email.blank?
       emailButton.enabled = false
-      emailButton.alpha = 0.5
+      #emailButton.alpha = 0.5
     end
 
     if self.popoverViewController

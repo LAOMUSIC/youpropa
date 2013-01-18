@@ -175,6 +175,11 @@
                                     <action selector="makeCall:" destination="LnV-ib-tVW" eventType="touchUpInside" id="egg-i7-a4J"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="nLK-2f-Wmh" customClass="NVUIGradientButton">
+                                <rect key="frame" x="20" y="237" width="76" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -714,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GX-uY-MS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-982" y="1012"/>
+            <point key="canvasLocation" x="-1093" y="1167"/>
         </scene>
         <!--Navigation Controller - Clienti-->
         <scene sceneID="fgv-lu-Axi">
@@ -1033,6 +1038,9 @@
                 <relationship kind="action" name="close:"/>
             </relationships>
         </class>
+        <class className="NVUIGradientButton" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NVUIGradientButton.h"/>
+        </class>
         <class className="TestModalPickerView" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestModalPickerView.h"/>
             <relationships>
@@ -1063,7 +1071,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RUe-Yc-fiS"/>
+        <segue reference="6Fu-lY-mkJ"/>
         <segue reference="puy-cX-y5n"/>
     </inferredMetricsTieBreakers>
 </document>

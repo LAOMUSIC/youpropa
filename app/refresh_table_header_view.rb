@@ -101,7 +101,7 @@ class RefreshTableHeaderView < UIView
       CATransaction.commit
 
     elsif state == :pullRefreshLoading
-      @statusLabel.text = "Stò caricando..."
+      @statusLabel.text = "Sto caricando..."
       @activityView.startAnimating
       CATransaction.begin
       CATransaction.setValue(true, forKey:KCATransactionDisableActions)

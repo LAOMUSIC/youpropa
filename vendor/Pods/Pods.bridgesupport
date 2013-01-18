@@ -1,88 +1,91 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
-<constant name='AFNetworkingErrorDomain' const='true' declared_type='NSString*' type='@'/>
-<constant name='AFNetworkingOperationDidFinishNotification' const='true' declared_type='NSString*' type='@'/>
-<constant name='AFNetworkingOperationDidStartNotification' const='true' declared_type='NSString*' type='@'/>
-<constant name='AFNetworkingOperationFailingURLRequestErrorKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='AFNetworkingOperationFailingURLResponseErrorKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKDetailedErrorsKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKEntityDescriptionPrimaryKeyAttributeUserInfoKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKEntityDescriptionPrimaryKeyAttributeValuePredicateSubstitutionVariable' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKErrorDomain' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKErrorNotificationErrorKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKISO8601DefaultTimeSeparatorCharacter' declared_type='unichar' type='S'/>
-<constant name='RKMIMETypeErrorKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKMIMETypeFormURLEncoded' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKMIMETypeJSON' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKMIMETypeTextXML' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKMIMETypeXML' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKMappingErrorKeyPathErrorKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKObjectMapperErrorObjectsKey' const='true' declared_type='NSString*' type='@'/>
-<constant name='RKRequestMethodAny' const='true' declared_type='RKRequestMethod' type='i'/>
-<constant name='RKSQLitePersistentStoreSeedDatabasePathOption' const='true' declared_type='NSString*' type='@'/>
-<constant name='kAFUploadStream3GSuggestedDelay' const='true' declared_type='NSTimeInterval' type='d'/>
-<constant name='kAFUploadStream3GSuggestedPacketSize' const='true' declared_type='NSUInteger' type='I'/>
-<enum name='AFFormURLParameterEncoding' value='0'/>
-<enum name='AFJSONParameterEncoding' value='1'/>
-<enum name='AFPropertyListParameterEncoding' value='2'/>
-<enum name='RKLogComponent' value='0'/>
-<enum name='RKLogLevelCritical' value='1'/>
-<enum name='RKLogLevelDebug' value='5'/>
-<enum name='RKLogLevelDefault' value='3'/>
-<enum name='RKLogLevelError' value='2'/>
-<enum name='RKLogLevelInfo' value='4'/>
-<enum name='RKLogLevelOff' value='0'/>
-<enum name='RKLogLevelTrace' value='6'/>
-<enum name='RKLogLevelWarning' value='3'/>
-<enum name='RKMappingErrorFromMappingResult' value='1004'/>
-<enum name='RKMappingErrorNotFound' value='1001'/>
-<enum name='RKMappingErrorTypeMismatch' value='1002'/>
-<enum name='RKMappingErrorUnmappableRepresentation' value='1003'/>
-<enum name='RKMappingErrorValidationFailure' value='1005'/>
-<enum name='RKObjectLoaderRemoteSystemError' value='1'/>
-<enum name='RKObjectLoaderUnexpectedResponseError' value='4'/>
-<enum name='RKParserRegistryEmptyDataError' value='7'/>
-<enum name='RKRequestBaseURLOfflineError' value='2'/>
-<enum name='RKRequestConnectionTimeoutError' value='5'/>
-<enum name='RKRequestMethodDELETE' value='3'/>
-<enum name='RKRequestMethodGET' value='0'/>
-<enum name='RKRequestMethodHEAD' value='4'/>
-<enum name='RKRequestMethodInvalid' value='-1'/>
-<enum name='RKRequestMethodOPTIONS' value='6'/>
-<enum name='RKRequestMethodPATCH' value='5'/>
-<enum name='RKRequestMethodPOST' value='1'/>
-<enum name='RKRequestMethodPUT' value='2'/>
-<enum name='RKRequestUnexpectedResponseError' value='3'/>
-<enum name='RKStatusCodeClassClientError' value='400'/>
-<enum name='RKStatusCodeClassInformational' value='100'/>
-<enum name='RKStatusCodeClassRedirection' value='300'/>
-<enum name='RKStatusCodeClassServerError' value='500'/>
-<enum name='RKStatusCodeClassSuccessful' value='200'/>
-<enum name='RKUnsupportedMIMETypeError' value='6'/>
-<enum name='RKlcl_cApp' value='0'/>
-<enum name='RKlcl_cRestKit' value='1'/>
-<enum name='RKlcl_cRestKitCoreData' value='2'/>
-<enum name='RKlcl_cRestKitCoreDataCache' value='3'/>
-<enum name='RKlcl_cRestKitNetwork' value='4'/>
-<enum name='RKlcl_cRestKitObjectMapping' value='5'/>
-<enum name='RKlcl_cRestKitSearch' value='6'/>
-<enum name='RKlcl_cRestKitSupport' value='7'/>
-<enum name='RKlcl_cRestKitTesting' value='8'/>
-<enum name='RKlcl_cRestKitUI' value='9'/>
-<enum name='RKlcl_vCritical' value='1'/>
-<enum name='RKlcl_vDebug' value='5'/>
-<enum name='RKlcl_vError' value='2'/>
-<enum name='RKlcl_vInfo' value='4'/>
-<enum name='RKlcl_vOff' value='0'/>
-<enum name='RKlcl_vTrace' value='6'/>
-<enum name='RKlcl_vWarning' value='3'/>
+<constant declared_type='NSString*' type='@' name='AFNetworkingErrorDomain' const='true'/>
+<constant declared_type='NSString*' type='@' name='AFNetworkingOperationDidFinishNotification' const='true'/>
+<constant declared_type='NSString*' type='@' name='AFNetworkingOperationDidStartNotification' const='true'/>
+<constant declared_type='NSString*' type='@' name='AFNetworkingOperationFailingURLRequestErrorKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='AFNetworkingOperationFailingURLResponseErrorKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKDetailedErrorsKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKEntityDescriptionPrimaryKeyAttributeUserInfoKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKEntityDescriptionPrimaryKeyAttributeValuePredicateSubstitutionVariable' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKErrorDomain' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKErrorNotificationErrorKey' const='true'/>
+<constant declared_type='unichar' type='S' name='RKISO8601DefaultTimeSeparatorCharacter'/>
+<constant declared_type='NSString*' type='@' name='RKMIMETypeErrorKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKMIMETypeFormURLEncoded' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKMIMETypeJSON' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKMIMETypeTextXML' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKMIMETypeXML' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKMappingErrorKeyPathErrorKey' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKObjectMapperErrorObjectsKey' const='true'/>
+<constant declared_type='RKRequestMethod' type='i' name='RKRequestMethodAny' const='true'/>
+<constant declared_type='NSString*' type='@' name='RKSQLitePersistentStoreSeedDatabasePathOption' const='true'/>
+<constant declared_type='NSTimeInterval' type='d' name='kAFUploadStream3GSuggestedDelay' const='true'/>
+<constant declared_type='NSUInteger' type='I' name='kAFUploadStream3GSuggestedPacketSize' const='true'/>
+<enum value='0' name='AFFormURLParameterEncoding'/>
+<enum value='1' name='AFJSONParameterEncoding'/>
+<enum value='2' name='AFPropertyListParameterEncoding'/>
+<enum value='2' name='NVUIGradientButtonStyleBlackOpaque'/>
+<enum value='3' name='NVUIGradientButtonStyleBlackTranslucent'/>
+<enum value='1' name='NVUIGradientButtonStyleDefault'/>
+<enum value='0' name='RKLogComponent'/>
+<enum value='1' name='RKLogLevelCritical'/>
+<enum value='5' name='RKLogLevelDebug'/>
+<enum value='3' name='RKLogLevelDefault'/>
+<enum value='2' name='RKLogLevelError'/>
+<enum value='4' name='RKLogLevelInfo'/>
+<enum value='0' name='RKLogLevelOff'/>
+<enum value='6' name='RKLogLevelTrace'/>
+<enum value='3' name='RKLogLevelWarning'/>
+<enum value='1004' name='RKMappingErrorFromMappingResult'/>
+<enum value='1001' name='RKMappingErrorNotFound'/>
+<enum value='1002' name='RKMappingErrorTypeMismatch'/>
+<enum value='1003' name='RKMappingErrorUnmappableRepresentation'/>
+<enum value='1005' name='RKMappingErrorValidationFailure'/>
+<enum value='1' name='RKObjectLoaderRemoteSystemError'/>
+<enum value='4' name='RKObjectLoaderUnexpectedResponseError'/>
+<enum value='7' name='RKParserRegistryEmptyDataError'/>
+<enum value='2' name='RKRequestBaseURLOfflineError'/>
+<enum value='5' name='RKRequestConnectionTimeoutError'/>
+<enum value='3' name='RKRequestMethodDELETE'/>
+<enum value='0' name='RKRequestMethodGET'/>
+<enum value='4' name='RKRequestMethodHEAD'/>
+<enum value='-1' name='RKRequestMethodInvalid'/>
+<enum value='6' name='RKRequestMethodOPTIONS'/>
+<enum value='5' name='RKRequestMethodPATCH'/>
+<enum value='1' name='RKRequestMethodPOST'/>
+<enum value='2' name='RKRequestMethodPUT'/>
+<enum value='3' name='RKRequestUnexpectedResponseError'/>
+<enum value='400' name='RKStatusCodeClassClientError'/>
+<enum value='100' name='RKStatusCodeClassInformational'/>
+<enum value='300' name='RKStatusCodeClassRedirection'/>
+<enum value='500' name='RKStatusCodeClassServerError'/>
+<enum value='200' name='RKStatusCodeClassSuccessful'/>
+<enum value='6' name='RKUnsupportedMIMETypeError'/>
+<enum value='0' name='RKlcl_cApp'/>
+<enum value='1' name='RKlcl_cRestKit'/>
+<enum value='2' name='RKlcl_cRestKitCoreData'/>
+<enum value='3' name='RKlcl_cRestKitCoreDataCache'/>
+<enum value='4' name='RKlcl_cRestKitNetwork'/>
+<enum value='5' name='RKlcl_cRestKitObjectMapping'/>
+<enum value='6' name='RKlcl_cRestKitSearch'/>
+<enum value='7' name='RKlcl_cRestKitSupport'/>
+<enum value='8' name='RKlcl_cRestKitTesting'/>
+<enum value='9' name='RKlcl_cRestKitUI'/>
+<enum value='1' name='RKlcl_vCritical'/>
+<enum value='5' name='RKlcl_vDebug'/>
+<enum value='2' name='RKlcl_vError'/>
+<enum value='4' name='RKlcl_vInfo'/>
+<enum value='0' name='RKlcl_vOff'/>
+<enum value='6' name='RKlcl_vTrace'/>
+<enum value='3' name='RKlcl_vWarning'/>
 <function name='AFContentTypesFromHTTPHeader'>
-<arg name='string' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' type='@' name='string'/>
 <retval declared_type='NSSet*' type='@'/>
 </function>
 <function name='AFQueryStringFromParametersWithEncoding'>
-<arg name='parameters' declared_type='NSDictionary*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSDictionary*' type='@' name='parameters'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKApplicationDataDirectory'>
@@ -92,7 +95,7 @@
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKClassIsCollection'>
-<arg name='aClass' declared_type='Class' type='#'/>
+<arg declared_type='Class' type='#' name='aClass'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKDateFromHTTPDateString'>
@@ -100,42 +103,42 @@
 <retval declared_type='NSDate*' type='@'/>
 </function>
 <function name='RKDateFromString'>
-<arg name='dateString' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' type='@' name='dateString'/>
 <retval declared_type='NSDate*' type='@'/>
 </function>
 <function name='RKDictionaryByMergingDictionaryWithDictionary'>
-<arg name='dict1' declared_type='NSDictionary*' type='@'/>
-<arg name='dict2' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' type='@' name='dict1'/>
+<arg declared_type='NSDictionary*' type='@' name='dict2'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </function>
 <function name='RKDictionaryByReplacingPercentEscapesInEntriesFromDictionary'>
-<arg name='dictionary' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' type='@' name='dictionary'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </function>
 <function name='RKDictionaryFromURLEncodedStringWithEncoding'>
-<arg name='URLEncodedString' declared_type='NSString*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSString*' type='@' name='URLEncodedString'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </function>
 <function name='RKEnsureDirectoryExistsAtPath'>
-<arg name='path' declared_type='NSString*' type='@'/>
-<arg name='error' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSString*' type='@' name='path'/>
+<arg declared_type='NSError**' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKErrorFromMappingResult'>
-<arg name='mappingResult' declared_type='RKMappingResult*' type='@'/>
+<arg declared_type='RKMappingResult*' type='@' name='mappingResult'/>
 <retval declared_type='NSError*' type='@'/>
 </function>
 <function name='RKHTTPCacheExpirationDateFromHeadersWithStatusCode'>
-<arg name='headers' declared_type='NSDictionary*' type='@'/>
-<arg name='statusCode' declared_type='NSInteger' type='i'/>
+<arg declared_type='NSDictionary*' type='@' name='headers'/>
+<arg declared_type='NSInteger' type='i' name='statusCode'/>
 <retval declared_type='NSDate*' type='@'/>
 </function>
 <function name='RKLogConfigureFromEnvironment'>
 <retval declared_type='void' type='v'/>
 </function>
 <function name='RKLogCoreDataError'>
-<arg name='error' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </function>
 <function name='RKLogInitialize'>
@@ -146,49 +149,49 @@
 <retval declared_type='void' type='v'/>
 </function>
 <function name='RKLogValidationError'>
-<arg name='error' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </function>
 <function name='RKMIMETypeFromPathExtension'>
-<arg name='path' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' type='@' name='path'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKMIMETypeInSet'>
-<arg name='MIMEType' declared_type='NSString*' type='@'/>
-<arg name='MIMETypes' declared_type='NSSet*' type='@'/>
+<arg declared_type='NSString*' type='@' name='MIMEType'/>
+<arg declared_type='NSSet*' type='@' name='MIMETypes'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKObjectIsCollection'>
-<arg name='object' declared_type='id' type='@'/>
+<arg declared_type='id' type='@' name='object'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKObjectIsCollectionContainingOnlyManagedObjects'>
-<arg name='object' declared_type='id' type='@'/>
+<arg declared_type='id' type='@' name='object'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKObjectIsEqualToObject'>
-<arg name='object' declared_type='id' type='@'/>
-<arg name='anotherObject' declared_type='id' type='@'/>
+<arg declared_type='id' type='@' name='object'/>
+<arg declared_type='id' type='@' name='anotherObject'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKPathAndQueryStringFromURLRelativeToURL'>
-<arg name='URL' declared_type='NSURL*' type='@'/>
-<arg name='baseURL' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' type='@' name='URL'/>
+<arg declared_type='NSURL*' type='@' name='baseURL'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKPathFromPatternWithObject'>
-<arg name='pathPattern' declared_type='NSString*' type='@'/>
-<arg name='object' declared_type='id' type='@'/>
+<arg declared_type='NSString*' type='@' name='pathPattern'/>
+<arg declared_type='id' type='@' name='object'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKPercentEscapedQueryStringFromStringWithEncoding'>
-<arg name='string' declared_type='NSString*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSString*' type='@' name='string'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKQueryParametersFromStringWithEncoding'>
-<arg name='string' declared_type='NSString*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSString*' type='@' name='string'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </function>
 <function name='RKRequestMethodFromString'>
@@ -196,15 +199,15 @@
 <retval declared_type='RKRequestMethod' type='i'/>
 </function>
 <function name='RKStatusCodeIndexSetForClass'>
-<arg name='statusCodeClass' declared_type='RKStatusCodeClass' type='I'/>
+<arg declared_type='RKStatusCodeClass' type='I' name='statusCodeClass'/>
 <retval declared_type='NSIndexSet*' type='@'/>
 </function>
 <function name='RKStatusCodeRangeForClass'>
-<arg name='statusCodeClass' declared_type='RKStatusCodeClass' type='I'/>
+<arg declared_type='RKStatusCodeClass' type='I' name='statusCodeClass'/>
 <retval declared_type='NSRange' type='{_NSRange=II}'/>
 </function>
 <function name='RKStringFromDate'>
-<arg name='date' declared_type='NSDate*' type='@'/>
+<arg declared_type='NSDate*' type='@' name='date'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKStringFromRequestMethod'>
@@ -212,49 +215,49 @@
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKURLEncodedStringFromDictionaryWithEncoding'>
-<arg name='dictionary' declared_type='NSDictionary*' type='@'/>
-<arg name='encoding' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSDictionary*' type='@' name='dictionary'/>
+<arg declared_type='NSStringEncoding' type='I' name='encoding'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <function name='RKURLIsRelativeToURL'>
-<arg name='URL' declared_type='NSURL*' type='@'/>
-<arg name='baseURL' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' type='@' name='URL'/>
+<arg declared_type='NSURL*' type='@' name='baseURL'/>
 <retval declared_type='BOOL' type='B'/>
 </function>
 <function name='RKlcl_configure_by_component'>
-<arg name='component' declared_type='_RKlcl_component_t' type='I'/>
-<arg name='level' declared_type='_RKlcl_level_t' type='I'/>
+<arg declared_type='_RKlcl_component_t' type='I' name='component'/>
+<arg declared_type='_RKlcl_level_t' type='I' name='level'/>
 <retval declared_type='uint32_t' type='I'/>
 </function>
 <function name='RKlcl_configure_by_header'>
-<arg name='header' const='true' declared_type='char*' type='*'/>
-<arg name='level' declared_type='_RKlcl_level_t' type='I'/>
+<arg declared_type='char*' type='*' name='header' const='true'/>
+<arg declared_type='_RKlcl_level_t' type='I' name='level'/>
 <retval declared_type='uint32_t' type='I'/>
 </function>
 <function name='RKlcl_configure_by_identifier'>
-<arg name='identifier' const='true' declared_type='char*' type='*'/>
-<arg name='level' declared_type='_RKlcl_level_t' type='I'/>
+<arg declared_type='char*' type='*' name='identifier' const='true'/>
+<arg declared_type='_RKlcl_level_t' type='I' name='level'/>
 <retval declared_type='uint32_t' type='I'/>
 </function>
 <function name='RKlcl_configure_by_name'>
-<arg name='name' const='true' declared_type='char*' type='*'/>
-<arg name='level' declared_type='_RKlcl_level_t' type='I'/>
+<arg declared_type='char*' type='*' name='name' const='true'/>
+<arg declared_type='_RKlcl_level_t' type='I' name='level'/>
 <retval declared_type='uint32_t' type='I'/>
 </function>
 <function name='SOCStringFromStringWithObject'>
-<arg name='string' declared_type='NSString*' type='@'/>
-<arg name='object' declared_type='id' type='@'/>
+<arg declared_type='NSString*' type='@' name='string'/>
+<arg declared_type='id' type='@' name='object'/>
 <retval declared_type='NSString*' type='@'/>
 </function>
 <class name='AFHTTPClient'>
 <method selector='HTTPRequestOperationWithRequest:success:failure:'>
-<arg name='request' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='request'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='2' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='2' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -265,33 +268,33 @@
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='cancelAllHTTPOperationsWithMethod:path:'>
-<arg name='method' index='0' declared_type='NSString*' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='method'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='clearAuthorizationHeader'>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='clientWithBaseURL:' class_method='true'>
-<arg name='url' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='url'/>
 <retval declared_type='AFHTTPClient*' type='@'/>
 </method>
 <method selector='defaultHeaders'>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='defaultValueForHeader:'>
-<arg name='header' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='header'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='deletePath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -299,44 +302,44 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperations:progressBlock:completionBlock:'>
-<arg name='operations' index='0' declared_type='NSArray*' type='@'/>
-<arg name='progressBlock' index='1' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' function_pointer='true'>
+<arg declared_type='NSArray*' index='0' type='@' name='operations'/>
+<arg declared_type='void (^)(NSUInteger, NSUInteger)' index='1' type='@?' name='progressBlock' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='completionBlock' index='2' declared_type='void (^)(NSArray *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSArray *)' index='2' type='@?' name='completionBlock' function_pointer='true'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfHTTPRequestOperationsWithRequests:progressBlock:completionBlock:'>
-<arg name='requests' index='0' declared_type='NSArray*' type='@'/>
-<arg name='progressBlock' index='1' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' function_pointer='true'>
+<arg declared_type='NSArray*' index='0' type='@' name='requests'/>
+<arg declared_type='void (^)(NSUInteger, NSUInteger)' index='1' type='@?' name='progressBlock' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='completionBlock' index='2' declared_type='void (^)(NSArray *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSArray *)' index='2' type='@?' name='completionBlock' function_pointer='true'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueHTTPRequestOperation:'>
-<arg name='operation' index='0' declared_type='AFHTTPRequestOperation*' type='@'/>
+<arg declared_type='AFHTTPRequestOperation*' index='0' type='@' name='operation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='getPath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -344,14 +347,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithBaseURL:'>
-<arg name='url' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='url'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='multipartFormRequestWithMethod:path:parameters:constructingBodyWithBlock:'>
-<arg name='method' index='0' declared_type='NSString*' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='block' index='3' declared_type='void (^)(id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='method'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(id)' index='3' type='@?' name='block' function_pointer='true'>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
@@ -364,14 +367,14 @@
 <retval declared_type='AFHTTPClientParameterEncoding' type='i'/>
 </method>
 <method selector='patchPath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -379,14 +382,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='postPath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -394,14 +397,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='putPath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -409,42 +412,42 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='registerHTTPOperationClass:'>
-<arg name='operationClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='operationClass'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='requestWithMethod:path:parameters:'>
-<arg name='method' index='0' declared_type='NSString*' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='method'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='setAuthorizationHeaderWithToken:'>
-<arg name='token' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='token'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setAuthorizationHeaderWithUsername:password:'>
-<arg name='username' index='0' declared_type='NSString*' type='@'/>
-<arg name='password' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='username'/>
+<arg declared_type='NSString*' index='1' type='@' name='password'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDefaultHeader:value:'>
-<arg name='header' index='0' declared_type='NSString*' type='@'/>
-<arg name='value' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='header'/>
+<arg declared_type='NSString*' index='1' type='@' name='value'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setParameterEncoding:'>
-<arg name='parameterEncoding' index='0' declared_type='AFHTTPClientParameterEncoding' type='i'/>
+<arg declared_type='AFHTTPClientParameterEncoding' index='0' type='i' name='parameterEncoding'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setStringEncoding:'>
-<arg name='stringEncoding' index='0' declared_type='NSStringEncoding' type='I'/>
+<arg declared_type='NSStringEncoding' index='0' type='I' name='stringEncoding'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='stringEncoding'>
 <retval declared_type='NSStringEncoding' type='I'/>
 </method>
 <method selector='unregisterHTTPOperationClass:'>
-<arg name='operationClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='operationClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -456,15 +459,15 @@
 <retval declared_type='NSIndexSet*' type='@'/>
 </method>
 <method selector='addAcceptableContentTypes:' class_method='true'>
-<arg name='contentTypes' index='0' declared_type='NSSet*' type='@'/>
+<arg declared_type='NSSet*' index='0' type='@' name='contentTypes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addAcceptableStatusCodes:' class_method='true'>
-<arg name='statusCodes' index='0' declared_type='NSIndexSet*' type='@'/>
+<arg declared_type='NSIndexSet*' index='0' type='@' name='statusCodes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='canProcessRequest:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='failureCallbackQueue'>
@@ -480,12 +483,12 @@
 <retval declared_type='NSHTTPURLResponse*' type='@'/>
 </method>
 <method selector='setCompletionBlockWithSuccess:failure:'>
-<arg name='success' index='0' declared_type='void (^)(AFHTTPRequestOperation *, id)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, id)' index='0' type='@?' name='success' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='1' declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(AFHTTPRequestOperation *, NSError *)' index='1' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='AFHTTPRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -493,11 +496,11 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setFailureCallbackQueue:'>
-<arg name='failureCallbackQueue' index='0' declared_type='dispatch_queue_t' type='@'/>
+<arg declared_type='dispatch_queue_t' index='0' type='@' name='failureCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSuccessCallbackQueue:'>
-<arg name='successCallbackQueue' index='0' declared_type='dispatch_queue_t' type='@'/>
+<arg declared_type='dispatch_queue_t' index='0' type='@' name='successCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='successCallbackQueue'>
@@ -506,18 +509,18 @@
 </class>
 <class name='AFImageRequestOperation'>
 <method selector='imageRequestOperationWithRequest:imageProcessingBlock:success:failure:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='imageProcessingBlock' index='1' declared_type='UIImage *(^)(UIImage *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='UIImage *(^)(UIImage *)' index='1' type='@?' name='imageProcessingBlock' function_pointer='true'>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='UIImage*' type='@'/>
 </arg>
-<arg name='success' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -526,8 +529,8 @@
 <retval declared_type='AFImageRequestOperation*' type='@'/>
 </method>
 <method selector='imageRequestOperationWithRequest:success:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(UIImage *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='void (^)(UIImage *)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
@@ -540,20 +543,20 @@
 <retval declared_type='UIImage*' type='@'/>
 </method>
 <method selector='setImageScale:'>
-<arg name='imageScale' index='0' declared_type='CGFloat' type='f'/>
+<arg declared_type='CGFloat' index='0' type='f' name='imageScale'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='AFJSONRequestOperation'>
 <method selector='JSONRequestOperationWithRequest:success:failure:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' index='2' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -580,7 +583,7 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setEnabled:'>
-<arg name='enabled' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='enabled'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='sharedManager' class_method='true'>
@@ -592,14 +595,14 @@
 <retval declared_type='NSPropertyListReadOptions' type='I'/>
 </method>
 <method selector='propertyListRequestOperationWithRequest:success:failure:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, id)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id)' index='2' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -612,7 +615,7 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setPropertyListReadOptions:'>
-<arg name='propertyListReadOptions' index='0' declared_type='NSPropertyListReadOptions' type='I'/>
+<arg declared_type='NSPropertyListReadOptions' index='0' type='I' name='propertyListReadOptions'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -621,7 +624,7 @@
 <retval declared_type='NSError*' type='@'/>
 </method>
 <method selector='initWithRequest:'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='inputStream'>
@@ -655,7 +658,7 @@
 <retval declared_type='NSSet*' type='@'/>
 </method>
 <method selector='setAuthenticationAgainstProtectionSpaceBlock:'>
-<arg name='block' index='0' declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' type='@?' function_pointer='true'>
+<arg declared_type='BOOL (^)(NSURLConnection *, NSURLProtectionSpace *)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSURLProtectionSpace*' type='@'/>
 <retval declared_type='BOOL' type='B'/>
@@ -663,7 +666,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setAuthenticationChallengeBlock:'>
-<arg name='block' index='0' declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLConnection *, NSURLAuthenticationChallenge *)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSURLAuthenticationChallenge*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -671,7 +674,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setCacheResponseBlock:'>
-<arg name='block' index='0' declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' type='@?' function_pointer='true'>
+<arg declared_type='NSCachedURLResponse *(^)(NSURLConnection *, NSCachedURLResponse *)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSCachedURLResponse*' type='@'/>
 <retval declared_type='NSCachedURLResponse*' type='@'/>
@@ -679,7 +682,7 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDownloadProgressBlock:'>
-<arg name='block' index='0' declared_type='void (^)(NSUInteger, long long, long long)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='long long' type='q'/>
 <arg declared_type='long long' type='q'/>
@@ -688,15 +691,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setInputStream:'>
-<arg name='inputStream' index='0' declared_type='NSInputStream*' type='@'/>
+<arg declared_type='NSInputStream*' index='0' type='@' name='inputStream'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setOutputStream:'>
-<arg name='outputStream' index='0' declared_type='NSOutputStream*' type='@'/>
+<arg declared_type='NSOutputStream*' index='0' type='@' name='outputStream'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRedirectResponseBlock:'>
-<arg name='block' index='0' declared_type='NSURLRequest *(^)(NSURLConnection *, NSURLRequest *, NSURLResponse *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest *(^)(NSURLConnection *, NSURLRequest *, NSURLResponse *)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSURLConnection*' type='@'/>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSURLResponse*' type='@'/>
@@ -705,17 +708,17 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRunLoopModes:'>
-<arg name='runLoopModes' index='0' declared_type='NSSet*' type='@'/>
+<arg declared_type='NSSet*' index='0' type='@' name='runLoopModes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setShouldExecuteAsBackgroundTaskWithExpirationHandler:'>
-<arg name='handler' index='0' declared_type='void (^)(void)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(void)' index='0' type='@?' name='handler' function_pointer='true'>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setUploadProgressBlock:'>
-<arg name='block' index='0' declared_type='void (^)(NSUInteger, long long, long long)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSUInteger, long long, long long)' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='long long' type='q'/>
 <arg declared_type='long long' type='q'/>
@@ -726,14 +729,14 @@
 </class>
 <class name='AFXMLRequestOperation'>
 <method selector='XMLParserRequestOperationWithRequest:success:failure:' class_method='true'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSXMLParser *)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSXMLParser*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *, NSXMLParser *)' index='2' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -748,14 +751,14 @@
 </class>
 <class name='NSEntityDescription'>
 <method selector='coerceValueForPrimaryKey:'>
-<arg name='primaryKeyValue' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='primaryKeyValue'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='predicateForPrimaryKeyAttribute'>
 <retval declared_type='NSPredicate*' type='@'/>
 </method>
 <method selector='predicateForPrimaryKeyAttributeWithValue:'>
-<arg name='value' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='value'/>
 <retval declared_type='NSPredicate*' type='@'/>
 </method>
 <method selector='primaryKeyAttribute'>
@@ -768,7 +771,7 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='setPrimaryKeyAttributeName:'>
-<arg name='primaryKeyAttributeName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='primaryKeyAttributeName'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -782,201 +785,379 @@
 </class>
 <class name='NSManagedObjectContext'>
 <method selector='countForEntityForName:predicate:error:'>
-<arg name='entityName' index='0' declared_type='NSString*' type='@'/>
-<arg name='predicate' index='1' declared_type='NSPredicate*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='entityName'/>
+<arg declared_type='NSPredicate*' index='1' type='@' name='predicate'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='NSUInteger' type='I'/>
 </method>
 <method selector='fetchObjectForEntity:withValueForPrimaryKeyAttribute:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='primaryKeyValue' index='1' declared_type='id' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='id' index='1' type='@' name='primaryKeyValue'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='fetchObjectForEntityForName:withValueForPrimaryKeyAttribute:'>
-<arg name='entityName' index='0' declared_type='NSString*' type='@'/>
-<arg name='primaryKeyValue' index='1' declared_type='id' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='entityName'/>
+<arg declared_type='id' index='1' type='@' name='primaryKeyValue'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='insertNewObjectForEntityForName:'>
-<arg name='entityName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='entityName'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='saveToPersistentStore:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 </class>
 <class name='NSObject'>
 <method selector='appendPartWithFileData:name:fileName:mimeType:'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
-<arg name='fileName' index='2' declared_type='NSString*' type='@'/>
-<arg name='mimeType' index='3' declared_type='NSString*' type='@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
+<arg declared_type='NSString*' index='2' type='@' name='fileName'/>
+<arg declared_type='NSString*' index='3' type='@' name='mimeType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithFileURL:name:error:'>
-<arg name='fileURL' index='0' declared_type='NSURL*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='fileURL'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='appendPartWithFormData:name:'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appendPartWithHeaders:body:'>
-<arg name='headers' index='0' declared_type='NSDictionary*' type='@'/>
-<arg name='body' index='1' declared_type='NSData*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='headers'/>
+<arg declared_type='NSData*' index='1' type='@' name='body'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='commitChangesForMappingOperation:'>
-<arg name='mappingOperation' index='0' declared_type='RKMappingOperation*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='mappingOperation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='dataFromObject:error:' class_method='true'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='error' index='1' declared_type='NSError**' type='^@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSError**' index='1' type='^@' name='error'/>
 <retval declared_type='NSData*' type='@'/>
 </method>
 <method selector='didCreateObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='didDeleteObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='didFetchObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='findInstanceOfEntity:withPrimaryKeyAttribute:value:inManagedObjectContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='primaryKeyAttribute' index='1' declared_type='NSString*' type='@'/>
-<arg name='primaryKeyValue' index='2' declared_type='id' type='@'/>
-<arg name='managedObjectContext' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='primaryKeyAttribute'/>
+<arg declared_type='id' index='2' type='@' name='primaryKeyValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='managedObjectContext'/>
 <retval declared_type='NSManagedObject*' type='@'/>
 </method>
 <method selector='findInstancesOfEntity:withPrimaryKeyAttribute:value:inManagedObjectContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='primaryKeyAttribute' index='1' declared_type='NSString*' type='@'/>
-<arg name='primaryKeyValue' index='2' declared_type='id' type='@'/>
-<arg name='managedObjectContext' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='primaryKeyAttribute'/>
+<arg declared_type='id' index='2' type='@' name='primaryKeyValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='managedObjectContext'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='mapper:didFailMappingOperation:forKeyPath:withError:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='error' index='3' declared_type='NSError*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='NSError*' index='3' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapper:didFindRepresentationOrArrayOfRepresentations:atKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='dictionaryOrArrayOfDictionaries' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='id' index='1' type='@' name='dictionaryOrArrayOfDictionaries'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapper:didFinishMappingOperation:forKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapper:didNotFindRepresentationOrArrayOfRepresentationsAtKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapper:willStartMappingOperation:forKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapperDidFinishMapping:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mapperWillStartMapping:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didConnectRelationship:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='relationship' index='1' declared_type='NSRelationshipDescription*' type='@'/>
-<arg name='connectionMapping' index='2' declared_type='RKConnectionMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSRelationshipDescription*' index='1' type='@' name='relationship'/>
+<arg declared_type='RKConnectionMapping*' index='2' type='@' name='connectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didFailWithError:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='error' index='1' declared_type='NSError*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSError*' index='1' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didFindValue:forKeyPath:mapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didNotFindValueForKeyPath:mapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='2' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='2' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didNotSetUnchangedValue:forKeyPath:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didSelectObjectMapping:forDynamicMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='objectMapping' index='1' declared_type='RKObjectMapping*' type='@'/>
-<arg name='dynamicMapping' index='2' declared_type='RKDynamicMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='RKObjectMapping*' index='1' type='@' name='objectMapping'/>
+<arg declared_type='RKDynamicMapping*' index='2' type='@' name='dynamicMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:didSetValue:forKeyPath:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingOperation:targetObjectForRepresentation:withMapping:'>
-<arg name='mappingOperation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='representation' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='mapping' index='2' declared_type='RKObjectMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='mappingOperation'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='representation'/>
+<arg declared_type='RKObjectMapping*' index='2' type='@' name='mapping'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='objectFromData:error:' class_method='true'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='error' index='1' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSError**' index='1' type='^@' name='error'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='throttleBandwidthWithPacketSize:delay:'>
-<arg name='numberOfBytes' index='0' declared_type='NSUInteger' type='I'/>
-<arg name='delay' index='1' declared_type='NSTimeInterval' type='d'/>
+<arg declared_type='NSUInteger' index='0' type='I' name='numberOfBytes'/>
+<arg declared_type='NSTimeInterval' index='1' type='d' name='delay'/>
 <retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='NVUIGradientButton'>
+<method selector='borderColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='borderWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='cornerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='disabledText'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='highlightedBorderColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='highlightedText'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='highlightedTextColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='highlightedTextShadowColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='highlightedTintColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='initWithFrame:cornerRadius:borderWidth:andText:'>
+<arg declared_type='CGRect' index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='frame'/>
+<arg declared_type='CGFloat' index='1' type='f' name='cornerRadius'/>
+<arg declared_type='CGFloat' index='2' type='f' name='borderWidth'/>
+<arg declared_type='NSString*' index='3' type='@' name='text'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithFrame:style:'>
+<arg declared_type='CGRect' index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='frame'/>
+<arg declared_type='NVUIGradientButtonStyle' index='1' type='i' name='style'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithFrame:style:cornerRadius:borderWidth:andText:'>
+<arg declared_type='CGRect' index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' name='frame'/>
+<arg declared_type='NVUIGradientButtonStyle' index='1' type='i' name='style'/>
+<arg declared_type='CGFloat' index='2' type='f' name='cornerRadius'/>
+<arg declared_type='CGFloat' index='3' type='f' name='borderWidth'/>
+<arg declared_type='NSString*' index='4' type='@' name='text'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isGradientEnabled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='rightAccessoryImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='rightHighlightedAccessoryImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='setBorderColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='borderColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderColor:forState:'>
+<arg declared_type='UIColor*' index='0' type='@' name='borderColor'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderWidth:'>
+<arg declared_type='CGFloat' index='0' type='f' name='borderWidth'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCornerRadius:'>
+<arg declared_type='CGFloat' index='0' type='f' name='cornerRadius'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDisabledText:'>
+<arg declared_type='NSString*' index='0' type='@' name='disabledText'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGradientEnabled:'>
+<arg declared_type='BOOL' index='0' type='B' name='gradientEnabled'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHighlightedBorderColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='highlightedBorderColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHighlightedText:'>
+<arg declared_type='NSString*' index='0' type='@' name='highlightedText'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHighlightedTextColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='highlightedTextColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHighlightedTextShadowColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='highlightedTextShadowColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHighlightedTintColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='highlightedTintColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRightAccessoryImage:'>
+<arg declared_type='UIImage*' index='0' type='@' name='rightAccessoryImage'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRightAccessoryImage:forState:'>
+<arg declared_type='UIImage*' index='0' type='@' name='rightAccessoryImage'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRightHighlightedAccessoryImage:'>
+<arg declared_type='UIImage*' index='0' type='@' name='rightHighlightedAccessoryImage'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStyle:'>
+<arg declared_type='NVUIGradientButtonStyle' index='0' type='i' name='style'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setText:'>
+<arg declared_type='NSString*' index='0' type='@' name='text'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setText:forState:'>
+<arg declared_type='NSString*' index='0' type='@' name='text'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='textColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextColor:forState:'>
+<arg declared_type='UIColor*' index='0' type='@' name='textColor'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextShadowColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='textShadowColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextShadowColor:forState:'>
+<arg declared_type='UIColor*' index='0' type='@' name='textShadowColor'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTintColor:'>
+<arg declared_type='UIColor*' index='0' type='@' name='tintColor'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTintColor:forState:'>
+<arg declared_type='UIColor*' index='0' type='@' name='tintColor'/>
+<arg declared_type='UIControlState' index='1' type='I' name='state'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleLabel:'>
+<arg declared_type='UILabel*' index='0' type='@' name='titleLabel'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='style'>
+<retval declared_type='NVUIGradientButtonStyle' type='i'/>
+</method>
+<method selector='text'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='textColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='textShadowColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='tintColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='titleLabel'>
+<retval declared_type='UILabel*' type='@'/>
 </method>
 </class>
 <class name='RKAttributeMapping'>
 <method selector='attributeMappingFromKeyPath:toKeyPath:' class_method='true'>
-<arg name='sourceKeyPath' index='0' declared_type='NSString*' type='@'/>
-<arg name='destinationKeyPath' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='sourceKeyPath'/>
+<arg declared_type='NSString*' index='1' type='@' name='destinationKeyPath'/>
 <retval declared_type='RKAttributeMapping*' type='@'/>
 </method>
 </class>
 <class name='RKConnectionMapping'>
 <method selector='initWithRelationship:sourceKeyPath:destinationKeyPath:matcher:'>
-<arg name='relationship' index='0' declared_type='NSRelationshipDescription*' type='@'/>
-<arg name='sourceKeyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='destinationKeyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='matcher' index='3' declared_type='RKDynamicMappingMatcher*' type='@'/>
+<arg declared_type='NSRelationshipDescription*' index='0' type='@' name='relationship'/>
+<arg declared_type='NSString*' index='1' type='@' name='sourceKeyPath'/>
+<arg declared_type='NSString*' index='2' type='@' name='destinationKeyPath'/>
+<arg declared_type='RKDynamicMappingMatcher*' index='3' type='@' name='matcher'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='isForeignKeyConnection'>
@@ -992,41 +1173,41 @@
 <retval declared_type='NSRelationshipDescription*' type='@'/>
 </method>
 <method selector='setMatcher:'>
-<arg name='matcher' index='0' declared_type='RKDynamicMappingMatcher*' type='@'/>
+<arg declared_type='RKDynamicMappingMatcher*' index='0' type='@' name='matcher'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRelationship:'>
-<arg name='relationship' index='0' declared_type='NSRelationshipDescription*' type='@'/>
+<arg declared_type='NSRelationshipDescription*' index='0' type='@' name='relationship'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKDotNetDateFormatter'>
 <method selector='dateFromString:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='NSDate*' type='@'/>
 </method>
 <method selector='dotNetDateFormatterWithTimeZone:' class_method='true'>
-<arg name='timeZone' index='0' declared_type='NSTimeZone*' type='@'/>
+<arg declared_type='NSTimeZone*' index='0' type='@' name='timeZone'/>
 <retval declared_type='RKDotNetDateFormatter*' type='@'/>
 </method>
 <method selector='stringFromDate:'>
-<arg name='date' index='0' declared_type='NSDate*' type='@'/>
+<arg declared_type='NSDate*' index='0' type='@' name='date'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 </class>
 <class name='RKDynamicMapping'>
 <method selector='objectMappingForRepresentation:'>
-<arg name='representation' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='representation'/>
 <retval declared_type='RKObjectMapping*' type='@'/>
 </method>
 <method selector='setObjectMapping:whenValueOfKeyPath:isEqualTo:'>
-<arg name='objectMapping' index='0' declared_type='RKObjectMapping*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='value' index='2' declared_type='id' type='@'/>
+<arg declared_type='RKObjectMapping*' index='0' type='@' name='objectMapping'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
+<arg declared_type='id' index='2' type='@' name='value'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setObjectMappingForDataBlock:'>
-<arg name='block' index='0' declared_type='RKDynamicMappingDelegateBlock' type='@?' function_pointer='true'>
+<arg declared_type='RKDynamicMappingDelegateBlock' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='id' type='@'/>
 <retval declared_type='RKObjectMapping*' type='@'/>
 </arg>
@@ -1038,44 +1219,44 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithKeyPath:expectedValue:objectMapping:'>
-<arg name='keyPath' index='0' declared_type='NSString*' type='@'/>
-<arg name='expectedValue' index='1' declared_type='id' type='@'/>
-<arg name='objectMapping' index='2' declared_type='RKObjectMapping*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='keyPath'/>
+<arg declared_type='id' index='1' type='@' name='expectedValue'/>
+<arg declared_type='RKObjectMapping*' index='2' type='@' name='objectMapping'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='keyPath'>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='matches:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='objectMapping'>
 <retval declared_type='RKObjectMapping*' type='@'/>
 </method>
 <method selector='setExpectedValue:'>
-<arg name='expectedValue' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='expectedValue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setObjectMapping:'>
-<arg name='objectMapping' index='0' declared_type='RKObjectMapping*' type='@'/>
+<arg declared_type='RKObjectMapping*' index='0' type='@' name='objectMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKEntityByAttributeCache'>
 <method selector='addObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='attribute'>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='containsObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='containsObjectWithAttributeValue:'>
-<arg name='attributeValue' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='attributeValue'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='count'>
@@ -1085,7 +1266,7 @@
 <retval declared_type='NSUInteger' type='I'/>
 </method>
 <method selector='countWithAttributeValue:'>
-<arg name='attributeValue' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='attributeValue'/>
 <retval declared_type='NSUInteger' type='I'/>
 </method>
 <method selector='entity'>
@@ -1095,9 +1276,9 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithEntity:attribute:managedObjectContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
-<arg name='context' index='2' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
+<arg declared_type='NSManagedObjectContext*' index='2' type='@' name='context'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='isLoaded'>
@@ -1113,133 +1294,133 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='objectWithAttributeValue:inContext:'>
-<arg name='attributeValue' index='0' declared_type='id' type='@'/>
-<arg name='context' index='1' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='attributeValue'/>
+<arg declared_type='NSManagedObjectContext*' index='1' type='@' name='context'/>
 <retval declared_type='NSManagedObject*' type='@'/>
 </method>
 <method selector='objectsWithAttributeValue:inContext:'>
-<arg name='attributeValue' index='0' declared_type='id' type='@'/>
-<arg name='context' index='1' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='attributeValue'/>
+<arg declared_type='NSManagedObjectContext*' index='1' type='@' name='context'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='removeObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMonitorsContextForChanges:'>
-<arg name='monitorsContextForChanges' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='monitorsContextForChanges'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKEntityCache'>
 <method selector='addObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='attributeCacheForEntity:attribute:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
 <retval declared_type='RKEntityByAttributeCache*' type='@'/>
 </method>
 <method selector='attributeCachesForEntity:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='cacheObjectsForEntity:byAttribute:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='flush'>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithManagedObjectContext:'>
-<arg name='context' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='context'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='isEntity:cachedByAttribute:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='managedObjectContext'>
 <retval declared_type='NSManagedObjectContext*' type='@'/>
 </method>
 <method selector='objectForEntity:withAttribute:value:inContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
-<arg name='attributeValue' index='2' declared_type='id' type='@'/>
-<arg name='context' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
+<arg declared_type='id' index='2' type='@' name='attributeValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='context'/>
 <retval declared_type='NSManagedObject*' type='@'/>
 </method>
 <method selector='objectsForEntity:withAttribute:value:inContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='attributeName' index='1' declared_type='NSString*' type='@'/>
-<arg name='attributeValue' index='2' declared_type='id' type='@'/>
-<arg name='context' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='attributeName'/>
+<arg declared_type='id' index='2' type='@' name='attributeValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='context'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='removeObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKEntityMapping'>
 <method selector='addConnectionMapping:'>
-<arg name='connectionMapping' index='0' declared_type='RKConnectionMapping*' type='@'/>
+<arg declared_type='RKConnectionMapping*' index='0' type='@' name='connectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addConnectionMappingForRelationshipForName:fromSourceKeyPath:toKeyPath:matcher:'>
-<arg name='relationshipName' index='0' declared_type='NSString*' type='@'/>
-<arg name='sourceKeyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='destinationKeyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='matcher' index='3' declared_type='RKDynamicMappingMatcher*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='relationshipName'/>
+<arg declared_type='NSString*' index='1' type='@' name='sourceKeyPath'/>
+<arg declared_type='NSString*' index='2' type='@' name='destinationKeyPath'/>
+<arg declared_type='RKDynamicMappingMatcher*' index='3' type='@' name='matcher'/>
 <retval declared_type='RKConnectionMapping*' type='@'/>
 </method>
 <method selector='addConnectionMappingsFromArray:'>
-<arg name='arrayOfConnectionMappings' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='arrayOfConnectionMappings'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='connectionMappings'>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='defaultValueForMissingAttribute:'>
-<arg name='attributeName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='attributeName'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='entity'>
 <retval declared_type='NSEntityDescription*' type='@'/>
 </method>
 <method selector='initWithEntity:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mappingForEntityForName:inManagedObjectStore:' class_method='true'>
-<arg name='entityName' index='0' declared_type='NSString*' type='@'/>
-<arg name='managedObjectStore' index='1' declared_type='RKManagedObjectStore*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='entityName'/>
+<arg declared_type='RKManagedObjectStore*' index='1' type='@' name='managedObjectStore'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='primaryKeyAttribute'>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='removeConnectionMapping:'>
-<arg name='connectionMapping' index='0' declared_type='RKConnectionMapping*' type='@'/>
+<arg declared_type='RKConnectionMapping*' index='0' type='@' name='connectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setConnectionMappings:'>
-<arg name='connectionMappings' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='connectionMappings'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setEntity:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPrimaryKeyAttribute:'>
-<arg name='primaryKeyAttribute' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='primaryKeyAttribute'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -1248,11 +1429,11 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='setErrorMessage:'>
-<arg name='errorMessage' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='errorMessage'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setUserInfo:'>
-<arg name='userInfo' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='userInfo'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='userInfo'>
@@ -1267,11 +1448,11 @@
 <retval declared_type='NSIndexSet*' type='@'/>
 </method>
 <method selector='setAcceptableContentTypes:'>
-<arg name='acceptableContentTypes' index='0' declared_type='NSSet*' type='@'/>
+<arg declared_type='NSSet*' index='0' type='@' name='acceptableContentTypes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setAcceptableStatusCodes:'>
-<arg name='acceptableStatusCodes' index='0' declared_type='NSIndexSet*' type='@'/>
+<arg declared_type='NSIndexSet*' index='0' type='@' name='acceptableStatusCodes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='wasNotModified'>
@@ -1280,33 +1461,33 @@
 </class>
 <class name='RKISO8601DateFormatter'>
 <method selector='dateComponentsFromString:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='NSDateComponents*' type='@'/>
 </method>
 <method selector='dateComponentsFromString:timeZone:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
-<arg name='outTimeZone' index='1' type_modifier='o' declared_type='NSTimeZone**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
+<arg declared_type='NSTimeZone**' type_modifier='o' index='1' type='^@' name='outTimeZone'/>
 <retval declared_type='NSDateComponents*' type='@'/>
 </method>
 <method selector='dateComponentsFromString:timeZone:range:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
-<arg name='outTimeZone' index='1' type_modifier='o' declared_type='NSTimeZone**' type='^@'/>
-<arg name='outRange' index='2' type_modifier='o' declared_type='NSRange*' type='^{_NSRange=II}'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
+<arg declared_type='NSTimeZone**' type_modifier='o' index='1' type='^@' name='outTimeZone'/>
+<arg declared_type='NSRange*' type_modifier='o' index='2' type='^{_NSRange=II}' name='outRange'/>
 <retval declared_type='NSDateComponents*' type='@'/>
 </method>
 <method selector='dateFromString:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='NSDate*' type='@'/>
 </method>
 <method selector='dateFromString:timeZone:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
-<arg name='outTimeZone' index='1' type_modifier='o' declared_type='NSTimeZone**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
+<arg declared_type='NSTimeZone**' type_modifier='o' index='1' type='^@' name='outTimeZone'/>
 <retval declared_type='NSDate*' type='@'/>
 </method>
 <method selector='dateFromString:timeZone:range:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
-<arg name='outTimeZone' index='1' type_modifier='o' declared_type='NSTimeZone**' type='^@'/>
-<arg name='outRange' index='2' type_modifier='o' declared_type='NSRange*' type='^{_NSRange=II}'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
+<arg declared_type='NSTimeZone**' type_modifier='o' index='1' type='^@' name='outTimeZone'/>
+<arg declared_type='NSRange*' type_modifier='o' index='2' type='^{_NSRange=II}' name='outRange'/>
 <retval declared_type='NSDate*' type='@'/>
 </method>
 <method selector='defaultTimeZone'>
@@ -1325,32 +1506,32 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDefaultTimeZone:'>
-<arg name='defaultTimeZone' index='0' declared_type='NSTimeZone*' type='@'/>
+<arg declared_type='NSTimeZone*' index='0' type='@' name='defaultTimeZone'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setFormat:'>
-<arg name='format' index='0' declared_type='RKISO8601DateFormat' type='I'/>
+<arg declared_type='RKISO8601DateFormat' index='0' type='I' name='format'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setIncludeTime:'>
-<arg name='includeTime' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='includeTime'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setParsesStrictly:'>
-<arg name='parsesStrictly' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='parsesStrictly'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTimeSeparator:'>
-<arg name='timeSeparator' index='0' declared_type='unichar' type='S'/>
+<arg declared_type='unichar' index='0' type='S' name='timeSeparator'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='stringFromDate:'>
-<arg name='date' index='0' declared_type='NSDate*' type='@'/>
+<arg declared_type='NSDate*' index='0' type='@' name='date'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='stringFromDate:timeZone:'>
-<arg name='date' index='0' declared_type='NSDate*' type='@'/>
-<arg name='timeZone' index='1' declared_type='NSTimeZone*' type='@'/>
+<arg declared_type='NSDate*' index='0' type='@' name='date'/>
+<arg declared_type='NSTimeZone*' index='1' type='@' name='timeZone'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='timeSeparator'>
@@ -1359,59 +1540,59 @@
 </class>
 <class name='RKInMemoryManagedObjectCache'>
 <method selector='initWithManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='id' type='@'/>
 </method>
 </class>
 <class name='RKMIMETypeSerialization'>
 <method selector='dataFromObject:MIMEType:error:' class_method='true'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='MIMEType' index='1' declared_type='NSString*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='MIMEType'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='NSData*' type='@'/>
 </method>
 <method selector='objectFromData:MIMEType:error:' class_method='true'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='MIMEType' index='1' declared_type='NSString*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSString*' index='1' type='@' name='MIMEType'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='registerClass:forMIMEType:' class_method='true'>
-<arg name='serializationClass' index='0' declared_type='Class*' type='#'/>
-<arg name='MIMETypeStringOrRegularExpression' index='1' declared_type='id' type='@'/>
+<arg declared_type='Class*' index='0' type='#' name='serializationClass'/>
+<arg declared_type='id' index='1' type='@' name='MIMETypeStringOrRegularExpression'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='registeredMIMETypes' class_method='true'>
 <retval declared_type='NSSet*' type='@'/>
 </method>
 <method selector='serializationClassForMIMEType:' class_method='true'>
-<arg name='MIMEType' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='MIMEType'/>
 <retval declared_type='Class*' type='#'/>
 </method>
 <method selector='unregisterClass:' class_method='true'>
-<arg name='serializationClass' index='0' declared_type='Class*' type='#'/>
+<arg declared_type='Class*' index='0' type='#' name='serializationClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKManagedObjectImporter'>
 <method selector='finishImporting:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='importObjectsFromItemAtPath:withMapping:keyPath:error:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='mapping' index='1' declared_type='RKMapping*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='error' index='3' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='RKMapping*' index='1' type='@' name='mapping'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='NSError**' index='3' type='^@' name='error'/>
 <retval declared_type='NSUInteger' type='I'/>
 </method>
 <method selector='initWithManagedObjectModel:storePath:'>
-<arg name='managedObjectModel' index='0' declared_type='NSManagedObjectModel*' type='@'/>
-<arg name='storePath' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSManagedObjectModel*' index='0' type='@' name='managedObjectModel'/>
+<arg declared_type='NSString*' index='1' type='@' name='storePath'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithPersistentStore:'>
-<arg name='persistentStore' index='0' declared_type='NSPersistentStore*' type='@'/>
+<arg declared_type='NSPersistentStore*' index='0' type='@' name='persistentStore'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='logSeedingInfo'>
@@ -1430,23 +1611,23 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectModel:'>
-<arg name='managedObjectModel' index='0' declared_type='NSManagedObjectModel*' type='@'/>
+<arg declared_type='NSManagedObjectModel*' index='0' type='@' name='managedObjectModel'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPersistentStore:'>
-<arg name='persistentStore' index='0' declared_type='NSPersistentStore*' type='@'/>
+<arg declared_type='NSPersistentStore*' index='0' type='@' name='persistentStore'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResetsStoreBeforeImporting:'>
-<arg name='resetsStoreBeforeImporting' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='resetsStoreBeforeImporting'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setStorePath:'>
-<arg name='storePath' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='storePath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='storePath'>
@@ -1455,8 +1636,8 @@
 </class>
 <class name='RKManagedObjectMappingOperationDataSource'>
 <method selector='initWithManagedObjectContext:cache:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
-<arg name='managedObjectCache' index='1' declared_type='id' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
+<arg declared_type='id' index='1' type='@' name='managedObjectCache'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='managedObjectCache'>
@@ -1469,15 +1650,15 @@
 <retval declared_type='NSOperationQueue*' type='@'/>
 </method>
 <method selector='setManagedObjectCache:'>
-<arg name='managedObjectCache' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='managedObjectCache'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setOperationQueue:'>
-<arg name='operationQueue' index='0' declared_type='NSOperationQueue*' type='@'/>
+<arg declared_type='NSOperationQueue*' index='0' type='@' name='operationQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -1498,23 +1679,23 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setDeletesOrphanedObjects:'>
-<arg name='deletesOrphanedObjects' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='deletesOrphanedObjects'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setFetchRequestBlocks:'>
-<arg name='fetchRequestBlocks' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='fetchRequestBlocks'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectCache:'>
-<arg name='managedObjectCache' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='managedObjectCache'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSavesToPersistentStore:'>
-<arg name='savesToPersistentStore' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='savesToPersistentStore'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -1526,15 +1707,15 @@
 <retval declared_type='NSManagedObjectContext*' type='@'/>
 </method>
 <method selector='setManagedObjectCache:'>
-<arg name='managedObjectCache' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='managedObjectCache'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectContext:'>
-<arg name='managedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='managedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTargetObjectID:'>
-<arg name='targetObjectID' index='0' declared_type='NSManagedObjectID*' type='@'/>
+<arg declared_type='NSManagedObjectID*' index='0' type='@' name='targetObjectID'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='targetObjectID'>
@@ -1543,13 +1724,13 @@
 </class>
 <class name='RKManagedObjectStore'>
 <method selector='addInMemoryPersistentStore:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='NSPersistentStore*' type='@'/>
 </method>
 <method selector='addSQLitePersistentStoreAtPath:fromSeedDatabaseAtPath:error:'>
-<arg name='storePath' index='0' declared_type='NSString*' type='@'/>
-<arg name='seedPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='storePath'/>
+<arg declared_type='NSString*' index='1' type='@' name='seedPath'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='NSPersistentStore*' type='@'/>
 </method>
 <method selector='createManagedObjectContexts'>
@@ -1565,11 +1746,11 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithManagedObjectModel:'>
-<arg name='managedObjectModel' index='0' declared_type='NSManagedObjectModel*' type='@'/>
+<arg declared_type='NSManagedObjectModel*' index='0' type='@' name='managedObjectModel'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithPersistentStoreCoordinator:'>
-<arg name='persistentStoreCoordinator' index='0' declared_type='NSPersistentStoreCoordinator*' type='@'/>
+<arg declared_type='NSPersistentStoreCoordinator*' index='0' type='@' name='persistentStoreCoordinator'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mainQueueManagedObjectContext'>
@@ -1582,7 +1763,7 @@
 <retval declared_type='NSManagedObjectModel*' type='@'/>
 </method>
 <method selector='newChildManagedObjectContextWithConcurrencyType:'>
-<arg name='concurrencyType' index='0' declared_type='NSManagedObjectContextConcurrencyType' type='I'/>
+<arg declared_type='NSManagedObjectContextConcurrencyType' index='0' type='I' name='concurrencyType'/>
 <retval declared_type='NSManagedObjectContext*' type='@'/>
 </method>
 <method selector='persistentStoreCoordinator'>
@@ -1592,37 +1773,37 @@
 <retval declared_type='NSManagedObjectContext*' type='@'/>
 </method>
 <method selector='resetPersistentStores:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setDefaultStore:' class_method='true'>
-<arg name='managedObjectStore' index='0' declared_type='RKManagedObjectStore*' type='@'/>
+<arg declared_type='RKManagedObjectStore*' index='0' type='@' name='managedObjectStore'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMainQueueManagedObjectContext:'>
-<arg name='mainQueueManagedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='mainQueueManagedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectCache:'>
-<arg name='managedObjectCache' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='managedObjectCache'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectModel:'>
-<arg name='managedObjectModel' index='0' declared_type='NSManagedObjectModel*' type='@'/>
+<arg declared_type='NSManagedObjectModel*' index='0' type='@' name='managedObjectModel'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPersistentStoreCoordinator:'>
-<arg name='persistentStoreCoordinator' index='0' declared_type='NSPersistentStoreCoordinator*' type='@'/>
+<arg declared_type='NSPersistentStoreCoordinator*' index='0' type='@' name='persistentStoreCoordinator'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPersistentStoreManagedObjectContext:'>
-<arg name='persistentStoreManagedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='persistentStoreManagedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='RKManagedObjectThreadSafeInvocation'>
 <method selector='invocationWithMethodSignature:' class_method='true'>
-<arg name='methodSignature' index='0' declared_type='NSMethodSignature*' type='@'/>
+<arg declared_type='NSMethodSignature*' index='0' type='@' name='methodSignature'/>
 <retval declared_type='RKManagedObjectThreadSafeInvocation*' type='@'/>
 </method>
 <method selector='invokeOnMainThread'>
@@ -1635,16 +1816,16 @@
 <retval declared_type='NSManagedObjectContext*' type='@'/>
 </method>
 <method selector='setMainQueueManagedObjectContext:'>
-<arg name='mainQueueManagedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='mainQueueManagedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectKeyPaths:forArgument:'>
-<arg name='keyPaths' index='0' declared_type='NSSet*' type='@'/>
-<arg name='index' index='1' declared_type='NSInteger' type='i'/>
+<arg declared_type='NSSet*' index='0' type='@' name='keyPaths'/>
+<arg declared_type='NSInteger' index='1' type='i' name='index'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPrivateQueueManagedObjectContext:'>
-<arg name='privateQueueManagedObjectContext' index='0' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSManagedObjectContext*' index='0' type='@' name='privateQueueManagedObjectContext'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -1656,27 +1837,27 @@
 <retval declared_type='NSError*' type='@'/>
 </method>
 <method selector='initWithObject:mappingsDictionary:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='mappingsDictionary' index='1' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='mappingsDictionary'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mapCollection:atKeyPath:usingMapping:'>
-<arg name='mappableObjects' index='0' declared_type='NSArray*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='mapping' index='2' declared_type='RKMapping*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='mappableObjects'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
+<arg declared_type='RKMapping*' index='2' type='@' name='mapping'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='mapFromObject:toObject:atKeyPath:usingMapping:'>
-<arg name='mappableObject' index='0' declared_type='id' type='@'/>
-<arg name='destinationObject' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='mapping' index='3' declared_type='RKMapping*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='mappableObject'/>
+<arg declared_type='id' index='1' type='@' name='destinationObject'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKMapping*' index='3' type='@' name='mapping'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='mapObject:atKeyPath:usingMapping:'>
-<arg name='mappableObject' index='0' declared_type='id' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='mapping' index='2' declared_type='RKMapping*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='mappableObject'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
+<arg declared_type='RKMapping*' index='2' type='@' name='mapping'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mappingOperationDataSource'>
@@ -1689,36 +1870,36 @@
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='objectWithMapping:andData:'>
-<arg name='objectMapping' index='0' declared_type='RKMapping*' type='@'/>
-<arg name='mappableData' index='1' declared_type='id' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='objectMapping'/>
+<arg declared_type='id' index='1' type='@' name='mappableData'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setDelegate:'>
-<arg name='delegate' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='delegate'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setError:'>
-<arg name='error' index='0' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' index='0' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingOperationDataSource:'>
-<arg name='mappingOperationDataSource' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='mappingOperationDataSource'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingResult:'>
-<arg name='mappingResult' index='0' declared_type='RKMappingResult*' type='@'/>
+<arg declared_type='RKMappingResult*' index='0' type='@' name='mappingResult'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingsDictionary:'>
-<arg name='mappingsDictionary' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='mappingsDictionary'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSourceObject:'>
-<arg name='sourceObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='sourceObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTargetObject:'>
-<arg name='targetObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='targetObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='sourceObject'>
@@ -1733,11 +1914,11 @@
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isEqualToMapping:'>
-<arg name='otherMapping' index='0' declared_type='RKMapping*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='otherMapping'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setForceCollectionMapping:'>
-<arg name='forceCollectionMapping' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='forceCollectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -1755,40 +1936,40 @@
 <retval declared_type='NSError*' type='@'/>
 </method>
 <method selector='initWithSourceObject:destinationObject:mapping:'>
-<arg name='sourceObject' index='0' declared_type='id' type='@'/>
-<arg name='destinationObject' index='1' declared_type='id' type='@'/>
-<arg name='objectOrDynamicMapping' index='2' declared_type='RKMapping*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='sourceObject'/>
+<arg declared_type='id' index='1' type='@' name='destinationObject'/>
+<arg declared_type='RKMapping*' index='2' type='@' name='objectOrDynamicMapping'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mapping'>
 <retval declared_type='RKMapping*' type='@'/>
 </method>
 <method selector='performMapping:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setDataSource:'>
-<arg name='dataSource' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='dataSource'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDelegate:'>
-<arg name='delegate' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='delegate'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDestinationObject:'>
-<arg name='destinationObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='destinationObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setError:'>
-<arg name='error' index='0' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' index='0' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMapping:'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSourceObject:'>
-<arg name='sourceObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='sourceObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='sourceObject'>
@@ -1809,7 +1990,7 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithDictionary:'>
-<arg name='dictionary' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='dictionary'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='set'>
@@ -1821,56 +2002,56 @@
 <retval declared_type='AFHTTPClient*' type='@'/>
 </method>
 <method selector='addFetchRequestBlock:'>
-<arg name='block' index='0' declared_type='RKFetchRequestBlock' type='@?' function_pointer='true'>
+<arg declared_type='RKFetchRequestBlock' index='0' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSURL*' type='@'/>
 <retval declared_type='NSFetchRequest*' type='@'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addRequestDescriptor:'>
-<arg name='requestDescriptor' index='0' declared_type='RKRequestDescriptor*' type='@'/>
+<arg declared_type='RKRequestDescriptor*' index='0' type='@' name='requestDescriptor'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addRequestDescriptorsFromArray:'>
-<arg name='requestDescriptors' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='requestDescriptors'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addResponseDescriptor:'>
-<arg name='responseDescriptor' index='0' declared_type='RKResponseDescriptor*' type='@'/>
+<arg declared_type='RKResponseDescriptor*' index='0' type='@' name='responseDescriptor'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addResponseDescriptorsFromArray:'>
-<arg name='responseDescriptors' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='responseDescriptors'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='appropriateObjectRequestOperationWithObject:method:path:parameters:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
-<arg name='path' index='2' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='3' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
+<arg declared_type='NSString*' index='2' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='3' type='@' name='parameters'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='baseURL'>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='cancelAllObjectRequestOperationsWithMethod:matchingPathPattern:'>
-<arg name='method' index='0' declared_type='RKRequestMethod' type='i'/>
-<arg name='pathPattern' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='RKRequestMethod' index='0' type='i' name='method'/>
+<arg declared_type='NSString*' index='1' type='@' name='pathPattern'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='defaultHeaders'>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='deleteObject:path:parameters:success:failure:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1878,49 +2059,49 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfObjectRequestOperations:progress:completion:'>
-<arg name='operations' index='0' declared_type='NSArray*' type='@'/>
-<arg name='progress' index='1' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' function_pointer='true'>
+<arg declared_type='NSArray*' index='0' type='@' name='operations'/>
+<arg declared_type='void (^)(NSUInteger, NSUInteger)' index='1' type='@?' name='progress' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='completion' index='2' declared_type='void (^)(NSArray *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSArray *)' index='2' type='@?' name='completion' function_pointer='true'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueBatchOfObjectRequestOperationsWithRoute:objects:progress:completion:'>
-<arg name='route' index='0' declared_type='RKRoute*' type='@'/>
-<arg name='objects' index='1' declared_type='NSArray*' type='@'/>
-<arg name='progress' index='2' declared_type='void (^)(NSUInteger, NSUInteger)' type='@?' function_pointer='true'>
+<arg declared_type='RKRoute*' index='0' type='@' name='route'/>
+<arg declared_type='NSArray*' index='1' type='@' name='objects'/>
+<arg declared_type='void (^)(NSUInteger, NSUInteger)' index='2' type='@?' name='progress' function_pointer='true'>
 <arg declared_type='NSUInteger' type='I'/>
 <arg declared_type='NSUInteger' type='I'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='completion' index='3' declared_type='void (^)(NSArray *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSArray *)' index='3' type='@?' name='completion' function_pointer='true'>
 <arg declared_type='NSArray*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='enqueueObjectRequestOperation:'>
-<arg name='objectRequestOperation' index='0' declared_type='RKObjectRequestOperation*' type='@'/>
+<arg declared_type='RKObjectRequestOperation*' index='0' type='@' name='objectRequestOperation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='fetchRequestBlocks'>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='getObject:path:parameters:success:failure:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1928,14 +2109,14 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='getObjectsAtPath:parameters:success:failure:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1943,15 +2124,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='getObjectsAtPathForRelationship:ofObject:parameters:success:failure:'>
-<arg name='relationshipName' index='0' declared_type='NSString*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='relationshipName'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1959,15 +2140,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='getObjectsAtPathForRouteNamed:object:parameters:success:failure:'>
-<arg name='routeName' index='0' declared_type='NSString*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='NSString*' index='0' type='@' name='routeName'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1975,18 +2156,18 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithHTTPClient:'>
-<arg name='client' index='0' declared_type='AFHTTPClient*' type='@'/>
+<arg declared_type='AFHTTPClient*' index='0' type='@' name='client'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='managedObjectRequestOperationWithRequest:managedObjectContext:success:failure:'>
-<arg name='request' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='managedObjectContext' index='1' declared_type='NSManagedObjectContext*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='request'/>
+<arg declared_type='NSManagedObjectContext*' index='1' type='@' name='managedObjectContext'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -1997,28 +2178,28 @@
 <retval declared_type='RKManagedObjectStore*' type='@'/>
 </method>
 <method selector='managerWithBaseURL:' class_method='true'>
-<arg name='baseURL' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='baseURL'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='multipartFormRequestWithObject:method:path:parameters:constructingBodyWithBlock:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
-<arg name='path' index='2' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='3' declared_type='NSDictionary*' type='@'/>
-<arg name='block' index='4' declared_type='void (^)(id)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
+<arg declared_type='NSString*' index='2' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='3' type='@' name='parameters'/>
+<arg declared_type='void (^)(id)' index='4' type='@?' name='block' function_pointer='true'>
 <arg declared_type='id' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='objectRequestOperationWithRequest:success:failure:'>
-<arg name='request' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='success' index='1' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='request'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='1' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='2' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='2' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -2029,15 +2210,15 @@
 <retval declared_type='NSOperationQueue*' type='@'/>
 </method>
 <method selector='patchObject:path:parameters:success:failure:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -2045,15 +2226,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='postObject:path:parameters:success:failure:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -2061,15 +2242,15 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='putObject:path:parameters:success:failure:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='path' index='1' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
-<arg name='success' index='3' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString*' index='1' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='3' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='4' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='4' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -2077,11 +2258,11 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='removeRequestDescriptor:'>
-<arg name='requestDescriptor' index='0' declared_type='RKRequestDescriptor*' type='@'/>
+<arg declared_type='RKRequestDescriptor*' index='0' type='@' name='requestDescriptor'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='removeResponseDescriptor:'>
-<arg name='responseDescriptor' index='0' declared_type='RKResponseDescriptor*' type='@'/>
+<arg declared_type='RKResponseDescriptor*' index='0' type='@' name='responseDescriptor'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='requestDescriptors'>
@@ -2091,23 +2272,23 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='requestWithObject:method:path:parameters:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
-<arg name='path' index='2' declared_type='NSString*' type='@'/>
-<arg name='parameters' index='3' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
+<arg declared_type='NSString*' index='2' type='@' name='path'/>
+<arg declared_type='NSDictionary*' index='3' type='@' name='parameters'/>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='requestWithPathForRelationship:ofObject:method:parameters:'>
-<arg name='relationship' index='0' declared_type='NSString*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='method' index='2' declared_type='RKRequestMethod' type='i'/>
-<arg name='parameters' index='3' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='relationship'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='2' type='i' name='method'/>
+<arg declared_type='NSDictionary*' index='3' type='@' name='parameters'/>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='requestWithPathForRouteNamed:object:parameters:'>
-<arg name='routeName' index='0' declared_type='NSString*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='parameters' index='2' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='routeName'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='NSDictionary*' index='2' type='@' name='parameters'/>
 <retval declared_type='NSMutableURLRequest*' type='@'/>
 </method>
 <method selector='responseDescriptors'>
@@ -2117,31 +2298,31 @@
 <retval declared_type='RKRouter*' type='@'/>
 </method>
 <method selector='setAcceptHeaderWithMIMEType:'>
-<arg name='MIMEType' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='MIMEType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setHTTPClient:'>
-<arg name='HTTPClient' index='0' declared_type='AFHTTPClient*' type='@'/>
+<arg declared_type='AFHTTPClient*' index='0' type='@' name='HTTPClient'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectStore:'>
-<arg name='managedObjectStore' index='0' declared_type='RKManagedObjectStore*' type='@'/>
+<arg declared_type='RKManagedObjectStore*' index='0' type='@' name='managedObjectStore'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setOperationQueue:'>
-<arg name='operationQueue' index='0' declared_type='NSOperationQueue*' type='@'/>
+<arg declared_type='NSOperationQueue*' index='0' type='@' name='operationQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRequestSerializationMIMEType:'>
-<arg name='requestSerializationMIMEType' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='requestSerializationMIMEType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRouter:'>
-<arg name='router' index='0' declared_type='RKRouter*' type='@'/>
+<arg declared_type='RKRouter*' index='0' type='@' name='router'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSharedManager:' class_method='true'>
-<arg name='manager' index='0' declared_type='RKObjectManager*' type='@'/>
+<arg declared_type='RKObjectManager*' index='0' type='@' name='manager'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='sharedManager' class_method='true'>
@@ -2150,28 +2331,28 @@
 </class>
 <class name='RKObjectMapping'>
 <method selector='addAttributeMappingsFromArray:'>
-<arg name='arrayOfAttributeNamesOrMappings' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='arrayOfAttributeNamesOrMappings'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addAttributeMappingsFromDictionary:'>
-<arg name='keyPathToAttributeNames' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='keyPathToAttributeNames'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addDefaultDateFormatter:' class_method='true'>
-<arg name='dateFormatter' index='0' declared_type='NSFormatter*' type='@'/>
+<arg declared_type='NSFormatter*' index='0' type='@' name='dateFormatter'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addDefaultDateFormatterForString:inTimeZone:' class_method='true'>
-<arg name='dateFormatString' index='0' declared_type='NSString*' type='@'/>
-<arg name='nilOrTimeZone' index='1' declared_type='NSTimeZone*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='dateFormatString'/>
+<arg declared_type='NSTimeZone*' index='1' type='@' name='nilOrTimeZone'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addPropertyMapping:'>
-<arg name='propertyMapping' index='0' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKPropertyMapping*' index='0' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='addPropertyMappingsFromArray:'>
-<arg name='arrayOfPropertyMappings' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='arrayOfPropertyMappings'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='attributeMappingForKeyOfNestedDictionary'>
@@ -2181,11 +2362,11 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='classForKeyPath:'>
-<arg name='keyPath' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='keyPath'/>
 <retval declared_type='Class' type='#'/>
 </method>
 <method selector='classForProperty:'>
-<arg name='propertyName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='propertyName'/>
 <retval declared_type='Class' type='#'/>
 </method>
 <method selector='dateFormatters'>
@@ -2195,25 +2376,25 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='defaultValueForMissingAttribute:'>
-<arg name='attributeName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='attributeName'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='ignoreUnknownKeyPaths'>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='initWithClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='inverseMapping'>
 <retval declared_type='RKObjectMapping*' type='@'/>
 </method>
 <method selector='mapKeyOfNestedDictionaryToAttribute:'>
-<arg name='attributeName' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='attributeName'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='mappingForClass:' class_method='true'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='objectClass'>
@@ -2241,53 +2422,53 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='removePropertyMapping:'>
-<arg name='propertyMapping' index='0' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKPropertyMapping*' index='0' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='requestMapping' class_method='true'>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setDateFormatters:'>
-<arg name='dateFormatters' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='dateFormatters'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setDefaultDateFormatters:' class_method='true'>
-<arg name='dateFormatters' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='dateFormatters'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setIgnoreUnknownKeyPaths:'>
-<arg name='ignoreUnknownKeyPaths' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='ignoreUnknownKeyPaths'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setNilForMissingRelationships'>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setObjectClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPerformKeyValueValidation:'>
-<arg name='performKeyValueValidation' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='performKeyValueValidation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPreferredDateFormatter:' class_method='true'>
-<arg name='dateFormatter' index='0' declared_type='NSFormatter*' type='@'/>
+<arg declared_type='NSFormatter*' index='0' type='@' name='dateFormatter'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPreferredDateFormatter:'>
-<arg name='preferredDateFormatter' index='0' declared_type='NSFormatter*' type='@'/>
+<arg declared_type='NSFormatter*' index='0' type='@' name='preferredDateFormatter'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPropertyMappings:'>
-<arg name='propertyMappings' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='propertyMappings'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSetDefaultValueForMissingAttributes:'>
-<arg name='setDefaultValueForMissingAttributes' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='setDefaultValueForMissingAttributes'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSetNilForMissingRelationships:'>
-<arg name='setNilForMissingRelationships' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='setNilForMissingRelationships'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='shouldSetDefaultValueForMissingAttributes'>
@@ -2296,9 +2477,9 @@
 </class>
 <class name='RKObjectParameterization'>
 <method selector='parametersWithObject:requestDescriptor:error:' class_method='true'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='requestDescriptor' index='1' declared_type='RKRequestDescriptor*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestDescriptor*' index='1' type='@' name='requestDescriptor'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 </class>
@@ -2310,15 +2491,15 @@
 <retval declared_type='dispatch_queue_t' type='@'/>
 </method>
 <method selector='initWithRequest:responseDescriptors:'>
-<arg name='request' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='responseDescriptors' index='1' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='request'/>
+<arg declared_type='NSArray*' index='1' type='@' name='responseDescriptors'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mappingResult'>
 <retval declared_type='RKMappingResult*' type='@'/>
 </method>
 <method selector='performMappingOnResponse:'>
-<arg name='error' index='0' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSError**' index='0' type='^@' name='error'/>
 <retval declared_type='RKMappingResult*' type='@'/>
 </method>
 <method selector='request'>
@@ -2334,12 +2515,12 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='setCompletionBlockWithSuccess:failure:'>
-<arg name='success' index='0' declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, RKMappingResult *)' index='0' type='@?' name='success' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='RKMappingResult*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='1' declared_type='void (^)(RKObjectRequestOperation *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(RKObjectRequestOperation *, NSError *)' index='1' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='RKObjectRequestOperation*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
 <retval declared_type='void' type='v'/>
@@ -2347,31 +2528,31 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setError:'>
-<arg name='error' index='0' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' index='0' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setFailureCallbackQueue:'>
-<arg name='failureCallbackQueue' index='0' declared_type='dispatch_queue_t' type='@'/>
+<arg declared_type='dispatch_queue_t' index='0' type='@' name='failureCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingResult:'>
-<arg name='mappingResult' index='0' declared_type='RKMappingResult*' type='@'/>
+<arg declared_type='RKMappingResult*' index='0' type='@' name='mappingResult'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRequest:'>
-<arg name='request' index='0' declared_type='NSURLRequest*' type='@'/>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='request'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResponseDescriptors:'>
-<arg name='responseDescriptors' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='responseDescriptors'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSuccessCallbackQueue:'>
-<arg name='successCallbackQueue' index='0' declared_type='dispatch_queue_t' type='@'/>
+<arg declared_type='dispatch_queue_t' index='0' type='@' name='successCallbackQueue'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTargetObject:'>
-<arg name='targetObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='targetObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='successCallbackQueue'>
@@ -2386,32 +2567,32 @@
 </class>
 <class name='RKPathMatcher'>
 <method selector='matchesPath:tokenizeQueryStrings:parsedArguments:'>
-<arg name='pathString' index='0' declared_type='NSString*' type='@'/>
-<arg name='shouldTokenize' index='1' declared_type='BOOL' type='B'/>
-<arg name='arguments' index='2' declared_type='NSDictionary**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='pathString'/>
+<arg declared_type='BOOL' index='1' type='B' name='shouldTokenize'/>
+<arg declared_type='NSDictionary**' index='2' type='^@' name='arguments'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='matchesPattern:tokenizeQueryStrings:parsedArguments:'>
-<arg name='patternString' index='0' declared_type='NSString*' type='@'/>
-<arg name='shouldTokenize' index='1' declared_type='BOOL' type='B'/>
-<arg name='arguments' index='2' declared_type='NSDictionary**' type='^@'/>
+<arg declared_type='NSString*' index='0' type='@' name='patternString'/>
+<arg declared_type='BOOL' index='1' type='B' name='shouldTokenize'/>
+<arg declared_type='NSDictionary**' index='2' type='^@' name='arguments'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='pathFromObject:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='pathFromObject:addingEscapes:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='addEscapes' index='1' declared_type='BOOL' type='B'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='BOOL' index='1' type='B' name='addEscapes'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='pathMatcherWithPath:' class_method='true'>
-<arg name='pathString' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='pathString'/>
 <retval declared_type='RKPathMatcher*' type='@'/>
 </method>
 <method selector='pathMatcherWithPattern:' class_method='true'>
-<arg name='patternString' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='patternString'/>
 <retval declared_type='RKPathMatcher*' type='@'/>
 </method>
 <method selector='queryParameters'>
@@ -2420,28 +2601,28 @@
 </class>
 <class name='RKPropertyInspector'>
 <method selector='propertyNamesAndTypesForClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='propertyNamesAndTypesForEntity:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='propertyTypeFromAttributeString:' class_method='true'>
-<arg name='attributeString' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='attributeString'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='sharedInspector' class_method='true'>
 <retval declared_type='RKPropertyInspector*' type='@'/>
 </method>
 <method selector='typeForProperty:ofClass:'>
-<arg name='propertyName' index='0' declared_type='NSString*' type='@'/>
-<arg name='objectClass' index='1' declared_type='Class' type='#'/>
+<arg declared_type='NSString*' index='0' type='@' name='propertyName'/>
+<arg declared_type='Class' index='1' type='#' name='objectClass'/>
 <retval declared_type='Class' type='#'/>
 </method>
 <method selector='typeForProperty:ofEntity:'>
-<arg name='propertyName' index='0' declared_type='NSString*' type='@'/>
-<arg name='entity' index='1' declared_type='NSEntityDescription*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='propertyName'/>
+<arg declared_type='NSEntityDescription*' index='1' type='@' name='entity'/>
 <retval declared_type='Class' type='#'/>
 </method>
 </class>
@@ -2450,15 +2631,15 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='isEqualToMapping:'>
-<arg name='otherMapping' index='0' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKPropertyMapping*' index='0' type='@' name='otherMapping'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setDestinationKeyPath:'>
-<arg name='destinationKeyPath' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='destinationKeyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setSourceKeyPath:'>
-<arg name='sourceKeyPath' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='sourceKeyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='sourceKeyPath'>
@@ -2470,9 +2651,9 @@
 <retval declared_type='RKConnectionMapping*' type='@'/>
 </method>
 <method selector='initWithManagedObject:connectionMapping:managedObjectCache:'>
-<arg name='managedObject' index='0' declared_type='NSManagedObject*' type='@'/>
-<arg name='connectionMapping' index='1' declared_type='RKConnectionMapping*' type='@'/>
-<arg name='managedObjectCache' index='2' declared_type='id' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='managedObject'/>
+<arg declared_type='RKConnectionMapping*' index='1' type='@' name='connectionMapping'/>
+<arg declared_type='id' index='2' type='@' name='managedObjectCache'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='managedObject'>
@@ -2482,15 +2663,15 @@
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setConnectionMapping:'>
-<arg name='connectionMapping' index='0' declared_type='RKConnectionMapping*' type='@'/>
+<arg declared_type='RKConnectionMapping*' index='0' type='@' name='connectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObject:'>
-<arg name='managedObject' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='managedObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setManagedObjectCache:'>
-<arg name='managedObjectCache' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='managedObjectCache'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -2499,13 +2680,13 @@
 <retval declared_type='RKMapping*' type='@'/>
 </method>
 <method selector='relationshipMappingFromKeyPath:toKeyPath:withMapping:' class_method='true'>
-<arg name='sourceKeyPath' index='0' declared_type='NSString*' type='@'/>
-<arg name='destinationKeyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='mapping' index='2' declared_type='RKMapping*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='sourceKeyPath'/>
+<arg declared_type='NSString*' index='1' type='@' name='destinationKeyPath'/>
+<arg declared_type='RKMapping*' index='2' type='@' name='mapping'/>
 <retval declared_type='RKRelationshipMapping*' type='@'/>
 </method>
 <method selector='setMapping:'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -2514,27 +2695,27 @@
 <retval declared_type='RKMapping*' type='@'/>
 </method>
 <method selector='matchesObject:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='objectClass'>
 <retval declared_type='Class' type='#'/>
 </method>
 <method selector='requestDescriptorWithMapping:objectClass:rootKeyPath:' class_method='true'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
-<arg name='objectClass' index='1' declared_type='Class' type='#'/>
-<arg name='rootKeyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
+<arg declared_type='Class' index='1' type='#' name='objectClass'/>
+<arg declared_type='NSString*' index='2' type='@' name='rootKeyPath'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='rootKeyPath'>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='setMapping:'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setObjectClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
@@ -2549,33 +2730,33 @@
 <retval declared_type='RKMapping*' type='@'/>
 </method>
 <method selector='matchesPath:'>
-<arg name='path' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='path'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='matchesResponse:'>
-<arg name='response' index='0' declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='NSHTTPURLResponse*' index='0' type='@' name='response'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='matchesURL:'>
-<arg name='URL' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='URL'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='pathPattern'>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='responseDescriptorWithMapping:pathPattern:keyPath:statusCodes:' class_method='true'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
-<arg name='pathPattern' index='1' declared_type='NSString*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='statusCodes' index='3' declared_type='NSIndexSet*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
+<arg declared_type='NSString*' index='1' type='@' name='pathPattern'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='NSIndexSet*' index='3' type='@' name='statusCodes'/>
 <retval declared_type='RKResponseDescriptor*' type='@'/>
 </method>
 <method selector='setBaseURL:'>
-<arg name='baseURL' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='baseURL'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMapping:'>
-<arg name='mapping' index='0' declared_type='RKMapping*' type='@'/>
+<arg declared_type='RKMapping*' index='0' type='@' name='mapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='statusCodes'>
@@ -2590,9 +2771,9 @@
 <retval declared_type='NSError*' type='@'/>
 </method>
 <method selector='initWithResponse:data:responseDescriptors:'>
-<arg name='response' index='0' declared_type='NSHTTPURLResponse*' type='@'/>
-<arg name='data' index='1' declared_type='NSData*' type='@'/>
-<arg name='responseDescriptors' index='2' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSHTTPURLResponse*' index='0' type='@' name='response'/>
+<arg declared_type='NSData*' index='1' type='@' name='data'/>
+<arg declared_type='NSArray*' index='2' type='@' name='responseDescriptors'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='mapperDelegate'>
@@ -2614,43 +2795,43 @@
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='setData:'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setError:'>
-<arg name='error' index='0' declared_type='NSError*' type='@'/>
+<arg declared_type='NSError*' index='0' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMapperDelegate:'>
-<arg name='mapperDelegate' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='mapperDelegate'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingOperationDataSource:'>
-<arg name='mappingOperationDataSource' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='mappingOperationDataSource'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setMappingResult:'>
-<arg name='mappingResult' index='0' declared_type='RKMappingResult*' type='@'/>
+<arg declared_type='RKMappingResult*' index='0' type='@' name='mappingResult'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResponse:'>
-<arg name='response' index='0' declared_type='NSHTTPURLResponse*' type='@'/>
+<arg declared_type='NSHTTPURLResponse*' index='0' type='@' name='response'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResponseDescriptors:'>
-<arg name='responseDescriptors' index='0' declared_type='NSArray*' type='@'/>
+<arg declared_type='NSArray*' index='0' type='@' name='responseDescriptors'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setResponseMappingsDictionary:'>
-<arg name='responseMappingsDictionary' index='0' declared_type='NSDictionary*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='responseMappingsDictionary'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTargetObject:'>
-<arg name='targetObject' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='targetObject'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setTreatsEmptyResponseAsSuccess:'>
-<arg name='treatsEmptyResponseAsSuccess' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='treatsEmptyResponseAsSuccess'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='targetObject'>
@@ -2683,38 +2864,38 @@
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='routeWithClass:pathPattern:method:' class_method='true'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
-<arg name='pathPattern' index='1' declared_type='NSString*' type='@'/>
-<arg name='method' index='2' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
+<arg declared_type='NSString*' index='1' type='@' name='pathPattern'/>
+<arg declared_type='RKRequestMethod' index='2' type='i' name='method'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='routeWithName:pathPattern:method:' class_method='true'>
-<arg name='name' index='0' declared_type='NSString*' type='@'/>
-<arg name='pathPattern' index='1' declared_type='NSString*' type='@'/>
-<arg name='method' index='2' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='NSString*' index='0' type='@' name='name'/>
+<arg declared_type='NSString*' index='1' type='@' name='pathPattern'/>
+<arg declared_type='RKRequestMethod' index='2' type='i' name='method'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='routeWithRelationshipName:objectClass:pathPattern:method:' class_method='true'>
-<arg name='name' index='0' declared_type='NSString*' type='@'/>
-<arg name='objectClass' index='1' declared_type='Class' type='#'/>
-<arg name='pathPattern' index='2' declared_type='NSString*' type='@'/>
-<arg name='method' index='3' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='NSString*' index='0' type='@' name='name'/>
+<arg declared_type='Class' index='1' type='#' name='objectClass'/>
+<arg declared_type='NSString*' index='2' type='@' name='pathPattern'/>
+<arg declared_type='RKRequestMethod' index='3' type='i' name='method'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='setName:'>
-<arg name='name' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='name'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setObjectClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setPathPattern:'>
-<arg name='pathPattern' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='pathPattern'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setShouldEscapePath:'>
-<arg name='shouldEscapePath' index='0' declared_type='BOOL' type='B'/>
+<arg declared_type='BOOL' index='0' type='B' name='shouldEscapePath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='shouldEscapePath'>
@@ -2723,7 +2904,7 @@
 </class>
 <class name='RKRouteSet'>
 <method selector='addRoute:'>
-<arg name='route' index='0' declared_type='RKRoute*' type='@'/>
+<arg declared_type='RKRoute*' index='0' type='@' name='route'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='allRoutes'>
@@ -2733,7 +2914,7 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='containsRoute:'>
-<arg name='route' index='0' declared_type='RKRoute*' type='@'/>
+<arg declared_type='RKRoute*' index='0' type='@' name='route'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='namedRoutes'>
@@ -2743,118 +2924,118 @@
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='removeRoute:'>
-<arg name='route' index='0' declared_type='RKRoute*' type='@'/>
+<arg declared_type='RKRoute*' index='0' type='@' name='route'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='routeForClass:method:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
 <retval declared_type='RKRoute*' type='@'/>
 </method>
 <method selector='routeForName:'>
-<arg name='name' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='name'/>
 <retval declared_type='RKRoute*' type='@'/>
 </method>
 <method selector='routeForObject:method:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
 <retval declared_type='RKRoute*' type='@'/>
 </method>
 <method selector='routeForRelationship:ofClass:method:'>
-<arg name='relationship' index='0' declared_type='NSString*' type='@'/>
-<arg name='objectClass' index='1' declared_type='Class' type='#'/>
-<arg name='method' index='2' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='NSString*' index='0' type='@' name='relationship'/>
+<arg declared_type='Class' index='1' type='#' name='objectClass'/>
+<arg declared_type='RKRequestMethod' index='2' type='i' name='method'/>
 <retval declared_type='RKRoute*' type='@'/>
 </method>
 <method selector='routesForClass:'>
-<arg name='objectClass' index='0' declared_type='Class' type='#'/>
+<arg declared_type='Class' index='0' type='#' name='objectClass'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='routesForObject:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='routesForRelationship:ofClass:'>
-<arg name='relationshipName' index='0' declared_type='NSString*' type='@'/>
-<arg name='objectClass' index='1' declared_type='Class' type='#'/>
+<arg declared_type='NSString*' index='0' type='@' name='relationshipName'/>
+<arg declared_type='Class' index='1' type='#' name='objectClass'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 </class>
 <class name='RKRouter'>
 <method selector='URLForObject:method:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='method' index='1' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='1' type='i' name='method'/>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='URLForRelationship:ofObject:method:'>
-<arg name='relationshipName' index='0' declared_type='NSString*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='method' index='2' declared_type='RKRequestMethod' type='i'/>
+<arg declared_type='NSString*' index='0' type='@' name='relationshipName'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='RKRequestMethod' index='2' type='i' name='method'/>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='URLForRouteNamed:method:object:'>
-<arg name='routeName' index='0' declared_type='NSString*' type='@'/>
-<arg name='method' index='1' type_modifier='o' declared_type='RKRequestMethod*' type='^i'/>
-<arg name='object' index='2' declared_type='id' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='routeName'/>
+<arg declared_type='RKRequestMethod*' type_modifier='o' index='1' type='^i' name='method'/>
+<arg declared_type='id' index='2' type='@' name='object'/>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='URLWithRoute:object:'>
-<arg name='route' index='0' declared_type='RKRoute*' type='@'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
+<arg declared_type='RKRoute*' index='0' type='@' name='route'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='baseURL'>
 <retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='initWithBaseURL:'>
-<arg name='baseURL' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='baseURL'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='routeSet'>
 <retval declared_type='RKRouteSet*' type='@'/>
 </method>
 <method selector='setBaseURL:'>
-<arg name='baseURL' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='baseURL'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setRouteSet:'>
-<arg name='routeSet' index='0' declared_type='RKRouteSet*' type='@'/>
+<arg declared_type='RKRouteSet*' index='0' type='@' name='routeSet'/>
 <retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='SOCPattern'>
 <method selector='initWithString:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='parameterDictionaryFromSourceString:'>
-<arg name='sourceString' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='sourceString'/>
 <retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='patternWithString:' class_method='true'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='performSelector:onObject:sourceString:'>
-<arg name='selector' index='0' declared_type='SEL' type=':'/>
-<arg name='object' index='1' declared_type='id' type='@'/>
-<arg name='sourceString' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='SEL' index='0' type=':' name='selector'/>
+<arg declared_type='id' index='1' type='@' name='object'/>
+<arg declared_type='NSString*' index='2' type='@' name='sourceString'/>
 <retval declared_type='id' type='@'/>
 </method>
 <method selector='stringFromObject:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='stringFromObject:withBlock:'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='block' index='1' declared_type='NSString *(^)(NSString *)' type='@?' function_pointer='true'>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSString *(^)(NSString *)' index='1' type='@?' name='block' function_pointer='true'>
 <arg declared_type='NSString*' type='@'/>
 <retval declared_type='NSString*' type='@'/>
 </arg>
 <retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='stringMatches:'>
-<arg name='string' index='0' declared_type='NSString*' type='@'/>
+<arg declared_type='NSString*' index='0' type='@' name='string'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 </class>
@@ -2863,24 +3044,24 @@
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURL:'>
-<arg name='url' index='0' declared_type='NSURL*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='url'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURL:placeholderImage:'>
-<arg name='url' index='0' declared_type='NSURL*' type='@'/>
-<arg name='placeholderImage' index='1' declared_type='UIImage*' type='@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='url'/>
+<arg declared_type='UIImage*' index='1' type='@' name='placeholderImage'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method selector='setImageWithURLRequest:placeholderImage:success:failure:'>
-<arg name='urlRequest' index='0' declared_type='NSURLRequest*' type='@'/>
-<arg name='placeholderImage' index='1' declared_type='UIImage*' type='@'/>
-<arg name='success' index='2' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' type='@?' function_pointer='true'>
+<arg declared_type='NSURLRequest*' index='0' type='@' name='urlRequest'/>
+<arg declared_type='UIImage*' index='1' type='@' name='placeholderImage'/>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, UIImage *)' index='2' type='@?' name='success' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='UIImage*' type='@'/>
 <retval declared_type='void' type='v'/>
 </arg>
-<arg name='failure' index='3' declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' type='@?' function_pointer='true'>
+<arg declared_type='void (^)(NSURLRequest *, NSHTTPURLResponse *, NSError *)' index='3' type='@?' name='failure' function_pointer='true'>
 <arg declared_type='NSURLRequest*' type='@'/>
 <arg declared_type='NSHTTPURLResponse*' type='@'/>
 <arg declared_type='NSError*' type='@'/>
@@ -2891,169 +3072,169 @@
 </class>
 <informal_protocol name='AFMultipartFormData'>
 <method type='v24@0:4@8@12@16@20' selector='appendPartWithFileData:name:fileName:mimeType:'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
-<arg name='fileName' index='2' declared_type='NSString*' type='@'/>
-<arg name='mimeType' index='3' declared_type='NSString*' type='@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
+<arg declared_type='NSString*' index='2' type='@' name='fileName'/>
+<arg declared_type='NSString*' index='3' type='@' name='mimeType'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='B20@0:4@8@12^@16' selector='appendPartWithFileURL:name:error:'>
-<arg name='fileURL' index='0' declared_type='NSURL*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
-<arg name='error' index='2' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSURL*' index='0' type='@' name='fileURL'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
+<arg declared_type='NSError**' index='2' type='^@' name='error'/>
 <retval declared_type='BOOL' type='B'/>
 </method>
 <method type='v16@0:4@8@12' selector='appendPartWithFormData:name:'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='name' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSString*' index='1' type='@' name='name'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v16@0:4@8@12' selector='appendPartWithHeaders:body:'>
-<arg name='headers' index='0' declared_type='NSDictionary*' type='@'/>
-<arg name='body' index='1' declared_type='NSData*' type='@'/>
+<arg declared_type='NSDictionary*' index='0' type='@' name='headers'/>
+<arg declared_type='NSData*' index='1' type='@' name='body'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4I8d12' selector='throttleBandwidthWithPacketSize:delay:'>
-<arg name='numberOfBytes' index='0' declared_type='NSUInteger' type='I'/>
-<arg name='delay' index='1' declared_type='NSTimeInterval' type='d'/>
+<arg declared_type='NSUInteger' index='0' type='I' name='numberOfBytes'/>
+<arg declared_type='NSTimeInterval' index='1' type='d' name='delay'/>
 <retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='RKManagedObjectCaching'>
 <method type='v12@0:4@8' selector='didCreateObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v12@0:4@8' selector='didDeleteObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v12@0:4@8' selector='didFetchObject:'>
-<arg name='object' index='0' declared_type='NSManagedObject*' type='@'/>
+<arg declared_type='NSManagedObject*' index='0' type='@' name='object'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='@24@0:4@8@12@16@20' selector='findInstanceOfEntity:withPrimaryKeyAttribute:value:inManagedObjectContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='primaryKeyAttribute' index='1' declared_type='NSString*' type='@'/>
-<arg name='primaryKeyValue' index='2' declared_type='id' type='@'/>
-<arg name='managedObjectContext' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='primaryKeyAttribute'/>
+<arg declared_type='id' index='2' type='@' name='primaryKeyValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='managedObjectContext'/>
 <retval declared_type='NSManagedObject*' type='@'/>
 </method>
 <method type='@24@0:4@8@12@16@20' selector='findInstancesOfEntity:withPrimaryKeyAttribute:value:inManagedObjectContext:'>
-<arg name='entity' index='0' declared_type='NSEntityDescription*' type='@'/>
-<arg name='primaryKeyAttribute' index='1' declared_type='NSString*' type='@'/>
-<arg name='primaryKeyValue' index='2' declared_type='id' type='@'/>
-<arg name='managedObjectContext' index='3' declared_type='NSManagedObjectContext*' type='@'/>
+<arg declared_type='NSEntityDescription*' index='0' type='@' name='entity'/>
+<arg declared_type='NSString*' index='1' type='@' name='primaryKeyAttribute'/>
+<arg declared_type='id' index='2' type='@' name='primaryKeyValue'/>
+<arg declared_type='NSManagedObjectContext*' index='3' type='@' name='managedObjectContext'/>
 <retval declared_type='NSArray*' type='@'/>
 </method>
 </informal_protocol>
 <informal_protocol name='RKMapperOperationDelegate'>
 <method type='v24@0:4@8@12@16@20' selector='mapper:didFailMappingOperation:forKeyPath:withError:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='error' index='3' declared_type='NSError*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='NSError*' index='3' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4@8@12@16' selector='mapper:didFindRepresentationOrArrayOfRepresentations:atKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='dictionaryOrArrayOfDictionaries' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='id' index='1' type='@' name='dictionaryOrArrayOfDictionaries'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4@8@12@16' selector='mapper:didFinishMappingOperation:forKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v16@0:4@8@12' selector='mapper:didNotFindRepresentationOrArrayOfRepresentationsAtKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4@8@12@16' selector='mapper:willStartMappingOperation:forKeyPath:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
-<arg name='mappingOperation' index='1' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
+<arg declared_type='RKMappingOperation*' index='1' type='@' name='mappingOperation'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v12@0:4@8' selector='mapperDidFinishMapping:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v12@0:4@8' selector='mapperWillStartMapping:'>
-<arg name='mapper' index='0' declared_type='RKMapperOperation*' type='@'/>
+<arg declared_type='RKMapperOperation*' index='0' type='@' name='mapper'/>
 <retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='RKMappingOperationDataSource'>
 <method type='v12@0:4@8' selector='commitChangesForMappingOperation:'>
-<arg name='mappingOperation' index='0' declared_type='RKMappingOperation*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='mappingOperation'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='@20@0:4@8@12@16' selector='mappingOperation:targetObjectForRepresentation:withMapping:'>
-<arg name='mappingOperation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='representation' index='1' declared_type='NSDictionary*' type='@'/>
-<arg name='mapping' index='2' declared_type='RKObjectMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='mappingOperation'/>
+<arg declared_type='NSDictionary*' index='1' type='@' name='representation'/>
+<arg declared_type='RKObjectMapping*' index='2' type='@' name='mapping'/>
 <retval declared_type='id' type='@'/>
 </method>
 </informal_protocol>
 <informal_protocol name='RKMappingOperationDelegate'>
 <method type='v20@0:4@8@12@16' selector='mappingOperation:didConnectRelationship:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='relationship' index='1' declared_type='NSRelationshipDescription*' type='@'/>
-<arg name='connectionMapping' index='2' declared_type='RKConnectionMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSRelationshipDescription*' index='1' type='@' name='relationship'/>
+<arg declared_type='RKConnectionMapping*' index='2' type='@' name='connectionMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v16@0:4@8@12' selector='mappingOperation:didFailWithError:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='error' index='1' declared_type='NSError*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSError*' index='1' type='@' name='error'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v24@0:4@8@12@16@20' selector='mappingOperation:didFindValue:forKeyPath:mapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4@8@12@16' selector='mappingOperation:didNotFindValueForKeyPath:mapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='keyPath' index='1' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='2' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='NSString*' index='1' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='2' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v24@0:4@8@12@16@20' selector='mappingOperation:didNotSetUnchangedValue:forKeyPath:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v20@0:4@8@12@16' selector='mappingOperation:didSelectObjectMapping:forDynamicMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='objectMapping' index='1' declared_type='RKObjectMapping*' type='@'/>
-<arg name='dynamicMapping' index='2' declared_type='RKDynamicMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='RKObjectMapping*' index='1' type='@' name='objectMapping'/>
+<arg declared_type='RKDynamicMapping*' index='2' type='@' name='dynamicMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 <method type='v24@0:4@8@12@16@20' selector='mappingOperation:didSetValue:forKeyPath:usingMapping:'>
-<arg name='operation' index='0' declared_type='RKMappingOperation*' type='@'/>
-<arg name='value' index='1' declared_type='id' type='@'/>
-<arg name='keyPath' index='2' declared_type='NSString*' type='@'/>
-<arg name='propertyMapping' index='3' declared_type='RKPropertyMapping*' type='@'/>
+<arg declared_type='RKMappingOperation*' index='0' type='@' name='operation'/>
+<arg declared_type='id' index='1' type='@' name='value'/>
+<arg declared_type='NSString*' index='2' type='@' name='keyPath'/>
+<arg declared_type='RKPropertyMapping*' index='3' type='@' name='propertyMapping'/>
 <retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='RKSerialization'>
 <method type='@16@0:4@8^@12' selector='dataFromObject:error:' class_method='true'>
-<arg name='object' index='0' declared_type='id' type='@'/>
-<arg name='error' index='1' declared_type='NSError**' type='^@'/>
+<arg declared_type='id' index='0' type='@' name='object'/>
+<arg declared_type='NSError**' index='1' type='^@' name='error'/>
 <retval declared_type='NSData*' type='@'/>
 </method>
 <method type='@16@0:4@8^@12' selector='objectFromData:error:' class_method='true'>
-<arg name='data' index='0' declared_type='NSData*' type='@'/>
-<arg name='error' index='1' declared_type='NSError**' type='^@'/>
+<arg declared_type='NSData*' index='0' type='@' name='data'/>
+<arg declared_type='NSError**' index='1' type='^@' name='error'/>
 <retval declared_type='id' type='@'/>
 </method>
 </informal_protocol>

@@ -30,19 +30,19 @@ class AppDelegate
     end
 
 
-    # if Device.ipad?
-    #   storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPad", bundle:nil)
-    #   @window.rootViewController = storyboard.instantiateInitialViewController
-    #   splitViewController = self.window.rootViewController
-    #   navigationController = splitViewController.viewControllers.lastObject
-    #   splitViewController.delegate = navigationController.topViewController
-    # else
-    #   storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPhone", bundle:nil)
-    #   #storyboard = UIStoryboard.storyboardWithName("Example", bundle:nil)
-    #   @window.rootViewController = storyboard.instantiateInitialViewController
-    # end
+    if Device.ipad?
+      storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPad", bundle:nil)
+      @window.rootViewController = storyboard.instantiateInitialViewController
+      splitViewController = self.window.rootViewController
+      navigationController = splitViewController.viewControllers.lastObject
+      splitViewController.delegate = navigationController.topViewController
+    else
+      #storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPhone", bundle:nil)
+      storyboard = UIStoryboard.storyboardWithName("Example", bundle:nil)
+      @window.rootViewController = storyboard.instantiateInitialViewController
+    end
 
-    # @window.makeKeyAndVisible
+    @window.makeKeyAndVisible
     true
   end
 
