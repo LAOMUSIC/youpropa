@@ -3,7 +3,6 @@ class AppuntoFormViewController < UITableViewController
   attr_accessor :appunto, :cliente
 
   def viewDidLoad
-    
     true
   end
 
@@ -12,20 +11,12 @@ class AppuntoFormViewController < UITableViewController
     
     unless @appunto 
       @appunto = Appunto.new(status: "da fare")
-      puts "new appunto"
     end
-    
     if @cliente
       @appunto.cliente_id = @cliente.remote_id
       @appunto.cliente_nome = @cliente.nome
     end
-
-
-    puts @appunto.cliente_nome
-    puts @appunto.status
-
     load_appunto
-
   end
 
   def load_appunto
@@ -46,6 +37,16 @@ class AppuntoFormViewController < UITableViewController
           temp.setText(@appunto.note)
         when 3
           cell.detailTextLabel.text = @appunto.status.split("_").join(" ")
+      end
+
+      #path = NSIndexPath.indexPathForRow(0, inSection:1)
+      cell = table.cellForRowAtIndexPath([1, 0].nsindexpath)
+      if @appunto.righe.empty?
+        cell.textLabel.text = "Aggiungi volumi"
+        cell.detailTextLabel.text = ""
+      else
+        cell.textLabel.text = "Totale volumi"
+        cell.detailTextLabel.text = @appunto.totale_copie.to_s
       end
     end
   end
@@ -93,6 +94,11 @@ class AppuntoFormViewController < UITableViewController
     )
   end
 
+  def prepareForSelectRigheSegue(segue, sender:sender)
+    editController = segue.destinationViewController
+    editController.appunto = @appunto
+  end
+
   def prepareForSegue(segue, sender:sender)
     if segue.identifier.isEqualToString("editDestinatario") 
       self.prepareForEditDestinatarioSegue(segue, sender:sender)
@@ -100,11 +106,12 @@ class AppuntoFormViewController < UITableViewController
       self.prepareForEditNoteSegue(segue, sender:sender)
     elsif segue.identifier.isEqualToString("editStato") 
       self.prepareForEditStatoSegue(segue, sender:sender)
+    elsif segue.identifier.isEqualToString("selectRighe") 
+      self.prepareForSelectRigheSegue(segue, sender:sender)
     end
   end
 
   def save(sender)
-
     @appunto.status = @appunto.status.split(" ").join("_")
     if @appunto.remote_id
       update_appunto
@@ -114,13 +121,6 @@ class AppuntoFormViewController < UITableViewController
   end
 
   def cancel(sender)
-    # NSManagedObjectContext *moc = [[self recipeMO] managedObjectContext];
-    # if ([[self recipeMO] isInserted]) {
-    #   [moc deleteObject:[self recipeMO]];
-    # } else {
-    #   [moc refreshObject:[self recipeMO] mergeChanges:NO];
-    # }
-
     if Device.ipad?
       self.dismissViewControllerAnimated(true, completion:nil)
     else
@@ -160,6 +160,5 @@ class AppuntoFormViewController < UITableViewController
                                                   App.alert error.localizedDescription
                                                 end)
     end
-
 
 end

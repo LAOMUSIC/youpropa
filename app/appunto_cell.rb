@@ -4,14 +4,6 @@ class AppuntoCell < UITableViewCell
 
   def initWithStyle(style, reuseIdentifier:reuseIdentifier)
     super
-
-    # self.imageView.frame = CGRectMake(14, 10, 32, 32);
-    # self.textLabel.frame = CGRectMake(70, 10, 240, 20);
-
-    # detailTextLabelFrame = CGRectOffset(self.textLabel.frame, 0, 25);
-    # detailTextLabelFrame.size.height = self.class.heightForCellWithPost(self.appunto) - 45
-    # self.detailTextLabel.frame = detailTextLabelFrame
-
     # self.textLabel.adjustsFontSizeToFitWidth = true
     # self.textLabel.textColor = UIColor.darkGrayColor
     # self.detailTextLabel.font = UIFont.systemFontOfSize 12
@@ -44,7 +36,11 @@ class AppuntoCell < UITableViewCell
 
   def layoutSubviews
     super
+    # self.imageView.frame = CGRectMake(14, 10, 32, 32);
+    # self.textLabel.frame = CGRectMake(70, 10, 240, 20);
 
-
+    # detailTextLabelFrame = CGRectOffset(self.textLabel.frame, 0, 25);
+    # detailTextLabelFrame.size.height = self.class.heightForCellWithPost(self.appunto) - 45
+    # self.detailTextLabel.frame = detailTextLabelFrame
   end
 end

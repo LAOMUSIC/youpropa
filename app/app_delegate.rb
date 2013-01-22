@@ -2,7 +2,7 @@ include SugarCube::Adjust
 
 class AppDelegate
 
-  BASE_URL = "http://todopropa.com"
+  BASE_URL = "http://localhost:3000"
 
   attr_accessor :backend
 
@@ -13,6 +13,12 @@ class AppDelegate
     init_restkit
     #debug_restkit
     login
+
+    add_response_mapping(libro_mapping, "libro")
+    add_response_mapping(libro_mapping, "libri")
+    add_request_mapping(libro_mapping, "libro")
+    add_route_set(Libro, "api/v1/libri", "api/v1/libri/:remote_id")
+
     add_response_mapping(cliente_mapping, "cliente")
     add_response_mapping(cliente_mapping, "clienti")
     add_request_mapping(cliente_mapping, "cliente")
@@ -23,12 +29,19 @@ class AppDelegate
     add_request_mapping(appunto_mapping, "appunto")
     add_route_set(Appunto, "api/v1/appunti", "api/v1/appunti/:remote_id")
 
+    add_response_mapping(riga_mapping, "riga")
+    add_response_mapping(riga_mapping, "righe")
+
+    add_request_mapping(inverse_appunto_mapping, "appunto")
+    add_request_mapping(inverse_riga_mapping, "riga")
+
+    add_route_set(Riga,
+                  "api/v1/appunti/:remote_appunto_id/righe",
+                  "api/v1/appunti/:remote_appunto_id/righe/:remote_id")
+
+
+
     AFNetworkActivityIndicatorManager.sharedManager.enabled = true
-
-    if Device.retina?
-      puts "RETINA"
-    end
-
 
     if Device.ipad?
       storyboard = UIStoryboard.storyboardWithName("MainStoryboard_iPad", bundle:nil)
@@ -102,7 +115,18 @@ class AppDelegate
     end
   end
 
-
+  def libro_mapping
+    @libro_mapping ||= begin
+      mapping = RKObjectMapping.mappingForClass(Libro)
+      mapping.addAttributeMappingsFromDictionary(id: "remote_id",
+                                                 titolo: "titolo",
+                                                 sigla: "sigla",
+                                                 prezzo_copertina: "prezzo_copertina", 
+                                                 prezzo_consigliato: "prezzo_consigliato",
+                                                 settore: "settore" 
+                                                 )
+    end
+  end
 
   def cliente_mapping
     @cliente_mapping ||= begin
@@ -125,6 +149,7 @@ class AppDelegate
 
   def appunto_mapping
     @appunto_mapping ||= begin
+      
       mapping = RKObjectMapping.mappingForClass(Appunto)
       mapping.addAttributeMappingsFromDictionary(id: "remote_id",
                                                  destinatario: "destinatario",
@@ -133,10 +158,53 @@ class AppDelegate
                                                  telefono: "telefono",
                                                  cliente_id: "cliente_id",
                                                  created_at: "created_at",
+                                                 totale_copie: "totale_copie",
+                                                 totale_importo: "totale_importo",
                                                  cliente_nome: "cliente_nome"
                                                  )
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("righe", 
+                                    toKeyPath:"righe", withMapping:riga_mapping))
+    end 
+  end
+
+  def riga_mapping
+    @riga_mapping ||= begin
+      mapping = RKObjectMapping.mappingForClass(Riga)
+      mapping.addAttributeMappingsFromDictionary(id: "remote_id",
+                                           libro_id: "libro_id",
+                                         appunto_id: "remote_appunto_id",
+                                             titolo: "titolo",
+                                   prezzo_copertina: "prezzo_copertina",
+                                    prezzo_unitario: "prezzo_unitario",
+                                           quantita: "quantita",
+                                             sconto: "sconto"
+                                           )
     end
   end
+
+  def inverse_riga_mapping
+    @inverse_riga_mapping ||= begin
+      mapping = RKObjectMapping.requestMapping
+      mapping.addAttributeMappingsFromDictionary(
+                                           libro_id: "libro_id",
+                                   prezzo_copertina: "prezzo_copertina",
+                                    prezzo_unitario: "prezzo_unitario",
+                                           quantita: "quantita",
+                                             sconto: "sconto")
+    end
+  end
+
+  def inverse_appunto_mapping
+    @inverse_appunto_mapping ||= begin
+      mapping = RKObjectMapping.requestMapping
+      mapping.addAttributeMappingsFromDictionary(destinatario: "destinatario",
+                                                 note: "note",
+                                                 status: "status",
+                                                 telefono: "telefono",
+                                                 cliente_id: "cliente_id")
+    end
+  end
+
 
   def add_response_mapping(mapping, path)
     successCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)
