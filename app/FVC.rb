@@ -1,2 +1,0 @@
-class FVC < UIViewController
-end

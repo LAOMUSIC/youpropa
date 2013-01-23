@@ -83,12 +83,12 @@ class AppDelegate
   def login
 
     #server 
-    #app_id = "36e1b9ed802dc7ee45e375bf318924dc3ae0f0f842c690611fde8336687960eb"
-    #secret = "11ab577f8fabf2ac33bdd75e951fc6507ef7bc21ef993c2a77a1383bed438224"
+    app_id = "36e1b9ed802dc7ee45e375bf318924dc3ae0f0f842c690611fde8336687960eb"
+    secret = "11ab577f8fabf2ac33bdd75e951fc6507ef7bc21ef993c2a77a1383bed438224"
 
     #paolotax
-    app_id = "9aa427dcda89ebd5b3c9015dcd507242b70bac2a4d6e736589f6be35849474ff"
-    secret = "a5d78f0c32ba25fcbc1a679e03b110724497684263c1f4d9f645444cbf80a832"
+    #app_id = "9aa427dcda89ebd5b3c9015dcd507242b70bac2a4d6e736589f6be35849474ff"
+    #secret = "a5d78f0c32ba25fcbc1a679e03b110724497684263c1f4d9f645444cbf80a832"
 
     data = {
       grant_type: 'password',

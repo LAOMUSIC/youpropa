@@ -1,2 +1,0 @@
-class SVC < UIViewController
-end

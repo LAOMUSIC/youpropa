@@ -16,7 +16,7 @@ class RigaFormViewController < UITableViewController
     super
     
     unless @riga 
-      @riga = Riga.new(quantita: 1)
+      @riga = Riga.new(quantita: 1, prezzo_unitario: @libro.prezzo_consigliato)
       puts "new riga"
     end
      
@@ -39,6 +39,8 @@ class RigaFormViewController < UITableViewController
       case index
         when 0
           cell.textLabel.text = @libro.titolo
+        when 1
+          cell.detailTextLabel.text = "€ %.2f" % @libro.prezzo_copertina
       end
     end  
 
@@ -50,19 +52,18 @@ class RigaFormViewController < UITableViewController
         when 0
           cell.detailTextLabel.text = @riga.quantita.to_s
         when 1
-          cell.detailTextLabel.text = @libro.prezzo_consigliato
+          cell.detailTextLabel.text = "€ %.2f" % @riga.prezzo_unitario
       end  
     end
   end
   
   def prepareForEditQuantitaSegue(segue, sender:sender)
     editController = segue.destinationViewController
-    editController.testo = @riga.quantita
+    editController.testo = @riga.quantita.to_s
     editController.setTextChangedBlock( lambda do |text, error|
-        path = NSIndexPath.indexPathForRow(1, inSection:0)
-        cell = self.tableView.cellForRowAtIndexPath(path)
+        cell = self.tableView.cellForRowAtIndexPath([1, 0].nsindexpath)
         cell.detailTextLabel.setText(text)
-        @riga.quantita = text
+        @riga.quantita = text.to_i
         return true
       end
     )
@@ -70,13 +71,14 @@ class RigaFormViewController < UITableViewController
 
   def prepareForSelectPrezzoSegue(segue, sender:sender)
     editController = segue.destinationViewController
-    editController.appunto = @appunto
-    #editController.textView.setText(name)
+    editController.riga  = @riga
+    editController.libro = @libro
     editController.setStatoChangedBlock( lambda do |text, error|
-        path = NSIndexPath.indexPathForRow(3, inSection:0)
-        cell = self.tableView.cellForRowAtIndexPath(path)
-        cell.detailTextLabel.setText(text)
-        @appunto.status = text
+        cell = self.tableView.cellForRowAtIndexPath([1, 1].nsindexpath)
+
+        puts text
+        cell.detailTextLabel.text = text
+        @riga.prezzo_unitario = text
         return true
       end
     )
