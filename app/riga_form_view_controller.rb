@@ -78,7 +78,18 @@ class RigaFormViewController < UITableViewController
 
         puts text
         cell.detailTextLabel.text = text
-        @riga.prezzo_unitario = text
+
+        formatter = NSNumberFormatter.alloc.init
+        formatter.setNumberStyle NSNumberFormatterDecimalStyle
+        formatter.setMaximumFractionDigits 2
+        formatter.setRoundingMode NSNumberFormatterRoundHalfUp
+
+        number = formatter.stringFromNumber(Value)
+
+
+
+        @riga.prezzo_unitario = text.split(" ")[1].to_f.round(2)
+        puts @riga.prezzo_unitario
         return true
       end
     )
