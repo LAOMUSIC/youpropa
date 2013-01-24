@@ -9,6 +9,8 @@ class EditPrezzoViewController < UITableViewController
 
   def viewWillAppear(animated)
     super
+    puts @riga.titolo
+    puts @riga.prezzo_copertina
     load_data
   end
 

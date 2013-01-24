@@ -10,7 +10,7 @@ class AppuntoFormViewController < UITableViewController
     super
     
     unless @appunto 
-      @appunto = Appunto.new(status: "da fare")
+      @appunto = Appunto.new(status: "da fare", righe: [])
     end
     if @cliente
       @appunto.cliente_id = @cliente.remote_id
@@ -41,6 +41,7 @@ class AppuntoFormViewController < UITableViewController
 
       #path = NSIndexPath.indexPathForRow(0, inSection:1)
       cell = table.cellForRowAtIndexPath([1, 0].nsindexpath)
+      
       if @appunto.righe.empty?
         cell.textLabel.text = "Aggiungi volumi"
         cell.detailTextLabel.text = ""
@@ -48,6 +49,7 @@ class AppuntoFormViewController < UITableViewController
         cell.textLabel.text = "Totale volumi"
         cell.detailTextLabel.text = @appunto.totale_copie.to_s
       end
+
     end
   end
   

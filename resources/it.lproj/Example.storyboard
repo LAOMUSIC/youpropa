@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aHZ-6V-EsO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aHZ-6V-EsO">
     <dependencies>
         <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
@@ -508,7 +508,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="righeTableViewCell" textLabel="0vO-lr-wuH" detailTextLabel="YBl-9B-c3G" style="IBUITableViewCellStyleValue1" id="hql-gT-Ju3">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="righeTableViewCell" textLabel="0vO-lr-wuH" detailTextLabel="YBl-9B-c3G" style="IBUITableViewCellStyleValue1" id="hql-gT-Ju3" customClass="RigaTableViewCell">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -721,11 +721,11 @@
                                             <segue destination="rnb-ab-Xll" kind="push" identifier="selectPrezzo" id="iRJ-l6-BiO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yKr-hk-guu" detailTextLabel="iS5-Yy-2dU" style="IBUITableViewCellStyleValue1" id="85Q-z1-fa8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yKr-hk-guu" detailTextLabel="iS5-Yy-2dU" style="IBUITableViewCellStyleValue1" id="85Q-z1-fa8">
                                         <rect key="frame" x="0.0" y="209" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Sconto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yKr-hk-guu">
@@ -735,7 +735,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="scegli" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iS5-Yy-2dU">
-                                                    <rect key="frame" x="226" y="11" width="44" height="21"/>
+                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1782,15 +1782,16 @@
         <class className="EditPrezzoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPrezzoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="check_prezzo"/>
                 <relationship kind="action" name="close:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="handleButtonDone"/>
                 <relationship kind="action" name="load_data"/>
                 <relationship kind="action" name="prezzi"/>
                 <relationship kind="action" name="sconti"/>
                 <relationship kind="action" name="showDoneButton:"/>
                 <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="editPrezzo" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="editSconto" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="editPrezzo"/>
+                <relationship kind="outlet" name="editSconto"/>
             </relationships>
         </class>
         <class className="EditStatoViewController" superclassName="UITableViewController">
@@ -1822,9 +1823,6 @@
         </class>
         <class className="LibroCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LibroCell.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="NVUIGradientButton" superclassName="UIControl">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NVUIGradientButton.h"/>

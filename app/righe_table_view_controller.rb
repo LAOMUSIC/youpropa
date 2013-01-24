@@ -4,6 +4,11 @@ class RigheTableViewController < UITableViewController
 
     # UITableViewDelegate
 
+  def viewWillAppear(animated)
+    super
+    self.tableView.reloadData
+  end
+
   def tableView(tableView, numberOfRowsInSection:section)
     @appunto.righe.count
   end
@@ -11,12 +16,13 @@ class RigheTableViewController < UITableViewController
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
 
     cell = tableView.dequeueReusableCellWithIdentifier("righeTableViewCell")
-    cell ||= UITableViewCell.alloc.initWithStyle(UITableViewCellStyle1,
+    cell ||= RigaTableViewCell.alloc.initWithStyle(UITableViewCellStyle1,
                                             reuseIdentifier:"righeTableViewCell")
 
     riga = @appunto.righe[indexPath.row]
-    cell.textLabel.text = riga.titolo
-    cell.detailTextLabel.text = "#{riga.quantita} #{riga.prezzo_unitario}"
+    cell.riga = riga
+    # cell.textLabel.text = riga.titolo
+    # cell.detailTextLabel.text = "#{riga.quantita} #{riga.prezzo_unitario}"
     cell
   end
 
@@ -28,7 +34,9 @@ class RigheTableViewController < UITableViewController
       indexPath = self.tableView.indexPathForCell(sender)
       @riga = self.tableView.cellForRowAtIndexPath(indexPath).riga
     end
-    segue.destinationViewController.riga = @riga  
+    @riga.appunto = @appunto
+    segue.destinationViewController.riga = @riga
+
   end
 
   # def tableView(tableView, heightForRowAtIndexPath:indexPath)

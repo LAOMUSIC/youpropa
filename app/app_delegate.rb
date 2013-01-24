@@ -2,7 +2,7 @@ include SugarCube::Adjust
 
 class AppDelegate
 
-  BASE_URL = "http://localhost:3000"
+  BASE_URL = "http://todopropa.com"
 
   attr_accessor :backend
 
@@ -93,8 +93,8 @@ class AppDelegate
       grant_type: 'password',
       client_id: app_id,
       client_secret: secret,
-      username: "paolotax",
-      password: "sisboccia"
+      username: "polso",
+      password: "polso14"
     }
 
     AFMotion::Client.build_shared(BASE_URL) do

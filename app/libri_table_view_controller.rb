@@ -78,11 +78,12 @@ class LibriTableViewController < UITableViewController
 
     riga.libro_id = libro.remote_id
     riga.titolo   = libro.titolo
-    riga.prezzo_copertina = libro.prezzo_copertina
-    riga.prezzo_unitario  = libro.prezzo_consigliato
-    riga.sconto = 0
+    riga.prezzo_copertina    = libro.prezzo_copertina
+    riga.prezzo_unitario     = libro.prezzo_consigliato
+    riga.prezzo_consigliato  = libro.prezzo_consigliato
+    riga.sconto   = 0
     riga.quantita = 1
-
+    
     segue.destinationViewController.riga  = riga  
     #segue.destinationViewController.libro = libro
 

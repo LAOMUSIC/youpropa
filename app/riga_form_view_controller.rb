@@ -62,6 +62,7 @@ class RigaFormViewController < UITableViewController
   def prepareForSelectPrezzoSegue(segue, sender:sender)
     editController = segue.destinationViewController
     editController.riga  = @riga
+    puts @riga
     editController.setPrezzoChangedBlock( lambda do |prezzo, sconto, error|
         # prezzo_cell = self.tableView.cellForRowAtIndexPath([1, 1].nsindexpath)
         # prezzo_cell.detailTextLabel.text = prezzo.to_s
