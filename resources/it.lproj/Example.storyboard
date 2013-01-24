@@ -528,6 +528,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="ZaO-ec-HMo" kind="push" identifier="editRiga" id="y0B-Or-TWU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -538,7 +541,7 @@
                     <navigationItem key="navigationItem" id="F7N-xc-eo1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fUL-Eb-t85">
                             <connections>
-                                <segue destination="u2f-4p-SE8" kind="push" id="u8v-8w-MJr"/>
+                                <segue destination="u2f-4p-SE8" kind="push" identifier="addRiga" id="u8v-8w-MJr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -611,7 +614,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1371" y="1364"/>
+            <point key="canvasLocation" x="1397" y="1703"/>
         </scene>
         <!--Riga Form View Controller-->
         <scene sceneID="Nsg-sJ-fjm">
@@ -778,7 +781,13 @@
                             <outlet property="delegate" destination="ZaO-ec-HMo" id="Ld4-gP-bXm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="8FN-bA-oEy"/>
+                    <navigationItem key="navigationItem" id="8FN-bA-oEy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MEN-5v-c7L">
+                            <connections>
+                                <action selector="save:" destination="ZaO-ec-HMo" id="eS8-OE-Biv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmj-zW-oWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -933,41 +942,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EOF-ru-fhN">
-                                        <rect key="frame" x="0.0" y="311" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="indica lo sconto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEG-nY-tYM">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="143" id="c1E-CC-bFg"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-rO-Jhj">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="gfy-eu-VSL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="fEG-nY-tYM" firstAttribute="leading" secondItem="EOF-ru-fhN" secondAttribute="leading" constant="22" id="BAW-i0-45e"/>
-                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="centerY" secondItem="fEG-nY-tYM" secondAttribute="centerY" type="default" id="BDa-Xm-yyl"/>
-                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="centerY" secondItem="EOF-ru-fhN" secondAttribute="centerY" type="default" id="Co8-2s-yUT"/>
-                                            <constraint firstAttribute="trailing" secondItem="X1L-rO-Jhj" secondAttribute="trailing" constant="19" id="XY3-XR-JgN"/>
-                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="baseline" secondItem="fEG-nY-tYM" secondAttribute="baseline" type="default" id="l7M-0j-uXS"/>
-                                        </constraints>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bch-rh-4c9">
-                                        <rect key="frame" x="0.0" y="355" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="311" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -987,6 +963,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="showDoneButton:" destination="rnb-ab-Xll" eventType="editingDidBegin" id="5Ye-nW-GTo"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -995,8 +974,44 @@
                                             <constraint firstAttribute="trailing" secondItem="y1Q-Si-x3M" secondAttribute="trailing" constant="19" id="6rb-fM-7rm"/>
                                             <constraint firstItem="h5L-sV-a9U" firstAttribute="leading" secondItem="bch-rh-4c9" secondAttribute="leading" constant="22" id="8bt-LJ-wXi"/>
                                             <constraint firstItem="y1Q-Si-x3M" firstAttribute="centerY" secondItem="h5L-sV-a9U" secondAttribute="centerY" type="default" id="Rs1-Bi-Uwa"/>
-                                            <constraint firstItem="y1Q-Si-x3M" firstAttribute="centerY" secondItem="bch-rh-4c9" secondAttribute="centerY" type="default" id="gCH-g5-y8n"/>
                                             <constraint firstItem="y1Q-Si-x3M" firstAttribute="baseline" secondItem="h5L-sV-a9U" secondAttribute="baseline" type="default" id="jBj-Tz-4o4"/>
+                                            <constraint firstItem="h5L-sV-a9U" firstAttribute="centerY" secondItem="bch-rh-4c9" secondAttribute="centerY" type="default" id="uaA-dK-hGR"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EOF-ru-fhN">
+                                        <rect key="frame" x="0.0" y="355" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="indica lo sconto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEG-nY-tYM">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="143" id="c1E-CC-bFg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X1L-rO-Jhj">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="gfy-eu-VSL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="showDoneButton:" destination="rnb-ab-Xll" eventType="editingDidBegin" id="edn-Eg-cNi"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fEG-nY-tYM" firstAttribute="leading" secondItem="EOF-ru-fhN" secondAttribute="leading" constant="22" id="BAW-i0-45e"/>
+                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="centerY" secondItem="fEG-nY-tYM" secondAttribute="centerY" type="default" id="BDa-Xm-yyl"/>
+                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="centerY" secondItem="EOF-ru-fhN" secondAttribute="centerY" type="default" id="Co8-2s-yUT"/>
+                                            <constraint firstAttribute="trailing" secondItem="X1L-rO-Jhj" secondAttribute="trailing" constant="19" id="XY3-XR-JgN"/>
+                                            <constraint firstItem="X1L-rO-Jhj" firstAttribute="baseline" secondItem="fEG-nY-tYM" secondAttribute="baseline" type="default" id="l7M-0j-uXS"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1008,6 +1023,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Prezzo" id="4bC-kb-Ovn"/>
+                    <connections>
+                        <outlet property="editPrezzo" destination="y1Q-Si-x3M" id="PoW-YG-tQK"/>
+                        <outlet property="editSconto" destination="X1L-rO-Jhj" id="qbw-Ft-1DY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CA4-uN-Yg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1760,6 +1779,20 @@
                 <relationship kind="outlet" name="searchBar"/>
             </relationships>
         </class>
+        <class className="EditPrezzoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPrezzoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="check_prezzo"/>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="action" name="load_data"/>
+                <relationship kind="action" name="prezzi"/>
+                <relationship kind="action" name="sconti"/>
+                <relationship kind="action" name="showDoneButton:"/>
+                <relationship kind="action" name="viewWillAppear:"/>
+                <relationship kind="outlet" name="editPrezzo" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="editSconto" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="EditStatoViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EditStatoViewController.h"/>
             <relationships>
@@ -1843,6 +1876,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="y0B-Or-TWU"/>
         <segue reference="lDd-N5-MQ9"/>
         <segue reference="bLA-y0-CF2"/>
     </inferredMetricsTieBreakers>

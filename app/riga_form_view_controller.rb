@@ -6,7 +6,7 @@ class RigaFormViewController < UITableViewController
   outlet :editPrezzo
 
 
-  attr_accessor :libro, :riga
+  attr_accessor :riga
 
   def viewDidLoad
     true
@@ -14,47 +14,37 @@ class RigaFormViewController < UITableViewController
 
   def viewWillAppear(animated)
     super
-    
-    unless @riga 
-      @riga = Riga.new(quantita: 1, prezzo_unitario: @libro.prezzo_consigliato)
-      puts "new riga"
-    end
-     
-    # if @cliente
-    #   @appunto.cliente_id = @cliente.remote_id
-    #   @appunto.cliente_nome = @cliente.nome
-    # end
-
     load_riga
-
   end
 
   def load_riga
     table = self.tableView
     
     (0..1).each do |index|
-      
       cell = table.cellForRowAtIndexPath([0, index].nsindexpath)
-      
       case index
         when 0
-          cell.textLabel.text = @libro.titolo
+          cell.textLabel.text = @riga.titolo
         when 1
-          cell.detailTextLabel.text = "€ %.2f" % @libro.prezzo_copertina
+          cell.detailTextLabel.text = "€ %.2f" % @riga.prezzo_copertina
       end
     end  
 
-    (0..5).each do |index|
-      #path = NSIndexPath.indexPathForRow(0, inSection:1)
+    (0..2).each do |index|
       cell = table.cellForRowAtIndexPath([1, index].nsindexpath)
-      
       case index
         when 0
           cell.detailTextLabel.text = @riga.quantita.to_s
         when 1
           cell.detailTextLabel.text = "€ %.2f" % @riga.prezzo_unitario
+        when 2
+          cell.detailTextLabel.text = @riga.sconto.to_s
       end  
     end
+
+    cell = table.cellForRowAtIndexPath([2, 0].nsindexpath)
+    cell.detailTextLabel.text = @riga.importo.to_s
+
   end
   
   def prepareForEditQuantitaSegue(segue, sender:sender)
@@ -72,24 +62,13 @@ class RigaFormViewController < UITableViewController
   def prepareForSelectPrezzoSegue(segue, sender:sender)
     editController = segue.destinationViewController
     editController.riga  = @riga
-    editController.libro = @libro
-    editController.setStatoChangedBlock( lambda do |text, error|
-        cell = self.tableView.cellForRowAtIndexPath([1, 1].nsindexpath)
-
-        puts text
-        cell.detailTextLabel.text = text
-
-        formatter = NSNumberFormatter.alloc.init
-        formatter.setNumberStyle NSNumberFormatterDecimalStyle
-        formatter.setMaximumFractionDigits 2
-        formatter.setRoundingMode NSNumberFormatterRoundHalfUp
-
-        number = formatter.stringFromNumber(Value)
-
-
-
-        @riga.prezzo_unitario = text.split(" ")[1].to_f.round(2)
-        puts @riga.prezzo_unitario
+    editController.setPrezzoChangedBlock( lambda do |prezzo, sconto, error|
+        # prezzo_cell = self.tableView.cellForRowAtIndexPath([1, 1].nsindexpath)
+        # prezzo_cell.detailTextLabel.text = prezzo.to_s
+        # sconto_cell = self.tableView.cellForRowAtIndexPath([1, 2].nsindexpath)
+        # sconto_cell.detailTextLabel.text = sconto.to_s
+        @riga.prezzo_unitario = prezzo
+        @riga.sconto = sconto
         return true
       end
     )
@@ -108,6 +87,12 @@ class RigaFormViewController < UITableViewController
     if @riga.remote_id
       update_riga
     else
+      puts @riga.prezzo_unitario
+      puts @riga.quantita
+      puts @riga.sconto
+      puts @riga.appunto
+
+      @riga.appunto.righe << @riga
       create_riga
     end
   end
@@ -123,7 +108,7 @@ class RigaFormViewController < UITableViewController
   private
 
     def create_riga
-      puts "Creating new riga #{@riga.titolo}"
+      puts "Creating new riga #{@riga.titolo} #{@riga.libro_id}"
       App.delegate.backend.postObject(@riga, path:nil, parameters:nil,
                                  success: lambda do |operation, result|
                                                 if Device.ipad?

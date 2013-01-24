@@ -16,25 +16,24 @@ class AppDelegate
 
     add_response_mapping(libro_mapping, "libro")
     add_response_mapping(libro_mapping, "libri")
-    add_request_mapping(libro_mapping, "libro")
-    add_route_set(Libro, "api/v1/libri", "api/v1/libri/:remote_id")
-
+    
     add_response_mapping(cliente_mapping, "cliente")
     add_response_mapping(cliente_mapping, "clienti")
-    add_request_mapping(cliente_mapping, "cliente")
-    add_route_set(Cliente, "api/v1/clienti", "api/v1/clienti/:remote_id")
 
     add_response_mapping(appunto_mapping, "appunto")
     add_response_mapping(appunto_mapping, "appunti")
-    add_request_mapping(appunto_mapping, "appunto")
-    add_route_set(Appunto, "api/v1/appunti", "api/v1/appunti/:remote_id")
 
     add_response_mapping(riga_mapping, "riga")
     add_response_mapping(riga_mapping, "righe")
 
-    add_request_mapping(inverse_appunto_mapping, "appunto")
-    add_request_mapping(inverse_riga_mapping, "riga")
+    add_request_mapping(libro_mapping.inverseMapping, "libro", Libro)
+    add_request_mapping(cliente_mapping.inverseMapping, "cliente", Cliente)
+    add_request_mapping(inverse_appunto_mapping, "appunto", Appunto)
+    add_request_mapping(inverse_riga_mapping, "riga", Riga)
 
+    add_route_set(Libro,   "api/v1/libri",   "api/v1/libri/:remote_id")
+    add_route_set(Cliente, "api/v1/clienti", "api/v1/clienti/:remote_id")
+    add_route_set(Appunto, "api/v1/appunti", "api/v1/appunti/:remote_id")
     add_route_set(Riga,
                   "api/v1/appunti/:remote_appunto_id/righe",
                   "api/v1/appunti/:remote_appunto_id/righe/:remote_id")
@@ -171,13 +170,15 @@ class AppDelegate
     @riga_mapping ||= begin
       mapping = RKObjectMapping.mappingForClass(Riga)
       mapping.addAttributeMappingsFromDictionary(id: "remote_id",
-                                           libro_id: "libro_id",
                                          appunto_id: "remote_appunto_id",
+                                           libro_id: "libro_id",
                                              titolo: "titolo",
-                                   prezzo_copertina: "prezzo_copertina",
                                     prezzo_unitario: "prezzo_unitario",
+                                   prezzo_copertina: "prezzo_copertina",
+                                 prezzo_consigliato: "prezzo_consigliato",
                                            quantita: "quantita",
-                                             sconto: "sconto"
+                                             sconto: "sconto",
+                                            importo: "importo"
                                            )
     end
   end
@@ -187,7 +188,6 @@ class AppDelegate
       mapping = RKObjectMapping.requestMapping
       mapping.addAttributeMappingsFromDictionary(
                                            libro_id: "libro_id",
-                                   prezzo_copertina: "prezzo_copertina",
                                     prezzo_unitario: "prezzo_unitario",
                                            quantita: "quantita",
                                              sconto: "sconto")
@@ -215,9 +215,9 @@ class AppDelegate
     backend.addResponseDescriptor(descriptor)
   end
 
-  def add_request_mapping(mapping, path)
-    request_descriptor = RKRequestDescriptor.requestDescriptorWithMapping(mapping.inverseMapping,
-                                                                          objectClass: mapping.objectClass,
+  def add_request_mapping(mapping, path, klass)
+    request_descriptor = RKRequestDescriptor.requestDescriptorWithMapping(mapping,
+                                                                          objectClass: klass,
                                                                           rootKeyPath: path)
     backend.addRequestDescriptor(request_descriptor)
   end

@@ -20,6 +20,17 @@ class RigheTableViewController < UITableViewController
     cell
   end
 
+  # Storyboard methods
+  def prepareForSegue(segue, sender:sender)
+    if segue.identifier.isEqualToString("addRiga") 
+      @riga = Riga.new( remote_appunto_id: @appunto.remote_id, appunto: @appunto )
+    elsif segue.identifier.isEqualToString("editRiga") 
+      indexPath = self.tableView.indexPathForCell(sender)
+      @riga = self.tableView.cellForRowAtIndexPath(indexPath).riga
+    end
+    segue.destinationViewController.riga = @riga  
+  end
+
   # def tableView(tableView, heightForRowAtIndexPath:indexPath)
   #   puts "heightForRowAtIndexPath #{indexPath.row}"
   #   AppuntoTableViewCell.heightForCellWithAppunto(@appunti[indexPath.row])

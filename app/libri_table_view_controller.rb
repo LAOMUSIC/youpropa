@@ -2,6 +2,7 @@ class LibriTableViewController < UITableViewController
   
   extend IB
 
+  attr_accessor :riga
   attr_accessor :searchResults, :refreshHeaderView, :detailViewController
 
   outlet :searchBar
@@ -67,18 +68,23 @@ class LibriTableViewController < UITableViewController
   # Storyboard methods
   def prepareForSegue(segue, sender:sender)
 
-    # if segue.identifier.isEqualToString("displayCliente")
-      libro = nil
-      if (self.searchDisplayController.isActive)
-        indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
-        libro = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).libro
-      else
-        indexPath = self.tableView.indexPathForCell(sender)
-        libro = self.tableView.cellForRowAtIndexPath(indexPath).libro
-      end  
-      segue.destinationViewController.libro = libro
-    #  libro = nil
-    # end
+    if (self.searchDisplayController.isActive)
+      indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
+      libro = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).libro
+    else
+      indexPath = self.tableView.indexPathForCell(sender)
+      libro = self.tableView.cellForRowAtIndexPath(indexPath).libro
+    end
+
+    riga.libro_id = libro.remote_id
+    riga.titolo   = libro.titolo
+    riga.prezzo_copertina = libro.prezzo_copertina
+    riga.prezzo_unitario  = libro.prezzo_consigliato
+    riga.sconto = 0
+    riga.quantita = 1
+
+    segue.destinationViewController.riga  = riga  
+    #segue.destinationViewController.libro = libro
 
   end
 
@@ -105,19 +111,19 @@ class LibriTableViewController < UITableViewController
     return cell
   end
 
-  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     
-    if Device.ipad?
-      if (self.searchDisplayController.isActive)
-        object = @searchResults[indexPath.row];
-      else
-        object = @libri[indexPath.row];
-      end
-      self.detailViewController.libro = object
-      self.detailViewController.load_libro
-    end
+  #   if Device.ipad?
+  #     if (self.searchDisplayController.isActive)
+  #       object = @searchResults[indexPath.row];
+  #     else
+  #       object = @libri[indexPath.row];
+  #     end
+  #     self.detailViewController.libro = object
+  #     self.detailViewController.load_libro
+  #   end
  
-  end
+  # end
 
   # UISearchBar UISearchDisplayController methods
   def searchDisplayController(controller, shouldReloadTableForSearchString:searchString)
