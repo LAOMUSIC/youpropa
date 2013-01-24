@@ -11,7 +11,7 @@ class AppDelegate
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     init_restkit
-    #debug_restkit
+    debug_restkit
     login
 
     add_response_mapping(libro_mapping, "libro")
@@ -143,6 +143,8 @@ class AppDelegate
                                                  latitude: "latitude",
                                                  longitude: "longitude"
                                                  )
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
+                                    toKeyPath:"appunti", withMapping:appunto_mapping))
     end
   end
 

@@ -4,6 +4,7 @@ class Cliente
                 :telefono, :email, :latitude, :longitude, :appunti
 
   def initialize(attributes = {})
+    appunti = []
     attributes.each_pair do |key, value|
       self.send("#{key}=", value) if self.respond_to?(key)
     end

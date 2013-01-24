@@ -1,6 +1,5 @@
 class AppuntiTableViewController < UITableViewController
   
-  
   extend IB
 
   attr_accessor :searchResults, :refreshHeaderView
@@ -45,7 +44,6 @@ class AppuntiTableViewController < UITableViewController
   def prepareForSegue(segue, sender:sender)
 
     if segue.identifier.isEqualToString("displayAppunto")
-      appunto = nil
       if (self.searchDisplayController.isActive)
         indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
         appunto = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).appunto
@@ -53,9 +51,7 @@ class AppuntiTableViewController < UITableViewController
         indexPath = self.tableView.indexPathForCell(sender)
         appunto = self.tableView.cellForRowAtIndexPath(indexPath).appunto
       end
-      puts "status #{appunto.status}  "
       segue.destinationViewController.appunto = appunto
-      appunto = nil
     end
 
   end
