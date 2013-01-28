@@ -7,7 +7,6 @@ class Appunto
   }
   
   def initialize(attributes = {})
-    
     righe = []
 
     attributes.each { |key, value|
@@ -17,7 +16,25 @@ class Appunto
     }
   end
 
+  def copie_righe
+    righe.inject(0)  { |result, element| result + element.quantita.to_i }
+  end
 
-
+  def new_record?
+    remote_id.blank?
+  end
   
+  def load_from_backend(&block)
+    App.delegate.backend.getObject(self, path:nil, parameters:nil, 
+                              success: lambda do |operation, result|
+                                                puts result.firstObject.righe.count
+                                                puts result.firstObject.righe.map(&:remote_id)
+                                                puts self.righe.count
+                                                puts self.righe.map(&:remote_id)
+                                                block.call
+                                              end,
+                              failure: lambda do |operation, error|
+                                                App.alert error.localizedDescription
+                                                end)
+  end
 end

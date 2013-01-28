@@ -12,6 +12,8 @@ class ClienteDetailViewController < UIViewController
   outlet :emailButton
   outlet :callButton
 
+  outlet :appuntiTableView
+
   def viewDidLoad
     super
 
@@ -61,9 +63,8 @@ class ClienteDetailViewController < UIViewController
       segue.destinationViewController.cliente_id = @cliente.remote_id
     end
     if segue.identifier.isEqualToString("nuovoAppunto")
-      
       if Device.ipad?
-        puts segue.destinationViewController
+        segue.destinationViewController.visibleViewController.presentedAsModal = true
         segue.destinationViewController.visibleViewController.cliente = @cliente
       else
         segue.destinationViewController.cliente = @cliente
@@ -90,16 +91,20 @@ class ClienteDetailViewController < UIViewController
 
   # splitView delegates
 
-  def splitViewController(svc, willHideViewController:vc, withBarButtonItem:barButtonItem, forPopoverController:pc)
-    barButtonItem.title = "Menu"
-    self.navigationItem.setLeftBarButtonItem(barButtonItem)
-    self.popoverViewController = pc
+  def splitViewController(svc, shouldHideViewController:vc, inOrientation:orientation)
+    return false
   end
+
+  # def splitViewController(svc, willHideViewController:vc, withBarButtonItem:barButtonItem, forPopoverController:pc)
+  #   barButtonItem.title = "Menu"
+  #   self.navigationItem.setLeftBarButtonItem(barButtonItem)
+  #   self.popoverViewController = pc
+  # end
   
-  def splitViewController(svc, willShowViewController:avc, invalidatingBarButtonItem:barButtonItem) 
-    self.navigationItem.setLeftBarButtonItems([], animated:false)
-    self.popoverViewController = nil
-  end
+  # def splitViewController(svc, willShowViewController:avc, invalidatingBarButtonItem:barButtonItem) 
+  #   self.navigationItem.setLeftBarButtonItems([], animated:false)
+  #   self.popoverViewController = nil
+  # end
 
 
 end

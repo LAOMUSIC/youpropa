@@ -11,7 +11,7 @@ Motion::Project::App.setup do |app|
 
   app.device_family = [:iphone, :ipad]
   
-  app.provisioning_profile = '/Users/ptax/Library/MobileDevice/Provisioning Profiles/EA8F07F2-DB5C-43D5-A722-BEF7C43408FB.mobileprovision' 
+  app.provisioning_profile = '/Users/paolotax/Library/MobileDevice/Provisioning Profiles/EA8F07F2-DB5C-43D5-A722-BEF7C43408FB.mobileprovision' 
   app.codesign_certificate = 'iPhone Developer: Paolo Tassinari (9L6JUZD52Q)' 
 
   # app.info_plist["UIMainStoryboardFile"] = "Example"

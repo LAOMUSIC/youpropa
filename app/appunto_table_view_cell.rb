@@ -35,16 +35,21 @@ class AppuntoTableViewCell < UITableViewCell
   end
 
   def self.heightForCellWithAppunto(appunto)
-    sizeToFit = appunto.note.sizeWithFont(UIFont.systemFontOfSize(13), constrainedToSize: CGSizeMake(200, Float::MAX), lineBreakMode:UILineBreakModeWordWrap)
-    
-    return [96, sizeToFit.height + 55].max
+    unless appunto.note.blank?
+      sizeToFit = appunto.note.sizeWithFont(UIFont.systemFontOfSize(13), constrainedToSize: CGSizeMake(200, Float::MAX), lineBreakMode:UILineBreakModeWordWrap)
+      
+      return [96, sizeToFit.height + 55].max
+    else
+      return 96
+    end
   end
 
   def layoutSubviews
     super
-    puts "layoutSubviews"
-    # self.imageView.frame = CGRectMake(14, 10, 30, 30);
-    # self.clienteLabel.frame = CGRectMake(60, 10, 240, 20);
+    self.statusImage.frame = CGRectMake(7, 33, 25, 25);
+    self.clienteLabel.frame = CGRectMake(48, 8, 231, 20);
+    self.destinatarioLabel.frame = CGRectMake(48, 30, 231, 20);
+
     noteTextLabelFrame = CGRectMake(41, 48, 231, 26);
     noteTextLabelFrame.size.height = self.class.heightForCellWithAppunto(self.appunto) - 55
     self.noteText.frame = noteTextLabelFrame

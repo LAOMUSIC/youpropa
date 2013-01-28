@@ -3,6 +3,18 @@ include SugarCube::Adjust
 class AppDelegate
 
   BASE_URL = "http://todopropa.com"
+  #BASE_URL = "http://localhost:3000"
+
+  USERNAME = 'paolotax'
+  PASSWORD = 'sisboccia'
+
+  #server 
+  APP_ID = "36e1b9ed802dc7ee45e375bf318924dc3ae0f0f842c690611fde8336687960eb"
+  SECRET = "11ab577f8fabf2ac33bdd75e951fc6507ef7bc21ef993c2a77a1383bed438224"
+  
+  #ptax
+  #APP_ID = "9aa427dcda89ebd5b3c9015dcd507242b70bac2a4d6e736589f6be35849474ff"
+  #SECRET = "a5d78f0c32ba25fcbc1a679e03b110724497684263c1f4d9f645444cbf80a832"
 
   attr_accessor :backend
 
@@ -11,7 +23,7 @@ class AppDelegate
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     init_restkit
-    debug_restkit
+    #debug_restkit
     login
 
     add_response_mapping(libro_mapping, "libro")
@@ -81,20 +93,12 @@ class AppDelegate
 
   def login
 
-    #server 
-    app_id = "36e1b9ed802dc7ee45e375bf318924dc3ae0f0f842c690611fde8336687960eb"
-    secret = "11ab577f8fabf2ac33bdd75e951fc6507ef7bc21ef993c2a77a1383bed438224"
-
-    #paolotax
-    #app_id = "9aa427dcda89ebd5b3c9015dcd507242b70bac2a4d6e736589f6be35849474ff"
-    #secret = "a5d78f0c32ba25fcbc1a679e03b110724497684263c1f4d9f645444cbf80a832"
-
     data = {
       grant_type: 'password',
-      client_id: app_id,
-      client_secret: secret,
-      username: "polso",
-      password: "polso14"
+      client_id: APP_ID,
+      client_secret: SECRET,
+      username: USERNAME,
+      password: PASSWORD
     }
 
     AFMotion::Client.build_shared(BASE_URL) do
@@ -143,8 +147,8 @@ class AppDelegate
                                                  latitude: "latitude",
                                                  longitude: "longitude"
                                                  )
-      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
-                                    toKeyPath:"appunti", withMapping:appunto_mapping))
+      # mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
+      #                               toKeyPath:"appunti", withMapping:appunto_mapping))
     end
   end
 

@@ -6,7 +6,7 @@ class RigaFormViewController < UITableViewController
   outlet :editPrezzo
 
 
-  attr_accessor :riga
+  attr_accessor :riga, :appunto
 
   def viewDidLoad
     true
@@ -84,16 +84,9 @@ class RigaFormViewController < UITableViewController
   end
   
   def save(sender)
-
     if @riga.remote_id
       update_riga
     else
-      puts @riga.prezzo_unitario
-      puts @riga.quantita
-      puts @riga.sconto
-      puts @riga.appunto
-
-      @riga.appunto.righe << @riga
       create_riga
     end
   end
@@ -112,8 +105,9 @@ class RigaFormViewController < UITableViewController
       puts "Creating new riga #{@riga.titolo} #{@riga.libro_id}"
       App.delegate.backend.postObject(@riga, path:nil, parameters:nil,
                                  success: lambda do |operation, result|
+                                                @appunto.righe << result.firstObject
                                                 if Device.ipad?
-                                                  self.dismissViewControllerAnimated(true, completion:nil)
+                                                  self.navigationController.popViewControllerAnimated(true)
                                                 else
                                                   self.navigationController.popViewControllerAnimated(true)
                                                 end
@@ -127,9 +121,8 @@ class RigaFormViewController < UITableViewController
       puts "Updating name for #{@riga.remote_id} to #{@riga.titolo}"
       App.delegate.backend.putObject(@riga, path:nil, parameters:nil,
                                 success: lambda do |operation, result|
-                                                  puts "updated"
-                                                 if Device.ipad?
-                                                    self.dismissViewControllerAnimated(true, completion:nil)
+                                                  if Device.ipad?
+                                                    self.navigationController.popViewControllerAnimated(true)
                                                   else
                                                     self.navigationController.popViewControllerAnimated(true)
                                                   end

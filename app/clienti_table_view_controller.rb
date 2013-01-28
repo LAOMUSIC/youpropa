@@ -66,7 +66,7 @@ class ClientiTableViewController < UITableViewController
   def prepareForSegue(segue, sender:sender)
 
     if segue.identifier.isEqualToString("displayCliente")
-      cliente = nil
+      
       if (self.searchDisplayController.isActive)
         indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
         cliente = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).cliente
@@ -74,8 +74,12 @@ class ClientiTableViewController < UITableViewController
         indexPath = self.tableView.indexPathForCell(sender)
         cliente = self.tableView.cellForRowAtIndexPath(indexPath).cliente
       end  
-      segue.destinationViewController.cliente = cliente
-      cliente = nil
+      
+      if Device.ipad?
+        segue.destinationViewController.visibleViewController.cliente = cliente
+      else
+        segue.destinationViewController.cliente = cliente
+      end  
     end
 
   end
@@ -103,19 +107,19 @@ class ClientiTableViewController < UITableViewController
     return cell
   end
 
-  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+  # def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     
-    if Device.ipad?
-      if (self.searchDisplayController.isActive)
-        object = @searchResults[indexPath.row];
-      else
-        object = @clienti[indexPath.row];
-      end
-      self.detailViewController.cliente = object
-      self.detailViewController.load_cliente
-    end
+  #   if Device.ipad?
+  #     if (self.searchDisplayController.isActive)
+  #       object = @searchResults[indexPath.row];
+  #     else
+  #       object = @clienti[indexPath.row];
+  #     end
+  #     self.detailViewController.cliente = object
+  #     self.detailViewController.load_cliente
+  #   end
  
-  end
+  # end
 
   # UISearchBar UISearchDisplayController methods
   def searchDisplayController(controller, shouldReloadTableForSearchString:searchString)

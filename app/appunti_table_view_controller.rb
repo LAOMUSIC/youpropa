@@ -43,16 +43,23 @@ class AppuntiTableViewController < UITableViewController
   # Storyboard methods
   def prepareForSegue(segue, sender:sender)
 
-    if segue.identifier.isEqualToString("displayAppunto")
-      if (self.searchDisplayController.isActive)
-        indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
-        appunto = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).appunto
-      else
-        indexPath = self.tableView.indexPathForCell(sender)
-        appunto = self.tableView.cellForRowAtIndexPath(indexPath).appunto
-      end
-      segue.destinationViewController.appunto = appunto
+    if (self.searchDisplayController.isActive)
+      indexPath = self.searchDisplayController.searchResultsTableView.indexPathForCell(sender)
+      appunto = self.searchDisplayController.searchResultsTableView.cellForRowAtIndexPath(indexPath).appunto
+    else
+      indexPath = self.tableView.indexPathForCell(sender)
+      appunto = self.tableView.cellForRowAtIndexPath(indexPath).appunto
     end
+    
+    puts "cliente_id #{appunto.cliente_id} appunto_id #{appunto.remote_id}"
+
+    if segue.identifier.isEqualToString("displayAppunto")
+      segue.destinationViewController.appunto = appunto
+
+    elsif segue.identifier.isEqualToString("modalAppunto")
+      segue.destinationViewController.visibleViewController.appunto = appunto
+    end
+
 
   end
 
@@ -135,10 +142,6 @@ class AppuntiTableViewController < UITableViewController
                                               end)
   end
 
-  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
-    tableView.deselectRowAtIndexPath(indexPath, animated:true)
-  end
-
 
   # UISearchBar UISearchDisplayController methods
   def searchDisplayController(controller, shouldReloadTableForSearchString:searchString)
@@ -148,15 +151,13 @@ class AppuntiTableViewController < UITableViewController
 
   def searchDisplayControllerDidEndSearch(controller)
     view.reloadData
-    #loadFromBackend
   end
 
   def filterAppuntiForTerm(text)
     @searchResults = @appunti.select do |c| 
       condition = text.downcase
-      c.destinatario.downcase.include?( condition ) ||
-        c.cliente_nome.downcase.include?( condition) ||
-          c.note.downcase.include? (condition)
+      index = "#{c.destinatario} #{c.cliente_nome} #{c.note}"
+      index.downcase.include?( condition ) 
     end  
     view.reloadData
   end

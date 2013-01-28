@@ -1,6 +1,6 @@
 class AppuntoFormViewController < UITableViewController
 
-  attr_accessor :appunto, :cliente
+  attr_accessor :appunto, :cliente, :presentedAsModal
 
   def viewDidLoad
     true
@@ -11,11 +11,17 @@ class AppuntoFormViewController < UITableViewController
     
     unless @appunto 
       @appunto = Appunto.new(status: "da fare", righe: [])
+      self.navigationItem.setLeftBarButtonItem(UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCancel, target:self, action:"cancel:"))
+
     end
+    
     if @cliente
       @appunto.cliente_id = @cliente.remote_id
       @appunto.cliente_nome = @cliente.nome
     end
+    
+    puts @appunto.cliente_id
+
     load_appunto
   end
 
@@ -23,7 +29,6 @@ class AppuntoFormViewController < UITableViewController
     table = self.tableView
     
     (0..3).each do |index|
-      
       path = NSIndexPath.indexPathForRow(index, inSection:0)
       cell = table.cellForRowAtIndexPath(path)
       
@@ -38,20 +43,51 @@ class AppuntoFormViewController < UITableViewController
         when 3
           cell.detailTextLabel.text = @appunto.status.split("_").join(" ")
       end
+    end
 
-      #path = NSIndexPath.indexPathForRow(0, inSection:1)
-      cell = table.cellForRowAtIndexPath([1, 0].nsindexpath)
-      
+    cell = table.cellForRowAtIndexPath([1, 0].nsindexpath)
+    if @appunto.new_record?
+      cell.setHidden(true)
+    else  
       if @appunto.righe.empty?
         cell.textLabel.text = "Aggiungi volumi"
         cell.detailTextLabel.text = ""
       else
         cell.textLabel.text = "Totale volumi"
-        cell.detailTextLabel.text = @appunto.totale_copie.to_s
+        cell.detailTextLabel.text = @appunto.copie_righe.to_s
       end
-
     end
   end
+
+  # # UITableViewDelegate
+
+  # def tableView(tableView, numberOfRowsInSection:section)
+  #   if (section == 1)
+  #     return @appunto.righe.count
+  #   else
+  #     return 4
+  #   end
+  # end
+
+  # def tableView(tableView, cellForRowAtIndexPath:indexPath)
+
+  #   if (indexPath.section != 1)
+  #     return super
+  #   end    
+
+  #   cell = tableView.dequeueReusableCellWithIdentifier("righeTableViewCell")
+  #   cell ||= RigaTableViewCell.alloc.initWithStyle(UITableViewCellStyle1,
+  #                                           reuseIdentifier:"righeTableViewCell")
+
+  #   riga = @appunto.righe[indexPath.row]
+  #   cell.riga = riga
+  #   # cell.textLabel.text = riga.titolo
+  #   # cell.detailTextLabel.text = "#{riga.quantita} #{riga.prezzo_unitario}"
+  #   cell
+  
+  # end
+
+
   
   def prepareForEditDestinatarioSegue(segue, sender:sender)
     editController = segue.destinationViewController
@@ -101,6 +137,24 @@ class AppuntoFormViewController < UITableViewController
     editController.appunto = @appunto
   end
 
+  def prepareForShowClienteSegue(segue, sender:sender)
+    editController = segue.destinationViewController
+    unless @cliente
+      @cliente = Cliente.new(remote_id: @appunto.cliente_id)
+    end
+    App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
+                              success: lambda do |operation, result|
+                                                puts result.firstObject
+                                                editController.visibleViewController.cliente = result.firstObject
+                                                editController.visibleViewController.load_cliente
+                                              end,
+                              failure: lambda do |operation, error|
+                                                puts error
+                                                #App.delegate.alert error.localizedDescription
+                                              end)
+    
+  end
+
   def prepareForSegue(segue, sender:sender)
     if segue.identifier.isEqualToString("editDestinatario") 
       self.prepareForEditDestinatarioSegue(segue, sender:sender)
@@ -110,6 +164,8 @@ class AppuntoFormViewController < UITableViewController
       self.prepareForEditStatoSegue(segue, sender:sender)
     elsif segue.identifier.isEqualToString("selectRighe") 
       self.prepareForSelectRigheSegue(segue, sender:sender)
+    elsif segue.identifier.isEqualToString("showCliente") 
+      self.prepareForShowClienteSegue(segue, sender:sender)
     end
   end
 
@@ -136,10 +192,10 @@ class AppuntoFormViewController < UITableViewController
       puts "Creating new appunto #{@appunto.cliente_nome}"
       App.delegate.backend.postObject(@appunto, path:nil, parameters:nil,
                                  success: lambda do |operation, result|
-                                                if Device.ipad?
+                                                if Device.ipad? && presentedAsModal?
                                                   self.dismissViewControllerAnimated(true, completion:nil)
                                                 else
-                                                  self.navigationController.popViewControllerAnimated(true)
+                                                  self.navigationController.popViewControllerAnimated(true)  
                                                 end
                                           end,
                                  failure: lambda do |operation, error|
@@ -161,6 +217,10 @@ class AppuntoFormViewController < UITableViewController
                                 failure: lambda do |operation, error|
                                                   App.alert error.localizedDescription
                                                 end)
+    end
+
+    def presentedAsModal?
+      self.presentedAsModal == true
     end
 
 end

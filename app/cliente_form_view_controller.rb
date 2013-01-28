@@ -114,7 +114,7 @@ class ClienteFormViewController < UITableViewController
                                                 cap_text_field.text = result.firstObject.cap || ""
                                               end,
                               failure: lambda do |operation, error|
-                                                App.delegate.alert error.localizedDescription
+                                                App.alert error.localizedDescription
                                               end)
   end
 

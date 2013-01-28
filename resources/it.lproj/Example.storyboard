@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aHZ-6V-EsO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aHZ-6V-EsO">
     <dependencies>
         <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
@@ -17,11 +17,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>citta</string>
-                                <string>nome</string>
-                                <string>tutto</string>
-                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="0Zr-W6-2x8" id="QUz-jF-Vey"/>
                             </connections>
@@ -509,7 +504,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="righeTableViewCell" textLabel="0vO-lr-wuH" detailTextLabel="YBl-9B-c3G" style="IBUITableViewCellStyleValue1" id="hql-gT-Ju3" customClass="RigaTableViewCell">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -532,23 +527,37 @@
                                     <segue destination="ZaO-ec-HMo" kind="push" identifier="editRiga" id="y0B-Or-TWU"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addRigaCell" textLabel="gPQ-RR-csY" style="IBUITableViewCellStyleDefault" id="Pga-Nb-95Y" customClass="RigaTableViewCell">
+                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Aggiungi riga" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gPQ-RR-csY">
+                                            <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="u2f-4p-SE8" kind="push" identifier="addRiga" id="lRI-zw-4QR"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="KDs-Cy-Dvq" id="pcD-0r-aAO"/>
                             <outlet property="delegate" destination="KDs-Cy-Dvq" id="KhX-Aj-xnb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="F7N-xc-eo1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fUL-Eb-t85">
-                            <connections>
-                                <segue destination="u2f-4p-SE8" kind="push" identifier="addRiga" id="u8v-8w-MJr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="F7N-xc-eo1"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kC0-BB-Cvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="1364"/>
+            <point key="canvasLocation" x="1387" y="240"/>
         </scene>
         <!--Libri Table View Controller-->
         <scene sceneID="dsK-dS-uh3">
@@ -593,28 +602,17 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="u2f-4p-SE8" id="D8x-PT-s3z"/>
                             <outlet property="delegate" destination="u2f-4p-SE8" id="5GR-BG-PKM"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="roU-xD-rtJ"/>
                     <connections>
                         <outlet property="searchBar" destination="EVl-Sh-Ikl" id="Hjo-GF-6fK"/>
-                        <outlet property="searchDisplayController" destination="kst-8p-6yE" id="8Ln-vc-Zdt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFu-HB-wol" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="kst-8p-6yE">
-                    <connections>
-                        <outlet property="delegate" destination="u2f-4p-SE8" id="W5W-zX-5Q8"/>
-                        <outlet property="searchBar" destination="EVl-Sh-Ikl" id="e2k-hB-xCd"/>
-                        <outlet property="searchContentsController" destination="u2f-4p-SE8" id="lFf-93-0XY"/>
-                        <outlet property="searchResultsDataSource" destination="u2f-4p-SE8" id="fAn-OM-ffb"/>
-                        <outlet property="searchResultsDelegate" destination="u2f-4p-SE8" id="WOj-d4-HOf"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1397" y="1703"/>
+            <point key="canvasLocation" x="1754" y="700"/>
         </scene>
         <!--Riga Form View Controller-->
         <scene sceneID="Nsg-sJ-fjm">
@@ -1156,7 +1154,7 @@
                             </tableViewSection>
                             <tableViewSection id="6Oc-5f-EVZ">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Gge-Nt-06B" detailTextLabel="FrR-b3-iBF" style="IBUITableViewCellStyleValue1" id="nQf-fe-Mex">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Gge-Nt-06B" detailTextLabel="FrR-b3-iBF" style="IBUITableViewCellStyleValue1" id="nQf-fe-Mex" customClass="RigaTableViewCell">
                                         <rect key="frame" x="0.0" y="261" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1208,7 +1206,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9F-eK-054" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="112"/>
+            <point key="canvasLocation" x="433" y="-20"/>
         </scene>
         <!--AppuntiTV-->
         <scene sceneID="0gD-7w-F82">
@@ -1222,10 +1220,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="6ig-9A-ven" id="Ur7-fU-o63"/>
                             </connections>
@@ -1246,8 +1240,8 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NOME CLIENTE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3We-eY-bwq">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="168" id="D4Y-IK-R8W"/>
                                                 <constraint firstAttribute="height" constant="21" id="S98-Vj-sL9"/>
+                                                <constraint firstAttribute="width" constant="240" id="x7r-de-fKS"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1256,7 +1250,6 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1 AB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od3-qv-JRO">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="n6n-m0-sDo"/>
-                                                <constraint firstAttribute="width" constant="232" id="tEo-Ns-83D"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1268,8 +1261,8 @@
                                                 <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                                             </accessibility>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="246" id="Aw4-rd-SX1"/>
                                                 <constraint firstAttribute="height" constant="39" id="GJZ-SJ-lfM"/>
-                                                <constraint firstAttribute="width" constant="231" id="ssf-1H-a3d"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1284,10 +1277,11 @@
                                     <constraint firstItem="2rr-Jr-hLm" firstAttribute="leading" secondItem="Vba-zz-IgD" secondAttribute="leading" constant="42" id="4nr-lX-QVS"/>
                                     <constraint firstItem="jem-WA-VaN" firstAttribute="leading" secondItem="Vba-zz-IgD" secondAttribute="leading" constant="9" id="8Pg-mN-XSh"/>
                                     <constraint firstItem="3We-eY-bwq" firstAttribute="top" secondItem="Vba-zz-IgD" secondAttribute="top" constant="8" id="P4g-LR-xEL"/>
+                                    <constraint firstItem="2rr-Jr-hLm" firstAttribute="trailing" secondItem="od3-qv-JRO" secondAttribute="trailing" type="default" id="ieC-h4-bRz"/>
                                     <constraint firstItem="od3-qv-JRO" firstAttribute="top" secondItem="Vba-zz-IgD" secondAttribute="top" constant="30" id="lqw-F6-ZUT"/>
+                                    <constraint firstItem="od3-qv-JRO" firstAttribute="trailing" secondItem="3We-eY-bwq" secondAttribute="trailing" type="default" id="wF6-Me-qE2"/>
                                     <constraint firstItem="jem-WA-VaN" firstAttribute="centerY" secondItem="Vba-zz-IgD" secondAttribute="centerY" type="default" id="yYu-3H-nnv"/>
                                     <constraint firstItem="od3-qv-JRO" firstAttribute="leading" secondItem="3We-eY-bwq" secondAttribute="leading" type="default" id="ydy-FF-nGn"/>
-                                    <constraint firstItem="3We-eY-bwq" firstAttribute="leading" secondItem="Vba-zz-IgD" secondAttribute="leading" constant="48" id="zgL-hD-bEq"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="clienteLabel" destination="3We-eY-bwq" id="a42-2z-w1F"/>
@@ -1465,7 +1459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wr-NL-WCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="-432"/>
+            <point key="canvasLocation" x="983" y="-560"/>
         </scene>
         <!--Text Edit View Controller - Note-->
         <scene sceneID="Gsp-wQ-Wp5">
@@ -1515,7 +1509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K65-mh-gNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="112"/>
+            <point key="canvasLocation" x="983" y="808"/>
         </scene>
         <!--Edit Stato View Controller-->
         <scene sceneID="hpu-Ji-8z1">
@@ -1561,7 +1555,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYG-xe-zJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="679"/>
+            <point key="canvasLocation" x="975" y="112"/>
         </scene>
         <!--Test Modal Picker View-->
         <scene sceneID="yyI-aD-J0W">
@@ -1841,8 +1835,17 @@
                 <relationship kind="outlet" name="editQuantita"/>
             </relationships>
         </class>
+        <class className="RigaTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RigaTableViewCell.h"/>
+        </class>
         <class className="RigheTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RigheTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="delete_riga:"/>
+                <relationship kind="action" name="numberOfSectionsInTableView:"/>
+                <relationship kind="action" name="viewDidLoad"/>
+                <relationship kind="action" name="viewWillAppear:"/>
+            </relationships>
         </class>
         <class className="TestModalPickerView" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TestModalPickerView.h"/>
@@ -1874,8 +1877,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="y0B-Or-TWU"/>
         <segue reference="lDd-N5-MQ9"/>
         <segue reference="bLA-y0-CF2"/>
+        <segue reference="aWN-Ul-pvd"/>
     </inferredMetricsTieBreakers>
 </document>
