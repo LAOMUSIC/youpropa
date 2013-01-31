@@ -1240,8 +1240,8 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="NOME CLIENTE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3We-eY-bwq">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="S98-Vj-sL9"/>
-                                                <constraint firstAttribute="width" constant="240" id="x7r-de-fKS"/>
+                                                <constraint firstAttribute="width" constant="185" id="PWk-pl-g9l"/>
+                                                <constraint firstAttribute="height" constant="21" id="wYC-vP-LsU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1249,6 +1249,7 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1 AB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od3-qv-JRO">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="Gwn-Z1-VsK"/>
                                                 <constraint firstAttribute="height" constant="21" id="n6n-m0-sDo"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -1264,11 +1265,19 @@
                                                 <constraint firstAttribute="width" constant="246" id="Aw4-rd-SX1"/>
                                                 <constraint firstAttribute="height" constant="39" id="GJZ-SJ-lfM"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30 mag" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-iu-uym">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="L9m-h7-44w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -1276,10 +1285,12 @@
                                     <constraint firstItem="2rr-Jr-hLm" firstAttribute="top" secondItem="Vba-zz-IgD" secondAttribute="top" constant="47" id="1jK-0A-L5S"/>
                                     <constraint firstItem="2rr-Jr-hLm" firstAttribute="leading" secondItem="Vba-zz-IgD" secondAttribute="leading" constant="42" id="4nr-lX-QVS"/>
                                     <constraint firstItem="jem-WA-VaN" firstAttribute="leading" secondItem="Vba-zz-IgD" secondAttribute="leading" constant="9" id="8Pg-mN-XSh"/>
+                                    <constraint firstItem="0Ka-iu-uym" firstAttribute="bottom" secondItem="3We-eY-bwq" secondAttribute="bottom" type="default" id="Lqs-gf-NOM"/>
                                     <constraint firstItem="3We-eY-bwq" firstAttribute="top" secondItem="Vba-zz-IgD" secondAttribute="top" constant="8" id="P4g-LR-xEL"/>
+                                    <constraint firstItem="0Ka-iu-uym" firstAttribute="top" secondItem="3We-eY-bwq" secondAttribute="top" type="default" id="Yk0-b5-Rz8"/>
                                     <constraint firstItem="2rr-Jr-hLm" firstAttribute="trailing" secondItem="od3-qv-JRO" secondAttribute="trailing" type="default" id="ieC-h4-bRz"/>
                                     <constraint firstItem="od3-qv-JRO" firstAttribute="top" secondItem="Vba-zz-IgD" secondAttribute="top" constant="30" id="lqw-F6-ZUT"/>
-                                    <constraint firstItem="od3-qv-JRO" firstAttribute="trailing" secondItem="3We-eY-bwq" secondAttribute="trailing" type="default" id="wF6-Me-qE2"/>
+                                    <constraint firstItem="0Ka-iu-uym" firstAttribute="trailing" secondItem="od3-qv-JRO" secondAttribute="trailing" type="default" id="nWm-pC-e3o"/>
                                     <constraint firstItem="jem-WA-VaN" firstAttribute="centerY" secondItem="Vba-zz-IgD" secondAttribute="centerY" type="default" id="yYu-3H-nnv"/>
                                     <constraint firstItem="od3-qv-JRO" firstAttribute="leading" secondItem="3We-eY-bwq" secondAttribute="leading" type="default" id="ydy-FF-nGn"/>
                                 </constraints>
@@ -1720,6 +1731,7 @@
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="viewDidLoad"/>
                 <relationship kind="action" name="viewWillAppear:"/>
+                <relationship kind="outlet" name="appuntiTableView"/>
                 <relationship kind="outlet" name="callButton"/>
                 <relationship kind="outlet" name="cittaLabel"/>
                 <relationship kind="outlet" name="emailButton"/>
@@ -1797,17 +1809,8 @@
         <class className="LibriTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LibriTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doneReloadingTableViewData"/>
                 <relationship kind="action" name="filterLibriForTerm:"/>
                 <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
-                <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reloadTableViewDataSource"/>
-                <relationship kind="action" name="scrollViewDidScroll:"/>
-                <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
-                <relationship kind="action" name="setupPullToRefresh"/>
-                <relationship kind="action" name="setupSearchBar"/>
                 <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
                 <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="action" name="viewDidLoad"/>

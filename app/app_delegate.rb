@@ -163,6 +163,7 @@ class AppDelegate
                                                  telefono: "telefono",
                                                  cliente_id: "cliente_id",
                                                  created_at: "created_at",
+                                                 updated_at: "updated_at",
                                                  totale_copie: "totale_copie",
                                                  totale_importo: "totale_importo",
                                                  cliente_nome: "cliente_nome"

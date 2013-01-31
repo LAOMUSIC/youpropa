@@ -1,6 +1,6 @@
 class Appunto
   
-  PROPERTIES = [:remote_id, :destinatario, :cliente_nome, :cliente_id, :note, :status, :created_at, :telefono, :email, :totale_copie, :totale_importo, :righe]
+  PROPERTIES = [:remote_id, :destinatario, :cliente_nome, :cliente_id, :note, :status, :created_at, :updated_at, :telefono, :email, :totale_copie, :totale_importo, :righe]
   
   PROPERTIES.each { |prop|
     attr_accessor prop

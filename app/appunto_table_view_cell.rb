@@ -1,6 +1,5 @@
 class AppuntoTableViewCell < UITableViewCell
   
-
   extend IB
 
   outlet :clienteLabel
@@ -54,4 +53,5 @@ class AppuntoTableViewCell < UITableViewCell
     noteTextLabelFrame.size.height = self.class.heightForCellWithAppunto(self.appunto) - 55
     self.noteText.frame = noteTextLabelFrame
   end
+
 end

@@ -1,6 +1,7 @@
 
 PODS:
 - AFNetworking (1.0)
+- CustomBadge (2.0)
 - NVUIGradientButton (1.2.2)
 - RestKit (0.20.0b1):
   - RestKit/Core (= 0.20.0b1)
@@ -19,6 +20,7 @@ PODS:
 - SOCKit (1.0)
 
 DEPENDENCIES:
+- CustomBadge
 - NVUIGradientButton
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
 
@@ -29,6 +31,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 204f4b3d3a3ea7b38737c3fbf2646ba8c9719eea
+  CustomBadge: 07ca87331a9644bc355963ff47c9d1b1f2516acf
   NVUIGradientButton: 504e478e4d98dff1371c5713a29236b3ff221b2c
   RestKit: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
   RestKit/Core: fc06f864e3e40551e1f14b209fc72a0bd5fd105a

@@ -18,6 +18,12 @@ class AppuntiTableViewController < UITableViewController
 
     setupPullToRefresh
     setupSearchBar
+
+    self.tableView.registerClass(AppuntoCell, forCellReuseIdentifier:"appuntoCell")
+
+    # non va non capisco
+    #self.tableView.registerClass(AppuntoTableViewCell, forCellReuseIdentifier:"appuntoTableViewCell")
+
   end
 
   def viewDidAppear(animated)
@@ -104,22 +110,34 @@ class AppuntiTableViewController < UITableViewController
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
 
-    cell = self.tableView.dequeueReusableCellWithIdentifier("appuntoTableViewCell")
-    cell ||= AppuntoTableViewCell.alloc.initWithStyle(UITableViewCellStyleCustom,
-                                            reuseIdentifier:"appuntoTableViewCell")
+    cell = self.tableView.dequeueReusableCellWithIdentifier("appuntoCell")
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
+
+    # senza regiterClass in init per altro sistemare altezza
+    # cell = tableView.dequeueReusableCellWithIdentifier("appuntoTableViewCell")
+    # cell ||= AppuntoTableViewCell.alloc.initWithStyle(UITableViewCellStyleCustom,
+    #                                           reuseIdentifier:"appuntoTableViewCell")
 
     if (tableView == self.tableView)
       cell.appunto = @appunti[indexPath.row]
     else
       cell.appunto = @searchResults[indexPath.row]
     end
-    puts "cellForRowAtIndexPath #{indexPath.row}"
     cell
   end
 
   def tableView(tableView, heightForRowAtIndexPath:indexPath)
-    puts "heightForRowAtIndexPath #{indexPath.row}"
-    AppuntoTableViewCell.heightForCellWithAppunto(@appunti[indexPath.row])
+    95
+    #AppuntoTableViewCell.heightForCellWithAppunto(@appunti[indexPath.row])
+  end
+
+  def tableView(tableView, didSelectRowAtIndexPath:indexPath)
+    cell = tableView.cellForRowAtIndexPath(indexPath)
+    if Device.ipad?
+      self.performSegueWithIdentifier("modalAppunto", sender:cell )
+    else
+      self.performSegueWithIdentifier("displayAppunto", sender:cell )
+    end
   end
 
   def tableView(tableView, commitEditingStyle:editing_style, forRowAtIndexPath:indexPath)

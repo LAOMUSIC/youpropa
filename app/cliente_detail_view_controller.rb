@@ -28,6 +28,9 @@ class ClienteDetailViewController < UIViewController
     self.emailButton.text  = "Email"
     self.callButton.text   = "Chiama"
 
+    if Device.ipad?
+      self.appuntiTableView.registerClass( ClienteAppuntoCell, forCellWithReuseIdentifier:"clienteAppuntoCell")
+    end
   end
 
   def viewWillAppear(animated)
@@ -88,6 +91,28 @@ class ClienteDetailViewController < UIViewController
   end  
 
 
+  def numberOfSectionsInCollectionView(collectionView)
+    3
+  end
+
+
+  def collectionView(collectionView, numberOfItemsInSection:section)
+    case section
+    when 0
+      return 5
+    when 1
+      return 20
+    when 2
+      return 35
+    end
+  end
+
+  def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
+    cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
+                                                                       forIndexPath:indexPath)
+    cell.setNumber indexPath.row
+    cell
+  end
 
   # splitView delegates
 
