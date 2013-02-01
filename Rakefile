@@ -21,6 +21,7 @@ Motion::Project::App.setup do |app|
   app.frameworks << 'CoreData'
   app.pods do
     pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git', branch: 'development'
+    pod 'SVProgressHUD'
     pod 'NVUIGradientButton'
     pod 'CustomBadge'
   end

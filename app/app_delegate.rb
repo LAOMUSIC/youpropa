@@ -81,6 +81,12 @@ class AppDelegate
   def init_restkit
     url = NSURL.URLWithString(BASE_URL)
     self.backend = RKObjectManager.managerWithBaseURL(url)
+    
+    ## si carica ma non mappa    
+    formatter = NSDateFormatter.new
+    formatter.setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
+    RKObjectMapping.addDefaultDateFormatter(formatter)
+
   end
 
 

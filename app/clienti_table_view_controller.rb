@@ -50,15 +50,17 @@ class ClientiTableViewController < UITableViewController
   end
 
   def loadFromBackend
+    SVProgressHUD.show
     App.delegate.backend.getObjectsAtPath("api/v1/clienti",
                                 parameters: nil,
                                 success: lambda do |operation, result|
                                                   @clienti = result.array
                                                   tableView.reloadData
                                                   doneReloadingTableViewData
+                                                  SVProgressHUD.dismiss
                                                 end,
                                 failure: lambda do |operation, error|
-                                                  puts error.localizedDescription
+                                                  SVProgressHUD.showErrorWithStatus("#{error.localizedDescription}")
                                                 end)
   end
 

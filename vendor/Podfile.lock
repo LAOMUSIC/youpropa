@@ -18,11 +18,13 @@ PODS:
 - RestKit/ObjectMapping (0.20.0b1)
 - RestKit/Support (0.20.0b1)
 - SOCKit (1.0)
+- SVProgressHUD (0.9)
 
 DEPENDENCIES:
 - CustomBadge
 - NVUIGradientButton
 - RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
+- SVProgressHUD
 
 EXTERNAL SOURCES:
   RestKit:
@@ -40,5 +42,6 @@ SPEC CHECKSUMS:
   RestKit/ObjectMapping: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
   RestKit/Support: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
   SOCKit: 9d71b00c699cf5aa2989d6aa12f3392b048123db
+  SVProgressHUD: 98935fbafaf0031df4a9cafca3c66eaf3da06967
 
 COCOAPODS: 0.16.0

@@ -4,10 +4,6 @@ class AppuntoCell < UITableViewCell
 
   def initWithStyle(style, reuseIdentifier:reuseIdentifier)
     super
-
-    @formatter = NSDateFormatter.alloc.init
-    @formatter.setLocale(NSLocale.alloc.initWithLocaleIdentifier("it_IT"))
-
     setupBackground
     addStatusImage
     addClienteLabel
@@ -25,19 +21,13 @@ class AppuntoCell < UITableViewCell
       @destinatarioLabel.text = "#{@appunto.destinatario}"
       @noteLabel.text = "#{@appunto.note}"
       @statusImage.setImage UIImage.imageNamed("task-#{@appunto.status}")
-
-      
-
       if @appunto.totale_copie == 0
         @customBadge.hidden = true
       else
         @customBadge.hidden = false
         @customBadge.autoBadgeSizeWithString("#{@appunto.totale_copie}")
       end
-
-      puts @appunto.totale_copie
-      
-      @dataLabel.text = to_short_format(@appunto.created_at)
+      @dataLabel.text = format_date(@appunto.created_at)
       self.setNeedsLayout
     end
     @appunto
@@ -65,11 +55,13 @@ class AppuntoCell < UITableViewCell
 
   private
 
-    def to_short_format(date_str)
-      @formatter.setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
-      date = @formatter.dateFromString(date_str)
-      @formatter.setDateFormat("d MMM")
-      date_str = @formatter.stringFromDate(date)
+    def format_date(date_str)
+      formatter = NSDateFormatter.alloc.init
+      formatter.setLocale(NSLocale.alloc.initWithLocaleIdentifier("it_IT"))
+      formatter.setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
+      date = formatter.dateFromString(date_str)
+      formatter.setDateFormat("d MMM")
+      date_str = formatter.stringFromDate(date)
       date_str
     end
 
@@ -94,7 +86,7 @@ class AppuntoCell < UITableViewCell
     def addClienteLabel
       @clienteLabel = UILabel.alloc.init
       @clienteLabel.font         = UIFont.boldSystemFontOfSize(16)
-      @clienteLabel.textColor    = UIColor.colorWithWhite(0.45, alpha:1.0)
+      @clienteLabel.textColor    = UIColor.colorWithWhite(0.35, alpha:1.0)
       @clienteLabel.shadowColor  = UIColor.whiteColor
       @clienteLabel.shadowOffset = CGSizeMake(0, 1)
       @clienteLabel.backgroundColor = UIColor.clearColor
