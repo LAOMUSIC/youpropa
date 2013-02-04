@@ -30,6 +30,27 @@ class ClienteDetailViewController < UIViewController
 
     if Device.ipad?
       self.appuntiTableView.registerClass( ClienteAppuntoCell, forCellWithReuseIdentifier:"clienteAppuntoCell")
+
+      self.appuntiTableView.registerClass(UICollectionReusableView, 
+           forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, 
+                  withReuseIdentifier: "headerDaFare")
+
+      self.appuntiTableView.collectionViewLayout = LineLayout.alloc.init
+    end
+  end
+
+  def load_appunti
+    puts "loadAppunti"
+    if @cliente && !@cliente.remote_id.blank?
+      App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
+                              success: lambda do |operation, result|
+                                                @cliente.appunti = result.firstObject.appunti
+                                                self.appuntiTableView.reloadData
+                                              end,
+                              failure: lambda do |operation, error|
+                                                puts error
+                                                #App.delegate.alert error.localizedDescription
+                                              end)
     end
   end
 
@@ -56,6 +77,11 @@ class ClienteDetailViewController < UIViewController
       #emailButton.alpha = 0.5
     end
 
+    if Device.ipad?
+      load_appunti
+    end
+
+
     if self.popoverViewController
       self.popoverViewController.dismissPopoverAnimated(true)
     end  
@@ -63,11 +89,20 @@ class ClienteDetailViewController < UIViewController
 
   def prepareForSegue(segue, sender:sender)
     if segue.identifier.isEqualToString("showForm")
-      segue.destinationViewController.cliente_id = @cliente.remote_id
+      segue.destinationViewController.remote_cliente_id = @cliente.remote_id
     end
+    
     if segue.identifier.isEqualToString("nuovoAppunto")
       if Device.ipad?
         segue.destinationViewController.visibleViewController.presentedAsModal = true
+        segue.destinationViewController.visibleViewController.setSaveBlock( lambda do
+          self.load_appunti
+        end)
+
+        if sender.class == Appunto
+          segue.destinationViewController.visibleViewController.appunto = sender
+        end
+
         segue.destinationViewController.visibleViewController.cliente = @cliente
       else
         segue.destinationViewController.cliente = @cliente
@@ -92,14 +127,18 @@ class ClienteDetailViewController < UIViewController
 
 
   def numberOfSectionsInCollectionView(collectionView)
-    3
+    1
   end
 
 
   def collectionView(collectionView, numberOfItemsInSection:section)
     case section
     when 0
-      return 5
+      if @cliente && @cliente.appunti
+        @cliente.appunti.count
+      else
+        0
+      end
     when 1
       return 20
     when 2
@@ -108,11 +147,33 @@ class ClienteDetailViewController < UIViewController
   end
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
-    cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
+    
+    if indexPath.section == 0
+      cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
                                                                        forIndexPath:indexPath)
-    cell.setNumber indexPath.row
+      cell.appunto =  @cliente.appunti[indexPath.row]
+    end
     cell
   end
+
+  def collectionView(collectionView, viewForSupplementaryElementOfKind:kind, atIndexPath:indexPath)
+
+    if kind == UICollectionElementKindSectionHeader
+      return collectionView.dequeueReusableSupplementaryViewOfKind(kind, 
+                                                      withReuseIdentifier:"headerDaFare", 
+                                                             forIndexPath:indexPath)
+    end
+
+  end
+
+  def collectionView(collectionView, didSelectItemAtIndexPath:indexPath)
+    
+    appunto = @cliente.appunti[indexPath.row]
+
+    self.performSegueWithIdentifier("nuovoAppunto", sender:appunto)
+
+  end
+
 
   # splitView delegates
 

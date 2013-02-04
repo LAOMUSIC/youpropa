@@ -12,10 +12,6 @@ class LibriTableViewController < UITableViewController
     @libri = []
     @searchResults = []
     view.dataSource = view.delegate = self
-    if Device.ipad?
-      self.detailViewController = self.splitViewController.viewControllers.lastObject.topViewController
-    end
-    true
   end
 
   def viewDidAppear(animated)

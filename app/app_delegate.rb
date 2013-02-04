@@ -2,7 +2,7 @@ include SugarCube::Adjust
 
 class AppDelegate
 
-  BASE_URL = "http://todopropa.com"
+  BASE_URL = "http://youpropa.com"
   #BASE_URL = "http://localhost:3000"
 
   USERNAME = 'paolotax'
@@ -82,7 +82,7 @@ class AppDelegate
     url = NSURL.URLWithString(BASE_URL)
     self.backend = RKObjectManager.managerWithBaseURL(url)
     
-    ## si carica ma non mappa    
+    ## si carica ma mappa le date in stringhe   
     formatter = NSDateFormatter.new
     formatter.setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
     RKObjectMapping.addDefaultDateFormatter(formatter)
@@ -153,8 +153,8 @@ class AppDelegate
                                                  latitude: "latitude",
                                                  longitude: "longitude"
                                                  )
-      # mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
-      #                               toKeyPath:"appunti", withMapping:appunto_mapping))
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
+                                     toKeyPath:"appunti", withMapping:appunto_mapping))
     end
   end
 
@@ -167,7 +167,7 @@ class AppDelegate
                                                  note: "note",
                                                  status: "status",
                                                  telefono: "telefono",
-                                                 cliente_id: "cliente_id",
+                                                 cliente_id: "remote_cliente_id",
                                                  created_at: "created_at",
                                                  updated_at: "updated_at",
                                                  totale_copie: "totale_copie",
@@ -214,7 +214,7 @@ class AppDelegate
                                                  note: "note",
                                                  status: "status",
                                                  telefono: "telefono",
-                                                 cliente_id: "cliente_id")
+                                                 remote_cliente_id: "cliente_id")
     end
   end
 
@@ -248,6 +248,7 @@ class AppDelegate
     post_route = RKRoute.routeWithClass(klass, 
                                         pathPattern: collection_path,
                                         method: RKRequestMethodPOST)
+    
     backend.router.routeSet.addRoute(get_route)
     backend.router.routeSet.addRoute(put_route)
     backend.router.routeSet.addRoute(delete_route)

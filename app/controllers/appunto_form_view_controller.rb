@@ -1,6 +1,6 @@
 class AppuntoFormViewController < UITableViewController
 
-  attr_accessor :appunto, :cliente, :presentedAsModal
+  attr_accessor :appunto, :cliente, :presentedAsModal, :saveBlock
 
   def viewDidLoad
     true
@@ -11,16 +11,16 @@ class AppuntoFormViewController < UITableViewController
     
     unless @appunto 
       @appunto = Appunto.new(status: "da fare", righe: [])
-      self.navigationItem.setLeftBarButtonItem(UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCancel, target:self, action:"cancel:"))
-
     end
-    
+
     if @cliente
-      @appunto.cliente_id = @cliente.remote_id
+      @appunto.remote_cliente_id = @cliente.remote_id
       @appunto.cliente_nome = @cliente.nome
     end
-    
-    puts @appunto.cliente_id
+
+    if presentedAsModal?
+      self.navigationItem.setLeftBarButtonItem(UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCancel, target:self, action:"cancel:"))
+    end
 
     load_appunto
   end
@@ -140,11 +140,12 @@ class AppuntoFormViewController < UITableViewController
   def prepareForShowClienteSegue(segue, sender:sender)
     editController = segue.destinationViewController
     unless @cliente
-      @cliente = Cliente.new(remote_id: @appunto.cliente_id)
+      @cliente = Cliente.new(remote_id: @appunto.remote_cliente_id)
     end
     App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
-                                                puts result.firstObject
+                                                puts result.firstObject.appunti
+
                                                 editController.visibleViewController.cliente = result.firstObject
                                                 editController.visibleViewController.load_cliente
                                               end,
@@ -193,6 +194,7 @@ class AppuntoFormViewController < UITableViewController
       App.delegate.backend.postObject(@appunto, path:nil, parameters:nil,
                                  success: lambda do |operation, result|
                                                 if Device.ipad? && presentedAsModal?
+                                                  @saveBlock.call
                                                   self.dismissViewControllerAnimated(true, completion:nil)
                                                 else
                                                   self.navigationController.popViewControllerAnimated(true)  

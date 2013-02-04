@@ -4,7 +4,7 @@ class ClienteFormViewController < UITableViewController
 
   extend IB
 
-  attr_accessor :cliente_id
+  attr_accessor :remote_cliente_id
 
   outlet :saveItem
   outlet :nome_text_field
@@ -21,7 +21,7 @@ class ClienteFormViewController < UITableViewController
 
   def viewWillAppear(animated)
     super true
-    load_cliente if cliente_id
+    load_cliente if remote_cliente_id
   end
 
   def pickClienteTipo
@@ -102,7 +102,7 @@ class ClienteFormViewController < UITableViewController
   private
 
   def load_cliente
-    @cliente = Cliente.new(remote_id: cliente_id)
+    @cliente = Cliente.new(remote_id: remote_cliente_id)
     App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
                                                 cliente_nome = result.firstObject.nome 

@@ -1,12 +1,12 @@
 class ClienteViewController < UIViewController
   extend IB
 
-  attr_accessor :cliente_id
+  attr_accessor :remote_cliente_id
   outlet :name_text_field
 
   def viewDidLoad
     @cliente = Cliente.new
-    load_cliente if cliente_id
+    load_cliente if remote_cliente_id
     true
   end
 
@@ -17,7 +17,7 @@ class ClienteViewController < UIViewController
   # end
 
   # def viewWillAppear(animated)
-  #   #load_cliente if cliente_id
+  #   #load_cliente if remote_cliente_id
   # end
 
   def textFieldShouldReturn(field)
@@ -47,7 +47,7 @@ class ClienteViewController < UIViewController
   private
 
   def load_cliente
-    @cliente = Cliente.new(remote_id: cliente_id)
+    @cliente = Cliente.new(remote_id: remote_cliente_id)
     App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
                                                 cliente_nome = result.firstObject.nome

@@ -57,7 +57,7 @@ class AppuntiTableViewController < UITableViewController
       appunto = self.tableView.cellForRowAtIndexPath(indexPath).appunto
     end
     
-    puts "cliente_id #{appunto.cliente_id} appunto_id #{appunto.remote_id}"
+    puts "cliente_id #{appunto.remote_cliente_id} appunto_id #{appunto.remote_id}"
 
     if segue.identifier.isEqualToString("displayAppunto")
       segue.destinationViewController.appunto = appunto

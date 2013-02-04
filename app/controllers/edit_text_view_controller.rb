@@ -1,4 +1,4 @@
-class TextEditViewController < UIViewController
+class EditTextViewController < UIViewController
 
   extend IB
 
