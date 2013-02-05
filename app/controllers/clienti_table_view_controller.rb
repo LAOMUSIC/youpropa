@@ -79,6 +79,7 @@ class ClientiTableViewController < UITableViewController
       
       if Device.ipad?
         segue.destinationViewController.visibleViewController.cliente = cliente
+        puts "segue"
       else
         segue.destinationViewController.cliente = cliente
       end  

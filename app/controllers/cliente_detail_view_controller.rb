@@ -40,12 +40,20 @@ class ClienteDetailViewController < UIViewController
   end
 
   def load_appunti
-    puts "loadAppunti"
+    
+    RKObjectManager.sharedManager.cancelAllObjectRequestOperationsWithMethod(RKRequestMethodGET, matchingPathPattern:"api/v1/clienti/:remote_id")
+    
+    SVProgressHUD.show
+    
     if @cliente && !@cliente.remote_id.blank?
       App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
-                                                @cliente.appunti = result.firstObject.appunti
-                                                self.appuntiTableView.reloadData
+                                                
+                                                if @cliente && !result.firstObject.appunti.empty?
+                                                  @cliente.appunti = result.firstObject.appunti
+                                                  self.appuntiTableView.reloadData
+                                                end
+                                                SVProgressHUD.dismiss
                                               end,
                               failure: lambda do |operation, error|
                                                 puts error

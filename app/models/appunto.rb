@@ -20,6 +20,10 @@ class Appunto
     righe.inject(0)  { |result, element| result + element.quantita.to_i }
   end
 
+  def importo
+    "%.2f" % totale_importo
+  end
+  
   def new_record?
     remote_id.blank?
   end

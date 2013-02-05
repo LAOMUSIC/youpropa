@@ -144,8 +144,6 @@ class AppuntoFormViewController < UITableViewController
     end
     App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
-                                                puts result.firstObject.appunti
-
                                                 editController.visibleViewController.cliente = result.firstObject
                                                 editController.visibleViewController.load_cliente
                                               end,
@@ -153,7 +151,6 @@ class AppuntoFormViewController < UITableViewController
                                                 puts error
                                                 #App.delegate.alert error.localizedDescription
                                               end)
-    
   end
 
   def prepareForSegue(segue, sender:sender)
