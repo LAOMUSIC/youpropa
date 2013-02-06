@@ -1,14 +1,13 @@
 class Appunto
   
-  PROPERTIES = [:remote_id, :destinatario, :cliente_nome, :note, :status, :created_at, :updated_at, :telefono, :email, :totale_copie, :totale_importo, :righe, :remote_cliente_id]
+  PROPERTIES = [:remote_id, :destinatario, :cliente_nome, :note, :status, :created_at, :updated_at, :telefono, :email, :totale_copie, :totale_importo, :remote_cliente_id, :righe]
   
   PROPERTIES.each { |prop|
     attr_accessor prop
   }
   
   def initialize(attributes = {})
-    righe = []
-
+    righe  = []
     attributes.each { |key, value|
       if PROPERTIES.member? key.to_sym
         self.send((key.to_s + "=").to_s, value)

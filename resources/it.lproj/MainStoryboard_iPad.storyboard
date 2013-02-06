@@ -318,6 +318,9 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WIo-HT-56A">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="Dos-Mw-yOH"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rhD-Em-Bee">
                                     <size key="itemSize" width="200" height="100"/>
                                     <size key="headerReferenceSize" width="50" height="31"/>
@@ -353,27 +356,47 @@
                                     <outlet property="delegate" destination="mIp-eZ-aPr" id="1OG-R8-Qrv"/>
                                 </connections>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Uy4-oN-SR6">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="ygm-mS-FWp"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="90g-Wa-V5c">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mIp-eZ-aPr" id="yzH-qd-dAc"/>
+                                    <outlet property="delegate" destination="mIp-eZ-aPr" id="EUf-Uc-eKD"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Gy2-yG-n8X" firstAttribute="leading" secondItem="frx-Q3-J2G" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0KB-6P-Wsw"/>
                             <constraint firstItem="WIo-HT-56A" firstAttribute="bottom" secondItem="frx-Q3-J2G" secondAttribute="bottom" type="default" id="8Fb-qb-Ira"/>
-                            <constraint firstItem="La2-1v-aq5" firstAttribute="top" secondItem="nPz-3N-NN4" secondAttribute="top" type="default" id="E1G-dV-UyV"/>
-                            <constraint firstItem="nPz-3N-NN4" firstAttribute="top" secondItem="Pql-pI-RU8" secondAttribute="top" type="default" id="H5p-rw-Uhc"/>
-                            <constraint firstItem="Pql-pI-RU8" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="250" id="Jkl-bn-weN"/>
-                            <constraint firstItem="Gy2-yG-n8X" firstAttribute="top" secondItem="jfV-aA-1AO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Opp-3Q-djv"/>
-                            <constraint firstItem="nPz-3N-NN4" firstAttribute="centerX" secondItem="WIo-HT-56A" secondAttribute="centerX" type="default" id="Q1M-JR-JQ8"/>
-                            <constraint firstItem="C05-jJ-fvt" firstAttribute="top" secondItem="Gy2-yG-n8X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WRO-MR-SYj"/>
-                            <constraint firstItem="Ukm-6s-04S" firstAttribute="centerX" secondItem="C05-jJ-fvt" secondAttribute="centerX" type="default" id="ZaW-M1-sZK"/>
-                            <constraint firstItem="WIo-HT-56A" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="332" type="user" id="aE3-5W-wLO"/>
+                            <constraint firstItem="jfV-aA-1AO" firstAttribute="leading" secondItem="frx-Q3-J2G" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8ar-ym-fQi"/>
+                            <constraint firstItem="C05-jJ-fvt" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="90" id="AuF-c8-XfW"/>
+                            <constraint firstItem="C05-jJ-fvt" firstAttribute="leading" secondItem="frx-Q3-J2G" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EmL-hW-as3"/>
+                            <constraint firstItem="nPz-3N-NN4" firstAttribute="centerX" secondItem="Ukm-6s-04S" secondAttribute="centerX" type="default" id="Pls-KM-Iyb"/>
+                            <constraint firstItem="Pql-pI-RU8" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="176" id="Pq1-Dg-68C"/>
+                            <constraint firstItem="Gy2-yG-n8X" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="71" id="VYI-Vb-5ut"/>
                             <constraint firstItem="WIo-HT-56A" firstAttribute="trailing" secondItem="frx-Q3-J2G" secondAttribute="trailing" type="default" id="cF7-Mq-CMg"/>
-                            <constraint firstItem="Ukm-6s-04S" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="182" id="cG8-ZR-JzL"/>
-                            <constraint firstItem="Pql-pI-RU8" firstAttribute="leading" secondItem="Ukm-6s-04S" secondAttribute="leading" type="default" id="h0n-rV-d2c"/>
-                            <constraint firstItem="La2-1v-aq5" firstAttribute="trailing" secondItem="Ukm-6s-04S" secondAttribute="trailing" type="default" id="mPi-4h-Cgk"/>
-                            <constraint firstItem="C05-jJ-fvt" firstAttribute="centerX" secondItem="Gy2-yG-n8X" secondAttribute="centerX" type="default" id="mrl-v4-dvJ"/>
+                            <constraint firstItem="nPz-3N-NN4" firstAttribute="centerX" secondItem="Uy4-oN-SR6" secondAttribute="centerX" type="default" id="djd-zR-fRd"/>
+                            <constraint firstItem="WIo-HT-56A" firstAttribute="top" secondItem="Uy4-oN-SR6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="m5n-5C-aIi"/>
                             <constraint firstItem="WIo-HT-56A" firstAttribute="leading" secondItem="frx-Q3-J2G" secondAttribute="leading" type="default" id="o21-XO-mYe"/>
-                            <constraint firstItem="Gy2-yG-n8X" firstAttribute="centerX" secondItem="jfV-aA-1AO" secondAttribute="centerX" type="default" id="qQg-rY-Ljm"/>
-                            <constraint firstItem="jfV-aA-1AO" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="41" id="sIe-e5-ufc"/>
-                            <constraint firstItem="nPz-3N-NN4" firstAttribute="centerX" secondItem="Ukm-6s-04S" secondAttribute="centerX" type="default" id="xTN-jH-pIZ"/>
+                            <constraint firstItem="nPz-3N-NN4" firstAttribute="top" secondItem="Pql-pI-RU8" secondAttribute="top" type="default" id="oK4-IU-kMV"/>
+                            <constraint firstItem="Pql-pI-RU8" firstAttribute="leading" secondItem="Ukm-6s-04S" secondAttribute="leading" type="default" id="oo4-BZ-jVw"/>
+                            <constraint firstItem="Uy4-oN-SR6" firstAttribute="leading" secondItem="frx-Q3-J2G" secondAttribute="leading" type="default" id="qYN-un-pd8"/>
+                            <constraint firstItem="jfV-aA-1AO" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="43" id="tKj-h6-mnS"/>
+                            <constraint firstItem="La2-1v-aq5" firstAttribute="trailing" secondItem="Ukm-6s-04S" secondAttribute="trailing" type="default" id="y1k-rr-Pjy"/>
+                            <constraint firstItem="Ukm-6s-04S" firstAttribute="top" secondItem="frx-Q3-J2G" secondAttribute="top" constant="117" id="yvz-np-STb"/>
+                            <constraint firstItem="Uy4-oN-SR6" firstAttribute="trailing" secondItem="frx-Q3-J2G" secondAttribute="trailing" type="default" id="yyE-f2-ZHT"/>
+                            <constraint firstItem="nPz-3N-NN4" firstAttribute="top" secondItem="La2-1v-aq5" secondAttribute="top" type="default" id="zmC-dK-Lz7"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -385,6 +408,7 @@
                         <outlet property="appuntiTableView" destination="WIo-HT-56A" id="GqA-fj-l3j"/>
                         <outlet property="callButton" destination="La2-1v-aq5" id="rKc-UX-0Fw"/>
                         <outlet property="cittaLabel" destination="C05-jJ-fvt" id="6Xv-2G-Dt9"/>
+                        <outlet property="classiCollectionView" destination="Uy4-oN-SR6" id="112-Kf-44y"/>
                         <outlet property="emailButton" destination="nPz-3N-NN4" id="Geh-A4-j9t"/>
                         <outlet property="indirizzoLabel" destination="Gy2-yG-n8X" id="3w6-VZ-y6H"/>
                         <outlet property="navigaButton" destination="Pql-pI-RU8" id="dRR-qO-VEK"/>
@@ -1453,200 +1477,6 @@
             <point key="canvasLocation" x="3331" y="-376"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AppuntiTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntiTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="delete_appunto:"/>
-                <relationship kind="action" name="doneReloadingTableViewData"/>
-                <relationship kind="action" name="filterAppuntiForTerm:"/>
-                <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
-                <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reloadTableViewDataSource"/>
-                <relationship kind="action" name="scrollViewDidScroll:"/>
-                <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
-                <relationship kind="action" name="setupPullToRefresh"/>
-                <relationship kind="action" name="setupSearchBar"/>
-                <relationship kind="action" name="viewDidAppear:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="searchBar"/>
-            </relationships>
-        </class>
-        <class className="AppuntoFormViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntoFormViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="create_appunto"/>
-                <relationship kind="action" name="load_appunto"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="update_appunto"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-            </relationships>
-        </class>
-        <class className="AppuntoTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppuntoTableViewCell.h"/>
-            <relationships>
-                <relationship kind="action" name="layoutSubviews"/>
-                <relationship kind="outlet" name="clienteLabel"/>
-                <relationship kind="outlet" name="destinatarioLabel"/>
-                <relationship kind="outlet" name="noteText"/>
-                <relationship kind="outlet" name="statusImage"/>
-            </relationships>
-        </class>
-        <class className="ClienteCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClienteCell.h"/>
-        </class>
-        <class className="ClienteDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClienteDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="load_appunti"/>
-                <relationship kind="action" name="load_cliente"/>
-                <relationship kind="action" name="makeCall:"/>
-                <relationship kind="action" name="navigate:"/>
-                <relationship kind="action" name="numberOfSectionsInCollectionView:"/>
-                <relationship kind="action" name="sendEmail:"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="appuntiTableView"/>
-                <relationship kind="outlet" name="callButton"/>
-                <relationship kind="outlet" name="cittaLabel"/>
-                <relationship kind="outlet" name="emailButton"/>
-                <relationship kind="outlet" name="indirizzoLabel"/>
-                <relationship kind="outlet" name="navigaButton"/>
-                <relationship kind="outlet" name="nomeLabel"/>
-                <relationship kind="outlet" name="nuovoAppuntoButton"/>
-            </relationships>
-        </class>
-        <class className="ClientiTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClientiTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneReloadingTableViewData"/>
-                <relationship kind="action" name="filterClientiForTerm:"/>
-                <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceIsLoading:"/>
-                <relationship kind="action" name="refreshTableHeaderDataSourceLastUpdated:"/>
-                <relationship kind="action" name="refreshTableHeaderDidTriggerRefresh:"/>
-                <relationship kind="action" name="reloadTableViewDataSource"/>
-                <relationship kind="action" name="scrollViewDidScroll:"/>
-                <relationship kind="action" name="searchDisplayControllerDidEndSearch:"/>
-                <relationship kind="action" name="setupPullToRefresh"/>
-                <relationship kind="action" name="setupSearchBar"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="viewDidAppear:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="searchBar"/>
-            </relationships>
-        </class>
-        <class className="EditPrezzoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditPrezzoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="handleButtonDone"/>
-                <relationship kind="action" name="load_data"/>
-                <relationship kind="action" name="prezzi"/>
-                <relationship kind="action" name="sconti"/>
-                <relationship kind="action" name="showDoneButton:"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="editPrezzo"/>
-                <relationship kind="outlet" name="editSconto"/>
-            </relationships>
-        </class>
-        <class className="EditStatoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditStatoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="EditTextViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditTextViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="handleTextCompletion"/>
-                <relationship kind="action" name="textFieldShouldReturn:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="textField"/>
-                <relationship kind="outlet" name="textView"/>
-            </relationships>
-        </class>
-        <class className="LibriTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LibriTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="filterLibriForTerm:"/>
-                <relationship kind="action" name="loadFromBackend"/>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-                <relationship kind="action" name="viewDidAppear:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="searchBar"/>
-            </relationships>
-        </class>
-        <class className="LibroCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LibroCell.h"/>
-        </class>
-        <class className="MenuViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NVUIGradientButton" superclassName="UIControl">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NVUIGradientButton.h"/>
-        </class>
-        <class className="RigaFormViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RigaFormViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="create_riga"/>
-                <relationship kind="action" name="load_riga"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="update_riga"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-                <relationship kind="outlet" name="editPrezzo"/>
-                <relationship kind="outlet" name="editQuantita"/>
-            </relationships>
-        </class>
-        <class className="RigaTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RigaTableViewCell.h"/>
-        </class>
-        <class className="RigheTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RigheTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="delete_riga:"/>
-                <relationship kind="action" name="numberOfSectionsInTableView:"/>
-                <relationship kind="action" name="viewDidLoad"/>
-                <relationship kind="action" name="viewWillAppear:"/>
-            </relationships>
-        </class>
-        <class className="TAXSplitViewControllerRotating" superclassName="UISplitViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TAXSplitViewControllerRotating.h"/>
-            <relationships>
-                <relationship kind="action" name="shouldAutorotateToInterfaceOrientation:"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

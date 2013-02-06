@@ -2,8 +2,8 @@ include SugarCube::Adjust
 
 class AppDelegate
 
-  BASE_URL = "http://youpropa.com"
-  #BASE_URL = "http://localhost:3000"
+  #BASE_URL = "http://youpropa.com"
+  BASE_URL = "http://localhost:3000"
 
   USERNAME = 'paolotax'
   PASSWORD = 'sisboccia'
@@ -23,7 +23,7 @@ class AppDelegate
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     init_restkit
-    #debug_restkit
+    debug_restkit
     login
 
     add_response_mapping(libro_mapping, "libro")
@@ -34,6 +34,9 @@ class AppDelegate
 
     add_response_mapping(appunto_mapping, "appunto")
     add_response_mapping(appunto_mapping, "appunti")
+
+    add_response_mapping(classe_mapping, "classe")
+    add_response_mapping(classe_mapping, "classi")
 
     add_response_mapping(riga_mapping, "riga")
     add_response_mapping(riga_mapping, "righe")
@@ -155,7 +158,22 @@ class AppDelegate
                                                  )
       mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("appunti", 
                                      toKeyPath:"appunti", withMapping:appunto_mapping))
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("classi", 
+                                     toKeyPath:"classi", withMapping:classe_mapping))
     end
+  end
+
+  def classe_mapping
+    @classe_mapping ||= begin
+      
+      mapping = RKObjectMapping.mappingForClass(Classe)
+      mapping.addAttributeMappingsFromDictionary(id: "remote_id",
+                                                 classe: "classe",
+                                                 sezione: "sezione",
+                                                 nr_alunni: "nr_alunni",
+                                                 cliente_id: "remote_cliente_id",
+                                                 )
+    end 
   end
 
   def appunto_mapping

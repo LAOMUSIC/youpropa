@@ -13,6 +13,7 @@ class ClienteDetailViewController < UIViewController
   outlet :callButton
 
   outlet :appuntiTableView
+  outlet :classiCollectionView
 
   def viewDidLoad
     super
@@ -30,12 +31,16 @@ class ClienteDetailViewController < UIViewController
 
     if Device.ipad?
       self.appuntiTableView.registerClass( ClienteAppuntoCell, forCellWithReuseIdentifier:"clienteAppuntoCell")
-
       self.appuntiTableView.registerClass(UICollectionReusableView, 
            forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, 
                   withReuseIdentifier: "headerDaFare")
-
       self.appuntiTableView.collectionViewLayout = LineLayout.alloc.init
+
+      self.classiCollectionView.registerClass( ClasseItem, forCellWithReuseIdentifier:"classeItem")
+      # self.classiCollectionView.registerClass(UICollectionReusableView, 
+      #      forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, 
+      #             withReuseIdentifier: "headerDaFare")
+      # self.classiCollectionView.collectionViewLayout = LineLayout.alloc.init
     end
   end
 
@@ -48,11 +53,10 @@ class ClienteDetailViewController < UIViewController
     if @cliente && !@cliente.remote_id.blank?
       App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
                               success: lambda do |operation, result|
-                                                
-                                                if @cliente && !result.firstObject.appunti.empty?
-                                                  @cliente.appunti = result.firstObject.appunti
-                                                  self.appuntiTableView.reloadData
-                                                end
+                                                @cliente.appunti = result.firstObject.appunti
+                                                self.appuntiTableView.reloadData
+                                                @cliente.classi  = result.firstObject.classi
+                                                self.classiCollectionView.reloadData
                                                 SVProgressHUD.dismiss
                                               end,
                               failure: lambda do |operation, error|
@@ -134,52 +138,62 @@ class ClienteDetailViewController < UIViewController
   end  
 
 
-  def numberOfSectionsInCollectionView(collectionView)
-    1
-  end
-
-
   def collectionView(collectionView, numberOfItemsInSection:section)
-    case section
-    when 0
+    
+    if collectionView == self.appuntiTableView
       if @cliente && @cliente.appunti
         @cliente.appunti.count
       else
         0
       end
-    when 1
-      return 20
-    when 2
-      return 35
+    elsif collectionView == self.classiCollectionView
+      puts "mi vedi"
+      if @cliente && @cliente.classi
+        @cliente.classi.count
+      else
+        0
+      end      
     end
   end
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
     
-    if indexPath.section == 0
-      cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
-                                                                       forIndexPath:indexPath)
-      cell.appunto =  @cliente.appunti[indexPath.row]
+    if collectionView == self.appuntiTableView
+      if indexPath.section == 0
+        cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
+                                                                         forIndexPath:indexPath)
+        cell.appunto =  @cliente.appunti[indexPath.row]
+      end
+    elsif collectionView == self.classiCollectionView
+      puts "mi vedi 2"
+      if indexPath.section == 0
+        cell = collectionView.dequeueReusableCellWithReuseIdentifier("classeItem",
+                                                                      forIndexPath:indexPath)
+        cell.classe =  @cliente.classi[indexPath.row]
+      end   
     end
+
+
+
     cell
   end
 
   def collectionView(collectionView, viewForSupplementaryElementOfKind:kind, atIndexPath:indexPath)
 
-    if kind == UICollectionElementKindSectionHeader
-      return collectionView.dequeueReusableSupplementaryViewOfKind(kind, 
-                                                      withReuseIdentifier:"headerDaFare", 
-                                                             forIndexPath:indexPath)
+    if collectionView == self.appuntiTableView
+      if kind == UICollectionElementKindSectionHeader
+        return collectionView.dequeueReusableSupplementaryViewOfKind(kind, 
+                                                        withReuseIdentifier:"headerDaFare", 
+                                                               forIndexPath:indexPath)
+      end
     end
-
   end
 
   def collectionView(collectionView, didSelectItemAtIndexPath:indexPath)
-    
-    appunto = @cliente.appunti[indexPath.row]
-
-    self.performSegueWithIdentifier("nuovoAppunto", sender:appunto)
-
+    if collectionView == self.appuntiTableView
+      appunto = @cliente.appunti[indexPath.row]
+      self.performSegueWithIdentifier("nuovoAppunto", sender:appunto)
+    end
   end
 
 
