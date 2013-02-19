@@ -25,7 +25,6 @@
 #import <objc/runtime.h>
 
 @interface RKRouter ()
-@property (nonatomic, strong, readwrite) NSURL *baseURL;
 @property (nonatomic, strong, readwrite) RKRouteSet *routeSet;
 @end
 
@@ -80,7 +79,7 @@
 {
     if (! object) return route.pathPattern;
     RKPathMatcher *pathMatcher = [RKPathMatcher pathMatcherWithPattern:route.pathPattern];
-    return [pathMatcher pathFromObject:object addingEscapes:route.shouldEscapePath];
+    return [pathMatcher pathFromObject:object addingEscapes:route.shouldEscapePath interpolatedParameters:nil];
 }
 
 @end

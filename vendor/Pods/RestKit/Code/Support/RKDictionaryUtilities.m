@@ -10,15 +10,18 @@
 
 NSDictionary * RKDictionaryByMergingDictionaryWithDictionary(NSDictionary *dict1, NSDictionary *dict2)
 {
+    if (! dict1) return dict2;
+    if (! dict2) return dict1;
+
     NSMutableDictionary *mergedDictionary = [dict1 mutableCopy];
 
     [dict2 enumerateKeysAndObjectsUsingBlock:^(id key2, id obj2, BOOL *stop) {
-        id obj1 = dict1[key2];
+        id obj1 = [dict1 valueForKey:key2];
         if ([obj1 isKindOfClass:[NSDictionary class]] && [obj2 isKindOfClass:[NSDictionary class]]) {
             NSDictionary *mergedSubdict = RKDictionaryByMergingDictionaryWithDictionary(obj1, obj2);
-            mergedDictionary[key2] = mergedSubdict;
+            [mergedDictionary setValue:mergedSubdict forKey:key2];
         } else {
-            mergedDictionary[key2] = obj2;
+            [mergedDictionary setValue:obj2 forKey:key2];
         }
     }];
     

@@ -12,8 +12,9 @@ class ClienteDetailViewController < UIViewController
   outlet :emailButton
   outlet :callButton
 
-  outlet :appuntiTableView
+  outlet :appuntiCollectionView
   outlet :classiCollectionView
+  outlet :docentiCollectionView
 
   def viewDidLoad
     super
@@ -23,56 +24,35 @@ class ClienteDetailViewController < UIViewController
     self.nuovoAppuntoButton.textShadowColor = UIColor.darkGrayColor
     self.nuovoAppuntoButton.tintColor = UIColor.colorWithRed(0.45, green:0, blue:0, alpha:1)
     self.nuovoAppuntoButton.highlightedTintColor = UIColor.colorWithRed(0.75, green:0, blue:0, alpha:1)
-    #self.nuovoAppuntoButton.rightAccessoryImage = [UIImage imageNamed:@"arrow"];
 
     self.navigaButton.text = "Naviga"
     self.emailButton.text  = "Email"
     self.callButton.text   = "Chiama"
 
     if Device.ipad?
-      self.appuntiTableView.registerClass( ClienteAppuntoCell, forCellWithReuseIdentifier:"clienteAppuntoCell")
-      self.appuntiTableView.registerClass(UICollectionReusableView, 
+      self.appuntiCollectionView.registerClass(ClienteAppuntoCell, forCellWithReuseIdentifier:"clienteAppuntoCell")
+      self.appuntiCollectionView.registerClass(UICollectionReusableView, 
            forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, 
                   withReuseIdentifier: "headerDaFare")
-      self.appuntiTableView.collectionViewLayout = LineLayout.alloc.init
+      self.appuntiCollectionView.collectionViewLayout = LineLayout.alloc.init
 
-      self.classiCollectionView.registerClass( ClasseItem, forCellWithReuseIdentifier:"classeItem")
-      # self.classiCollectionView.registerClass(UICollectionReusableView, 
-      #      forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, 
-      #             withReuseIdentifier: "headerDaFare")
-      # self.classiCollectionView.collectionViewLayout = LineLayout.alloc.init
-    end
-  end
+      self.classiCollectionView.registerClass(ClasseItem, forCellWithReuseIdentifier:"classeItem")
+      self.docentiCollectionView.registerClass(DocenteItem, forCellWithReuseIdentifier:"docenteItem")
 
-  def load_appunti
-    
-    RKObjectManager.sharedManager.cancelAllObjectRequestOperationsWithMethod(RKRequestMethodGET, matchingPathPattern:"api/v1/clienti/:remote_id")
-    
-    SVProgressHUD.show
-    
-    if @cliente && !@cliente.remote_id.blank?
-      App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
-                              success: lambda do |operation, result|
-                                                @cliente.appunti = result.firstObject.appunti
-                                                self.appuntiTableView.reloadData
-                                                @cliente.classi  = result.firstObject.classi
-                                                self.classiCollectionView.reloadData
-                                                SVProgressHUD.dismiss
-                                              end,
-                              failure: lambda do |operation, error|
-                                                puts error
-                                                #App.delegate.alert error.localizedDescription
-                                              end)
+      self.appuntiCollectionView.setShowsHorizontalScrollIndicator(false)
+      self.appuntiCollectionView.setShowsVerticalScrollIndicator(false)
+
+      self.classiCollectionView.setShowsHorizontalScrollIndicator(false)
+      self.classiCollectionView.setShowsVerticalScrollIndicator(false)
+
+      self.docentiCollectionView.setShowsHorizontalScrollIndicator(false)
+      self.docentiCollectionView.setShowsVerticalScrollIndicator(false)
     end
   end
 
   def viewWillAppear(animated)
     super
     load_cliente if @cliente
-  end
-
-  def shouldAutorotateToInterfaceOrientation(orientation)
-    true
   end
 
   def load_cliente
@@ -99,6 +79,31 @@ class ClienteDetailViewController < UIViewController
     end  
   end
 
+  def load_appunti
+    
+    RKObjectManager.sharedManager.cancelAllObjectRequestOperationsWithMethod(RKRequestMethodGET, matchingPathPattern:"api/v1/clienti/:remote_id")
+    
+    SVProgressHUD.show
+    
+    if @cliente && !@cliente.remote_id.blank?
+      App.delegate.backend.getObject(@cliente, path:nil, parameters:nil, 
+                              success: lambda do |operation, result|
+                                                @cliente = result.firstObject
+                                                self.appuntiCollectionView.reloadData
+                                                self.classiCollectionView.reloadData
+                                                self.docentiCollectionView.reloadData
+                                                SVProgressHUD.dismiss
+                                              end,
+                              failure: lambda do |operation, error|
+                                                puts error
+                                                #App.delegate.alert error.localizedDescription
+                                              end)
+    end
+  end
+
+
+  #  segues
+
   def prepareForSegue(segue, sender:sender)
     if segue.identifier.isEqualToString("showForm")
       segue.destinationViewController.remote_cliente_id = @cliente.remote_id
@@ -122,6 +127,9 @@ class ClienteDetailViewController < UIViewController
     end
   end
 
+
+  # actions
+
   def navigate(sender)
     url = NSURL.URLWithString("http://maps.apple.com/maps?q=#{@cliente.latitude},#{@cliente.longitude}")
     UIApplication.sharedApplication.openURL(url);
@@ -137,19 +145,25 @@ class ClienteDetailViewController < UIViewController
     UIApplication.sharedApplication.openURL(url);
   end  
 
+  # collectionView delegates
 
   def collectionView(collectionView, numberOfItemsInSection:section)
     
-    if collectionView == self.appuntiTableView
+    if collectionView == self.appuntiCollectionView
       if @cliente && @cliente.appunti
         @cliente.appunti.count
       else
         0
       end
     elsif collectionView == self.classiCollectionView
-      puts "mi vedi"
       if @cliente && @cliente.classi
         @cliente.classi.count
+      else
+        0
+      end      
+    elsif collectionView == self.docentiCollectionView
+      if @cliente && @cliente.docenti
+        @cliente.docenti.count
       else
         0
       end      
@@ -158,29 +172,32 @@ class ClienteDetailViewController < UIViewController
 
   def collectionView(collectionView, cellForItemAtIndexPath:indexPath)
     
-    if collectionView == self.appuntiTableView
+    if collectionView == self.appuntiCollectionView
       if indexPath.section == 0
         cell = collectionView.dequeueReusableCellWithReuseIdentifier("clienteAppuntoCell",
                                                                          forIndexPath:indexPath)
         cell.appunto =  @cliente.appunti[indexPath.row]
       end
     elsif collectionView == self.classiCollectionView
-      puts "mi vedi 2"
       if indexPath.section == 0
         cell = collectionView.dequeueReusableCellWithReuseIdentifier("classeItem",
                                                                       forIndexPath:indexPath)
         cell.classe =  @cliente.classi[indexPath.row]
       end   
+    elsif collectionView == self.docentiCollectionView
+      if indexPath.section == 0
+        cell = collectionView.dequeueReusableCellWithReuseIdentifier("docenteItem",
+                                                                      forIndexPath:indexPath)
+        cell.docente =  @cliente.docenti[indexPath.row]
+      end   
     end
-
-
 
     cell
   end
 
   def collectionView(collectionView, viewForSupplementaryElementOfKind:kind, atIndexPath:indexPath)
 
-    if collectionView == self.appuntiTableView
+    if collectionView == self.appuntiCollectionView
       if kind == UICollectionElementKindSectionHeader
         return collectionView.dequeueReusableSupplementaryViewOfKind(kind, 
                                                         withReuseIdentifier:"headerDaFare", 
@@ -190,7 +207,7 @@ class ClienteDetailViewController < UIViewController
   end
 
   def collectionView(collectionView, didSelectItemAtIndexPath:indexPath)
-    if collectionView == self.appuntiTableView
+    if collectionView == self.appuntiCollectionView
       appunto = @cliente.appunti[indexPath.row]
       self.performSegueWithIdentifier("nuovoAppunto", sender:appunto)
     end

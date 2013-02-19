@@ -23,7 +23,7 @@
 @class RKMapping;
 
 /**
- An `RKRequestDescriptor` object describes an object mapping configuration that is used to construct the parameters of an HTTP request for an object. Request descriptors are defined by specifying the `RKMapping` object that is to be used when object mapping an object into an `NSDictionary` of parameters, the class of the type of object for which the mapping is to be applied, and an optional root key path under which the paramters are to be nested. Response descriptors are only utilized when construct parameters for an `NSURLRequest` with an HTTP method of `POST`, `PUT`, or `PATCH`.
+ An `RKRequestDescriptor` object describes an object mapping configuration that is used to construct the parameters of an HTTP request for an object. Request descriptors are defined by specifying the `RKMapping` object (whose `objectClass` must be `NSMutableDictionary`) that is to be used when object mapping an object into an `NSDictionary` of parameters, the class of the type of object for which the mapping is to be applied, and an optional root key path under which the paramters are to be nested. Response descriptors are only utilized when construct parameters for an `NSURLRequest` with an HTTP method of `POST`, `PUT`, or `PATCH`.
  
  @see RKObjectParameterization
  @see [RKObjectMapping requestMapping]
@@ -31,9 +31,9 @@
  */
 @interface RKRequestDescriptor : NSObject
 
-///-------------------------------------
-/// @name Creating a Response Descriptor
-///-------------------------------------
+///------------------------------------
+/// @name Creating a Request Descriptor
+///------------------------------------
 
 /**
  Creates and returns a new `RKRequestDescriptor` object.
@@ -46,9 +46,9 @@
  @see [RKObjectMapping requestMapping]
  @warning An exception will be raised if the objectClass of the given mapping is not `[NSMutableDictionary class]`.
  */
-+ (id)requestDescriptorWithMapping:(RKMapping *)mapping
-                       objectClass:(Class)objectClass
-                       rootKeyPath:(NSString *)rootKeyPath;
++ (instancetype)requestDescriptorWithMapping:(RKMapping *)mapping
+                                 objectClass:(Class)objectClass
+                                 rootKeyPath:(NSString *)rootKeyPath;
 
 ///-----------------------------------------------------
 /// @name Getting Information About a Request Descriptor

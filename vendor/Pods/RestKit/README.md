@@ -1,6 +1,6 @@
 # RestKit
 
-RestKit is a modern Objective-C framework for implementing RESTful web services clients on iOS and Mac OS X. It provides a powerful [object mapping]() engine that seamlessly integrates with [Core Data](http://developer.apple.com/library/mac/#documentation/cocoa/Conceptual/CoreData/cdProgrammingGuide.html) and a simple set of networking primitives for mapping HTTP requests and responses built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking). It has an elegant, carefully designed set of APIs that make accessing and modeling RESTful resources feel almost magical. For example, here's how to access the Twitter public timeline and turn the JSON contents into an array of Tweet objects:
+RestKit is a modern Objective-C framework for implementing RESTful web services clients on iOS and Mac OS X. It provides a powerful [object mapping](https://github.com/RestKit/RestKit/wiki/Object-mapping) engine that seamlessly integrates with [Core Data](http://developer.apple.com/library/mac/#documentation/cocoa/Conceptual/CoreData/cdProgrammingGuide.html) and a simple set of networking primitives for mapping HTTP requests and responses built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking). It has an elegant, carefully designed set of APIs that make accessing and modeling RESTful resources feel almost magical. For example, here's how to access the Twitter public timeline and turn the JSON contents into an array of Tweet objects:
 
 ```  objective-c
 @interface Tweet : NSObject
@@ -29,11 +29,11 @@ RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWith
 ## Getting Started
 
 - [Download RestKit](https://github.com/RestKit/RestKit/downloads) and play with the [examples](https://github.com/RestKit/RestKit/tree/development/Examples) for iPhone and Mac OS X
-- First time with RestKit? Read the ["Overview"](#Overview) section below and then check out the ["Getting Acquainted with RestKit"]() tutorial and [Object Mapping Reference](https://github.com/RestKit/RestKit/wiki/Object-mapping) documents in the wiki to jump right in.
-- Upgrading from RestKit 0.9.x or 0.10.x? Read the ["Upgrading to RestKit 0.20.x"]() guide in the wiki
-- Adding RestKit to an existing [AFNetworking]() application? Read the [AFNetworking Integration]() document to learn details about how the frameworks fit together.
-- Review the [source code API documentation](http://restkit.org/api/0.20.0) for a detailed look at the classes and API's in RestKit
-- Still need some help? Get support from [Stack Overflow](), the [RestKit mailing list](http://groups.google.com/group/restkit) or ping us on [Twitter](http://twitter.com/RestKit)
+- First time with RestKit? Read the ["Overview"](#Overview) section below and then check out the ["Getting Acquainted with RestKit"](https://github.com/RestKit/RestKit/wiki/Getting-Acquainted-with-RestKit) tutorial and [Object Mapping Reference](https://github.com/RestKit/RestKit/wiki/Object-mapping) documents in the wiki to jump right in.
+- Upgrading from RestKit 0.9.x or 0.10.x? Read the ["Upgrading to RestKit 0.20.x"](https://github.com/RestKit/RestKit/wiki/Upgrading-from-v0.10.x-to-v0.20.0) guide in the wiki
+- Adding RestKit to an existing [AFNetworking](http://afnetworking.org) application? Read the [AFNetworking Integration](https://github.com/RestKit/RestKit/wiki/AFNetworking-Integration) document to learn details about how the frameworks fit together.
+- Review the [source code API documentation](http://restkit.org/api/latest) for a detailed look at the classes and API's in RestKit. A great place to start is [RKObjectManager](http://restkit.org/api/latest/Classes/RKObjectManager.html).
+- Still need some help? Get support from [Stack Overflow](http://stackoverflow.com/questions/tagged/restkit), the [RestKit mailing list](http://groups.google.com/group/restkit) or ping us on [Twitter](http://twitter.com/RestKit)
 
 ## Overview
 
@@ -56,52 +56,52 @@ RestKit is broken into several modules that cleanly separate the mapping engine 
 <table>
   <tr><th colspan="2" style="text-align:center;"><a href="blob/development/Code/ObjectMapping/README.md">Object Mapping</a></th></tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectMapping.html">RKObjectMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectMapping.html">RKObjectMapping</a></td>
     <td>Encapsulates configuration for transforming object representations as expressed by key-value coding keypaths.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKAttributeMapping.html">RKAttributeMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKAttributeMapping.html">RKAttributeMapping</a></td>
     <td>Specifies a desired transformation between attributes within an object or entity mapping in terms of a source and destination key path.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKRelationshipMapping.html">RKRelationshipMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKRelationshipMapping.html">RKRelationshipMapping</a></td>
     <td>Specifies a desired mapping of a nested to-one or to-many child objects in in terms of a source and destination key path and an <tt>RKObjectMapping</tt> with which to map the attributes of the child object.</td>
   </tr>  
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKDynamicMapping.html">RKDynamicMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKDynamicMapping.html">RKDynamicMapping</a></td>
     <td>Specifies a flexible mapping in which the decision about which <tt>RKObjectMapping</tt> is to be used to process a given document is deferred to run time.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectMapper.html">RKObjectMapper</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectMapper.html">RKObjectMapper</a></td>
     <td>Provides an interface for mapping a parsed document into a set of local domain objects.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectMappingOperation.html">RKObjectMappingOperation</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectMappingOperation.html">RKObjectMappingOperation</a></td>
     <td>An <tt>NSOperation</tt> that performs a mapping between object representations using an <tt>RKObjectMapping</tt>.</td>
   </tr>  
   <tr><th colspan="2" style="text-align:center;"><a href="blob/development/Code/Network/README.md">Networking</a></th></tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKRequestDescriptor.html">RKRequestDescriptor</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKRequestDescriptor.html">RKRequestDescriptor</a></td>
     <td>Describes a request that can be sent from the application to a remote web application for a given object type.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKResponseDescriptor.html">RKResponseDescriptor</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKResponseDescriptor.html">RKResponseDescriptor</a></td>
     <td>Describes an object mappable response that may be returned from a remote web application in terms of an object mapping, a key path, a <a href="">SOCKit pattern</a> for matching the URL, and a set of status codes that define the circumstances in which the mapping is appropriate for a given response.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectParameterization.html">RKObjectParameterization</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectParameterization.html">RKObjectParameterization</a></td>
     <td>Performs mapping of a given object into an <tt>NSDictionary</tt> represenation suitable for use as the parameters of an HTTP request.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectRequestOperation.html">RKObjectRequestOperation</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectRequestOperation.html">RKObjectRequestOperation</a></td>
     <td>An <tt>NSOperation</tt> that sends an HTTP request and performs object mapping on the parsed response body using the configurations expressed in a set of <tt>RKResponseDescriptor</tt> objects.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKResponseMapper.html">RKResponseMapperOperation</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKResponseMapper.html">RKResponseMapperOperation</a></td>
     <td>An <tt>NSOperation</tt> that provides support for object mapping an <tt>NSHTTPURLResponse</tt> using a set of <tt>RKResponseDescriptor</tt> objects.</td>
   </tr>  
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKObjectManager.html">RKObjectManager</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKObjectManager.html">RKObjectManager</a></td>
     <td>Captures the common patterns for communicating with a RESTful web application over HTTP using object mapping including:
     	<ul>
     		<li>Centralizing <tt>RKRequestDescriptor</tt> and <tt>RKResponseDescriptor</tt> configurations</li>
@@ -113,32 +113,32 @@ RestKit is broken into several modules that cleanly separate the mapping engine 
     </td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKRouter.html">RKRouter</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKRouter.html">RKRouter</a></td>
     <td>Generates <tt>NSURL</tt> objects from a base URL and a set of <tt>RKRoute</tt> objects describing relative paths used by the application.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKRoute.html">RKRoute</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKRoute.html">RKRoute</a></td>
     <td>Describes a single relative path for a given object type and HTTP method, the relationship of an object, or a symbolic name.</td>
   </tr>
   <tr><th colspan="2" style="text-align:center;"><a href="blob/development/Code/CoreData/README.md">Core Data</a></th></tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKManagedObjectStore.html">RKManagedObjectStore</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKManagedObjectStore.html">RKManagedObjectStore</a></td>
     <td>Encapsulates Core Data configuration including an <tt>NSManagedObjectModel</tt>, a <tt>NSPersistentStoreCoordinator</tt>, and a pair of <tt>NSManagedObjectContext</tt> objects.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKEntityMapping.html">RKEntityMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKEntityMapping.html">RKEntityMapping</a></td>
     <td>Models a mapping for transforming an object representation into a <tt>NSManagedObject</tt> instance for a given <tt>NSEntityDescription</tt>.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKConnectionMapping.html">RKConnectionMapping</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKConnectionDescription.html">RKConnectionDescription</a></td>
     <td>Describes a mapping for establishing a relationship between Core Data entities using foreign key attributes.</td>
   </tr>  
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKManagedObjectRequestOperation.html">RKManagedObjectRequestOperation</a></td>
-    <td>An <tt>NSOperation</tt> subclass that sends an HTTP request and performs object mapping on the parsed response body to create <tt>NSManagedObject</tt> instances, establishes relationships between objects using <tt>RKConnectionMapping</tt> objects, and cleans up orphaned objects that no longer exist in the remote backend system.</td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKManagedObjectRequestOperation.html">RKManagedObjectRequestOperation</a></td>
+    <td>An <tt>NSOperation</tt> subclass that sends an HTTP request and performs object mapping on the parsed response body to create <tt>NSManagedObject</tt> instances, establishes relationships between objects using <tt>RKConnectionDescription</tt> objects, and cleans up orphaned objects that no longer exist in the remote backend system.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKManagedObjectImporter.html">RKManagedObjectImporter</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKManagedObjectImporter.html">RKManagedObjectImporter</a></td>
     <td>Provides support for bulk mapping of managed objects using <tt>RKEntityMapping</tt> objects for two use cases:
     	<ol>
     		<li>Bulk importing of parsed documents into an <tt>NSPersistentStore.</tt></li>
@@ -148,24 +148,24 @@ RestKit is broken into several modules that cleanly separate the mapping engine 
   </tr>
   <tr><th colspan="2" style="text-align:center;"><a href="blob/development/Code/Search/README.md">Search</a></th></tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKSearchIndexer.html">RKSearchIndexer</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKSearchIndexer.html">RKSearchIndexer</a></td>
     <td>Provides support for generating a full-text searchable index within Core Data for string attributes of entities within an application.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKSearchPredicate.html">RKSearchPredicate</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKSearchPredicate.html">RKSearchPredicate</a></td>
     <td>Generates an <tt>NSCompoundPredicate</tt> given a string of text that will search an index built with an <tt>RKSearchIndexer</tt> across any indexed entity.</td>
   </tr>
   <tr><th colspan="2" style="text-align:center;"><a href="blob/development/Code/Testing/README.md">Testing</a></th></tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKMappingTest.html">RKMappingTest</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKMappingTest.html">RKMappingTest</a></td>
     <td>Provides support for unit testing object mapping configurations given a parsed document and an object or entity mapping. Expectations are configured in terms of expected key path mappings and/or expected transformation results.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKTestFixture.html">RKTestFixture</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKTestFixture.html">RKTestFixture</a></td>
     <td>Provides an interface for easily generating test fixture data for unit testing.</td>
   </tr>
   <tr>
-    <td><a href="http://restkit.org/api/0.20.0/Classes/RKTestFactory.html">RKTestFactory</a></td>
+    <td><a href="http://restkit.org/api/latest/Classes/RKTestFactory.html">RKTestFactory</a></td>
     <td>Provides support for creating objects for use in testing.</td>
   </tr>
 </table>
@@ -199,8 +199,16 @@ RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWith
 // JSON looks like {"article": {"title": "My Article", "author": "Blake", "body": "Very cool!!", "categories": [{"id": 1, "name": "Core Data"]}
 NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+NSError *error = nil;
+BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
+if (! success) {
+    RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
+}
 NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Store.sqlite"];
-[managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil error:nil];
+NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+if (! persistentStore) {
+    RKLogError(@"Failed adding persistent store at path '%@': %@", path, error);
+}
 [managedObjectStore createManagedObjectContexts];
 
 RKEntityMapping *categoryMapping = [RKEntityMapping mappingForEntityForName:@"Category" inManagedObjectStore:managedObjectStore];
@@ -215,13 +223,16 @@ RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescrip
 NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://restkit.org/articles/888.json"]];
 RKManagedObjectRequestOperation *operation = [[RKManagedObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
 operation.managedObjectContext = managedObjectStore.mainQueueManagedObjectContext;
+operation.managedObjectCache = managedObjectStore.managedObjectCache;
 [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
   Article *article = [result firstObject];
 	NSLog(@"Mapped the article: %@", article);
-	NSLog(@"Mapped the category: %@", category);
+	NSLog(@"Mapped the category: %@", [article.categories anyObject]);
 } failure:^(RKObjectRequestOperation *operation, NSError *error) {
 	NSLog(@"Failed with error: %@", [error localizedDescription]);
 }];
+NSOperationQueue *operationQueue = [NSOperationQueue new];
+[operationQueue addOperation:operation];
 ```
 
 ### Map a Client Error Response to an NSError
@@ -229,9 +240,10 @@ operation.managedObjectContext = managedObjectStore.mainQueueManagedObjectContex
 // GET /articles/error.json returns a 422 (Unprocessable Entity)
 // JSON looks like {"errors": "Some Error Has Occurred"}
 
+// You can map errors to any class, but `RKErrorMessage` is included for free
 RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[RKErrorMessage class]];
 // The entire value at the source key path containing the errors maps to the message
-[errorMapping addAttributeMapping:[RKAttributeMapping attributeMappingFromKeyPath:[NSNull null] toKeyPath:@"message"]];
+[errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:nil toKeyPath:@"errorMessage"]];
 
 NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError);
 // Any response in the 4xx status code range with an "errors" key path uses this mapping
@@ -240,6 +252,7 @@ RKResponseDescriptor *errorDescriptor = [RKResponseDescriptor responseDescriptor
 NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://restkit.org/articles/error.json"]];
 RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[errorDescriptor]];
 [operation setCompletionBlockWithSuccess:nil failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    // The `description` method of the class the error is mapped to is used to construct the value of the localizedDescription
 	NSLog(@"Loaded this error: %@", [error localizedDescription]);
 }];
 ```
@@ -254,7 +267,7 @@ RKResponseDescriptor *articleDescriptor = [RKResponseDescriptor responseDescript
 
 RKObjectMapping *errorMapping = [RKObjectMapping mappingForClass:[RKErrorMessage class]];
 // The entire value at the source key path containing the errors maps to the message
-[errorMapping addAttributeMapping:[RKAttributeMapping attributeMappingFromKeyPath:[NSNull null] toKeyPath:@"message"]];
+[errorMapping addPropertyMapping:[RKAttributeMapping attributeMappingFromKeyPath:nil toKeyPath:@"message"]];
 NSIndexSet *statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassClientError);
 // Any response in the 4xx status code range with an "errors" key path uses this mapping
 RKResponseDescriptor *errorDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping pathPattern:nil keyPath:@"errors" statusCodes:statusCodes];
@@ -263,11 +276,30 @@ RKResponseDescriptor *errorDescriptor = [RKResponseDescriptor responseDescriptor
 RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://restkit.org"]];
 [manager addResponseDescriptorsFromArray:@[ articleDescriptor, errorDescriptor ]];
 
-[manager getObjectsAtPath:@"/articles/555.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)) {
+[manager getObjectsAtPath:@"/articles/555.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
 	// Handled with articleDescriptor
 } failure:^(RKObjectRequestOperation *operation, NSError *error) {
 	// Transport error or server error handled by errorDescriptor
 }];
+```
+
+### Configure Core Data Integration with the Object Manager
+``` objective-c
+NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
+if (! success) {
+    RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
+}
+NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Store.sqlite"];
+NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+if (! persistentStore) {
+    RKLogError(@"Failed adding persistent store at path '%@': %@", path, error);
+}
+[managedObjectStore createManagedObjectContexts];
+
+RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://restkit.org"]];
+manager.managedObjectStore = managedObjectStore;
 ```
 
 ### Load a Collection of Objects at a Path
@@ -305,7 +337,7 @@ RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorW
 
 RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://restkit.org"];
 [manager addRequestDescriptor:requestDescriptor];
-[manager addResponseDescriptor:responseDescriptor];
+[manager addResponseDescriptor:articleDescriptor];
 
 Article *article = [Article new];
 article.title = @"Introduction to RestKit";
@@ -364,8 +396,8 @@ NSMutableURLRequest *request = [[RKObjectManager sharedManager] multipartFormReq
                             mimeType:@"image/png"];
 }];
 
-RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] objectRequesOperationWithRequest:request success:nil failure:nil];
-[operation start];
+RKObjectRequestOperation *operation = [[RKObjectManager sharedManager] objectRequestOperationWithRequest:request success:nil failure:nil];
+[[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation]; // NOTE: Must be enqueued rather than started
 ```
 
 ### Enqueue a Batch of Object Request Operations
@@ -396,6 +428,17 @@ RKRoute *route = [RKRoute routeWithName:@"airport_weather" resourcePathPattern:@
 ``` objective-c
 NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+NSError *error = nil;
+BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
+if (! success) {
+    RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
+}
+NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Store.sqlite"];
+NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+if (! persistentStore) {
+    RKLogError(@"Failed adding persistent store at path '%@': %@", path, error);
+}
+[managedObjectStore createManagedObjectContexts];
 
 RKEntityMapping *articleMapping = [RKEntityMapping mappingForEntityForName:@"Article" inManagedObjectStore:managedObjectStore];
 [articleMapping addAttributeMappingsFromArray:@[@"title", @"author", @"body"]];
@@ -422,6 +465,17 @@ if (success) {
 ``` objective-c
 NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+NSError *error = nil;
+BOOL success = RKEnsureDirectoryExistsAtPath(RKApplicationDataDirectory(), &error);
+if (! success) {
+    RKLogError(@"Failed to create Application Data Directory at path '%@': %@", RKApplicationDataDirectory(), error);
+}
+NSString *path = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"Store.sqlite"];
+NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:path fromSeedDatabaseAtPath:nil withConfiguration:nil options:nil error:&error];
+if (! persistentStore) {
+    RKLogError(@"Failed adding persistent store at path '%@': %@", path, error);
+}
+[managedObjectStore createManagedObjectContexts];
 [managedObjectStore addSearchIndexingToEntityForName:@"Article" onAttributes:@[ @"title", @"body" ]];
 [managedObjectStore addInMemoryPersistentStore:nil];
 [managedObjectStore createManagedObjectContexts];
@@ -491,7 +545,7 @@ If you are including the RestKit sources directly into a project that does not y
 
 ### Serialization Formats
 
-RestKit provides a pluggable interface for handling arbitrary serialization formats via the [`RKSerialization`](http://restkit.org/api/0.20.0/Classes/RKSerialization.html) protocol and the [`RKMIMETypeSerialization`](http://restkit.org/api/0.20.0/Classes/RKMIMETypeSerialization.html) class. Out of the box, RestKit supports handling the [JSON](http://www.json.org/) format for serializing and deserializing object representations via the [`NSJSONSerialization`](http://developer.apple.com/library/mac/#documentation/Foundation/Reference/NSJSONSerialization_Class/Reference/Reference.html) class.
+RestKit provides a pluggable interface for handling arbitrary serialization formats via the [`RKSerialization`](http://restkit.org/api/latest/Classes/RKSerialization.html) protocol and the [`RKMIMETypeSerialization`](http://restkit.org/api/latest/Classes/RKMIMETypeSerialization.html) class. Out of the box, RestKit supports handling the [JSON](http://www.json.org/) format for serializing and deserializing object representations via the [`NSJSONSerialization`](http://developer.apple.com/library/mac/#documentation/Foundation/Reference/NSJSONSerialization_Class/Reference/Reference.html) class.
 
 #### Additional Serializations
 
@@ -505,7 +559,7 @@ Support for additional formats and alternate serialization backends is provided 
 
 ## Installation
 
-The recommended approach for installating RestKit is via the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation.
+The recommended approach for installating RestKit is via the [CocoaPods](http://cocoapods.org/) package manager, as it provides flexible dependency management and dead simple installation. For best results, it is recommended that you install via CocoaPods **>= 0.15.2** using Git **>= 1.8.0** installed via Homebrew.
 
 ### via CocoaPods
 
@@ -516,16 +570,19 @@ $ [sudo] gem install cocoapods
 $ pod setup
 ```
 
-Edit your Podfile and add RestKit:
+Change to the directory of your Xcode project, and Create and Edit your Podfile and add RestKit:
 
 ``` bash
+$ cd /path/to/MyProject
+$ touch Podfile
 $ edit Podfile
-platform :ios, '5.0'
-pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
+platform :ios, '5.0' 
+# Or platform :osx, '10.7'
+pod 'RestKit', '~> 0.20.0pre'
 
 # Testing and Search are optional components
-pod 'RestKit/Testing',  :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
-pod 'RestKit/Search',  :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
+pod 'RestKit/Testing', '~> 0.20.0pre'
+pod 'RestKit/Search',  '~> 0.20.0pre'
 ```
 
 Install into your project:
@@ -534,9 +591,17 @@ Install into your project:
 $ pod install
 ```
 
+Open your project in Xcode from the .xcworkspace file (not the usual project file)
+
+``` bash
+$ open MyProject.xcworkspace
+```
+
+Please note that if your installation fails, it may be because you are installing with a version of Git lower than CocoaPods is expecting. Please ensure that you are running Git **>= 1.8.0** by executing `git --version`. You can get a full picture of the installation details by executing `pod install --verbose`.
+
 ### From a Release Package or as a Git submodule
 
-Detailed installation instructions are available in the [Visual Install Guide](https://github.com/RestKit/RestKit/wiki/Installing-RestKit-in-Xcode-4.x) on the Wiki.
+Detailed installation instructions are available in the [Visual Install Guide](https://github.com/RestKit/RestKit/wiki/Installing-RestKit-v0.20.x-as-a-Git-Submodule) on the Wiki.
 
 ## License
 

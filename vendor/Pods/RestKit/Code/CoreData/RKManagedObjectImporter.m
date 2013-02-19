@@ -41,11 +41,11 @@
 @property (nonatomic, strong, readwrite) NSPersistentStore *persistentStore;
 @property (nonatomic, strong, readwrite) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong, readwrite) RKManagedObjectMappingOperationDataSource *mappingOperationDataSource;
+@property (nonatomic, strong, readwrite) NSOperationQueue *connectionQueue;
 @property (nonatomic, assign) BOOL hasPerformedResetIfNecessary;
 @end
 
 @implementation RKManagedObjectImporter
-
 
 - (id)initWithManagedObjectModel:(NSManagedObjectModel *)managedObjectModel storePath:(NSString *)storePath
 {
@@ -65,6 +65,10 @@
         NSManagedObjectContext *managedObjectContext = [self createManagedObjectContext];
         NSAssert(managedObjectContext, @"Importer initialization failed: Unable to create managed object context");
         self.managedObjectContext = managedObjectContext;
+
+        self.connectionQueue = [NSOperationQueue new];
+        [self.connectionQueue setName:@"RKManagedObjectImporter Connection Queue"];
+        [self.connectionQueue setSuspended:YES];
 
         RKManagedObjectMappingOperationDataSource *mappingOperationDataSource = [self createMappingOperationDataSource];
         self.mappingOperationDataSource = mappingOperationDataSource;
@@ -91,6 +95,10 @@
         NSManagedObjectContext *managedObjectContext = [self createManagedObjectContext];
         NSAssert(managedObjectContext, @"Importer initialization failed: Unable to create managed object store");
         self.managedObjectContext = managedObjectContext;
+
+        self.connectionQueue = [NSOperationQueue new];
+        [self.connectionQueue setName:@"RKManagedObjectImporter Connection Queue"];
+        [self.connectionQueue setSuspended:YES];
 
         RKManagedObjectMappingOperationDataSource *mappingOperationDataSource = [self createMappingOperationDataSource];
         self.mappingOperationDataSource = mappingOperationDataSource;
@@ -142,9 +150,11 @@
 
 - (RKManagedObjectMappingOperationDataSource *)createMappingOperationDataSource
 {
+    NSAssert(self.connectionQueue, @"Connection Queue cannot be nil");
     RKInMemoryManagedObjectCache *managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:self.managedObjectContext];
     RKManagedObjectMappingOperationDataSource *mappingOperationDataSource = [[RKManagedObjectMappingOperationDataSource alloc] initWithManagedObjectContext:self.managedObjectContext
                                                                                                                                                       cache:managedObjectCache];
+    mappingOperationDataSource.operationQueue = self.connectionQueue;
 
     return mappingOperationDataSource;
 }
@@ -203,7 +213,7 @@
     }
 
     NSDictionary *mappingDictionary = @{ (keyPath ?: [NSNull null]) : mapping };
-    RKMapperOperation *mapper = [[RKMapperOperation alloc] initWithObject:parsedData mappingsDictionary:mappingDictionary];
+    RKMapperOperation *mapper = [[RKMapperOperation alloc] initWithRepresentation:parsedData mappingsDictionary:mappingDictionary];
     mapper.mappingOperationDataSource = self.mappingOperationDataSource;
     __block RKMappingResult *mappingResult;
     [self.managedObjectContext performBlockAndWait:^{
@@ -262,6 +272,10 @@
 
 - (BOOL)finishImporting:(NSError **)error
 {
+    // Perform our connection operations in a batch, before we save the MOC
+    [self.connectionQueue setSuspended:NO];
+    [self.connectionQueue waitUntilAllOperationsAreFinished];
+
     __block BOOL success;
     __block NSError *localError = nil;
     [self.managedObjectContext performBlockAndWait:^{

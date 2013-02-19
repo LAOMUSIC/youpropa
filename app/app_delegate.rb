@@ -16,7 +16,7 @@ class AppDelegate
   #APP_ID = "9aa427dcda89ebd5b3c9015dcd507242b70bac2a4d6e736589f6be35849474ff"
   #SECRET = "a5d78f0c32ba25fcbc1a679e03b110724497684263c1f4d9f645444cbf80a832"
 
-  attr_accessor :backend
+  attr_accessor :window, :backend
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
@@ -37,6 +37,12 @@ class AppDelegate
 
     add_response_mapping(classe_mapping, "classe")
     add_response_mapping(classe_mapping, "classi")
+
+    add_response_mapping(adozione_mapping, "adozione")
+    add_response_mapping(adozione_mapping, "adozioni")
+
+    add_response_mapping(docente_mapping, "docente")
+    add_response_mapping(docente_mapping, "docenti")
 
     add_response_mapping(riga_mapping, "riga")
     add_response_mapping(riga_mapping, "righe")
@@ -73,13 +79,13 @@ class AppDelegate
     true
   end
 
-  def window
-    @window
-  end
+  # def window
+  #   @window
+  # end
 
-  def setWindow(window)
-    @window = window
-  end
+  # def setWindow(window)
+  #   @window = window
+  # end
 
   def init_restkit
     url = NSURL.URLWithString(BASE_URL)
@@ -95,7 +101,8 @@ class AppDelegate
 
 
   def debug_restkit
-    RKLogInitialize()
+    RKLogInitializer.load
+    # RKLogInitialize()
     RKlcl_configure_by_name("RestKit/Network", RKLogLevelTrace)
     RKlcl_configure_by_name("RestKit/ObjectMapping", RKLogLevelTrace)
   end
@@ -160,6 +167,8 @@ class AppDelegate
                                      toKeyPath:"appunti", withMapping:appunto_mapping))
       mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("classi", 
                                      toKeyPath:"classi", withMapping:classe_mapping))
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("docenti", 
+                                     toKeyPath:"docenti", withMapping:docente_mapping))
     end
   end
 
@@ -173,6 +182,30 @@ class AppDelegate
                                                  nr_alunni: "nr_alunni",
                                                  cliente_id: "remote_cliente_id",
                                                  )
+      mapping.addPropertyMapping(RKRelationshipMapping.relationshipMappingFromKeyPath("adozioni", 
+                               toKeyPath:"adozioni", withMapping:adozione_mapping))
+    end 
+  end
+
+  def adozione_mapping
+    @adozione_mapping ||= begin
+      
+      mapping = RKObjectMapping.mappingForClass(Adozione)
+      mapping.addAttributeMappingsFromDictionary(id: "remote_id",
+                                                 libro_id: "libro_id",
+                                                 classe_id: "remote_classe_id",
+                                                 sigla: "sigla"
+                                                )
+    end 
+  end
+
+  def docente_mapping
+    @docente_mapping ||= begin
+      
+      mapping = RKObjectMapping.mappingForClass(Docente)
+      mapping.addAttributeMappingsFromDictionary(docente: "docente",
+                                                 telefono: "telefono"
+                                                )
     end 
   end
 

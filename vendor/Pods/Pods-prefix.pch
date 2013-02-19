@@ -11,4 +11,8 @@
   #import <SystemConfiguration/SystemConfiguration.h>
   #import <CoreServices/CoreServices.h>
 #endif
-#endif /* __OBJC__ */
+#endif /* __OBJC__*/
+
+#ifdef __OBJC__
+#import <CoreData/CoreData.h>
+#endif /* __OBJC__*/

@@ -20,10 +20,21 @@
 
 #import <Foundation/Foundation.h>
 
+@class RKObjectMapping;
+
 /**
  `RKPropertyMapping` is an abstract class for describing the properties being mapped within an `RKObjectMapping` or `RKEntityMapping` object. It defines the common interface for its concrete subclasses `RKAttributeMapping` and `RKRelationshipMapping`. Each property mapping defines a single transformation from a source key path (often in the deserialized representation of a JSON or XML document) to a destination key path (typically on a target object).
  */
 @interface RKPropertyMapping : NSObject <NSCopying>
+
+///------------------------------------------
+/// @name Accessing the Parent Object Mapping
+///------------------------------------------
+
+/**
+ Returns the object mapping the receiver is added to.
+ */
+@property (nonatomic, weak, readonly) RKObjectMapping *objectMapping;
 
 ///-----------------------------------------------------
 /// @name Accessing the Source and Destination Key Paths
@@ -32,12 +43,12 @@
 /**
  A key path on the source object from which to get information that is to be mapped onto the destination object.
  */
-@property (nonatomic, strong, readonly) NSString *sourceKeyPath;
+@property (nonatomic, copy, readonly) NSString *sourceKeyPath;
 
 /**
  A key path on the destination object on which to set information that has been mapped from the source object.
  */
-@property (nonatomic, strong, readonly) NSString *destinationKeyPath;
+@property (nonatomic, copy, readonly) NSString *destinationKeyPath;
 
 ///----------------------------------
 /// @name Comparing Property Mappings

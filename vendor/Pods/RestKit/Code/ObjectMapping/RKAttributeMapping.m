@@ -21,16 +21,15 @@
 #import "RKAttributeMapping.h"
 
 @interface RKAttributeMapping ()
-@property (nonatomic, strong, readwrite) NSString *sourceKeyPath;
-@property (nonatomic, strong, readwrite) NSString *destinationKeyPath;
+@property (nonatomic, copy, readwrite) NSString *sourceKeyPath;
+@property (nonatomic, copy, readwrite) NSString *destinationKeyPath;
 @end
 
 @implementation RKAttributeMapping
 
-+ (RKAttributeMapping *)attributeMappingFromKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath
++ (instancetype)attributeMappingFromKeyPath:(NSString *)sourceKeyPath toKeyPath:(NSString *)destinationKeyPath
 {
-    NSParameterAssert(sourceKeyPath);
-    NSParameterAssert(destinationKeyPath);
+    NSAssert(sourceKeyPath || destinationKeyPath, @"Both the source and destination key paths cannot be nil");
     RKAttributeMapping *attributeMapping = [self new];
     attributeMapping.sourceKeyPath = sourceKeyPath;
     attributeMapping.destinationKeyPath = destinationKeyPath;

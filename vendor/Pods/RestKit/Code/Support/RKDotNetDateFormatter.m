@@ -33,9 +33,9 @@ static NSTimeInterval RKDotNetDateFormatterMillisecondsFromSeconds(NSTimeInterva
 
 @implementation RKDotNetDateFormatter
 
-+ (RKDotNetDateFormatter *)dotNetDateFormatterWithTimeZone:(NSTimeZone *)newTimeZone
++ (instancetype)dotNetDateFormatterWithTimeZone:(NSTimeZone *)newTimeZone
 {
-    RKDotNetDateFormatter *formatter = [[RKDotNetDateFormatter alloc] init];
+    RKDotNetDateFormatter *formatter = [self new];
     if (newTimeZone) formatter.timeZone = newTimeZone;
     return formatter;
 }
@@ -96,7 +96,7 @@ static NSTimeInterval RKDotNetDateFormatterMillisecondsFromSeconds(NSTimeInterva
 - (NSString *)millisecondsFromString:(NSString *)string
 {
     if (!string) return nil;
-    NSTextCheckingResult *match = [self.dotNetExpression firstMatchInString:string options:NSMatchingCompleted range:NSMakeRange(0, [string length])];
+    NSTextCheckingResult *match = [self.dotNetExpression firstMatchInString:string options:NSMatchingReportCompletion range:NSMakeRange(0, [string length])];
     if (!match) return nil;
     NSRange millisecRange = [match rangeAtIndex:1];
     if (!RKDotNetDateFormatterIsValidRange(millisecRange)) return nil;

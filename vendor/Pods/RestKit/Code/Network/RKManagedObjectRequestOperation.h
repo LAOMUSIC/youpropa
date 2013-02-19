@@ -40,17 +40,11 @@
 
  One of the confounding factors when working with asycnhronous processes interacting with Core Data is the addressability of managed objects that have not been saved to the persistent store across contexts. Unpersisted `NSManagedObject` instances have an `objectID` that is temporary and unsuitable for use in uniquely addressing a given object across two managed object contexts, even if they have common ancestry and share a persistent store coordinator. To mitigate this addressability issue without requiring objects to be saved to the persistent store, managed object request operations invoke `obtainPermanentIDsForObjects:` on the operation's target object (if any) and all managed objects that were inserted into the context during the mapping process. By the time the operation finishes, all managed objects in the mapping result can be referenced by `objectID` across contexts with no further action.
 
- ## Primary Keys &amp; Managed Object Caching
+ ## Identification Attributes &amp; Managed Object Caching
 
- When object mapping managed objects it is necessary to differentiate between objects that already exist in the local store and those that are being created as part of the mapping process. This ensures that the local store does not become populated with duplicate records. To make this differentiation, RestKit requires that each `NSEntityDescription` be configured with a primary key attribute. The primary key must correspond to a static attribute assigned by the remote backend system. During mapping, this key is used to search the managed object context for an existing managed object. If one is found, the object is updated else a new object is created. Primary keys are configured at the entity level and additional discussion accompanies the `NSEntityDescription (RKAdditions)` category.
+ When object mapping managed objects it is necessary to differentiate between objects that already exist in the local store and those that are being created as part of the mapping process. This ensures that the local store does not become populated with duplicate records. To make this differentiation, RestKit requires that each `RKEntityMapping` be configured with one or more identification attributes. Each identification attribute must correspond to a static attribute assigned by the remote backend system. During mapping, these attributes are used to search the managed object context for an existing managed object. If one is found, the object is updated else a new object is created. Identification attributes are configured on the `[RKEntityMapping identificationAttributes]` property.
 
- Primary key attributes are used in conjunction with the `RKManagedObjectCaching` protocol. Each managed object request operation is associated with an object conforming to the `RKManagedObjectCaching` protocol via the `managedObjectCache` proeprty. This cache is consulted during mapping to find existing objects and when establishing relationships between entities by primary key. Please see the documentation accompanying `RKManagedObjectCaching` and `RKConnectionMapping` for more information.
-
- ## Fetching Result Objects
-
- When a `completionBlock` is configured for an instance of `RKManagedObjectRequestOperation` additional work is performed before the mapping result is returned to the caller. Because mapping internally occurs on a private managed object context with the `NSPrivateQueueConcurrencyType` concurrency type, attempts to directly access the `NSManagedObject` instances contained within the `RKMappingResult` would violate the threading constraints imposed by Core Data. As such, before the mapping result is returned to the caller in a completion block the objects are re-fetched from the `managedObjectContext`. Please see `RKManagedObjectThreadSafeInvocation` for details about the implementation.
-
- TODO: Is this necessary?
+ Identification attributes are used in conjunction with the `RKManagedObjectCaching` protocol. Each managed object request operation is associated with an object conforming to the `RKManagedObjectCaching` protocol via the `managedObjectCache` proeprty. This cache is consulted during mapping to find existing objects and when establishing relationships between entities by one or more attributes. Please see the documentation accompanying `RKManagedObjectCaching` and `RKConnectionDescription` classes for more information.
 
  ## Deleting Managed Objects for `DELETE` requests
 
@@ -71,21 +65,21 @@
         NSString *airportID;
         if (match) {
             airportID = [argsDict objectForKey:@"airport_id"];
-            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"GGTerminal"];
-            NSEntityDescription *entity = [NSEntityDescription entityForName:@"GGAirport" inManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
-            fetchRequest.predicate = [entity predicateForPrimaryKeyAttributeWithValue:airportID];
-            fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Terminal"];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:@"Airport" inManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
+            fetchRequest.predicate = [NSPredication predicateWithFormat:@"airportID = %@", @([airportID integerValue])]; // NOTE: Coerced from string to number
+            fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
             return fetchRequest;
         }
 
         return nil;
     }];
 
- The above example code defines an `RKFetchRequestBlock` block object that will match an `NSURL` with a relative path matching the pattern `@"/airports/:airport_id/terminals.json"`. If a match is found, the block extracts the `airport_id` key from the matched arguments and uses it to construct an `NSPredicate` for the primary key attribute of `GGAirport` entity. It then constructs an `NSFetchRequest` for the `GGTerminal` entity that will retrieve all the managed objects with an airport ID attribute whose value is equal to `airport_id` encoded within the URL's path.
+ The above example code defines an `RKFetchRequestBlock` block object that will match an `NSURL` with a relative path matching the pattern `@"/airports/:airport_id/terminals.json"`. If a match is found, the block extracts the `airport_id` key from the matched arguments, coerces its value into a number, and uses it to construct an `NSPredicate` for the primary key attribute of `GGAirport` entity. Take note that the value of the 'airport_id' was coerced from an `NSString` to an `NSNumber` -- failure to so would result in a predicate whose value is equal to `airportID == '1234'` vs. `airportID == 1234`, which will prevent fetch requests from evaluating correctly. Once coerced, the value is used to construct a `NSFetchRequest` object for the `GGTerminal` entity that will retrieve all the managed objects with an airport ID attribute whose value is equal to `airport_id` encoded within the URL's path.
 
  In more concrete terms, given the URL `http://restkit.org/airports/1234/terminals.json` the block would return an `NSFetchRequest` equal to:
 
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"GGTerminal"];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Terminal"];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"airportID = 1234"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 
@@ -94,10 +88,23 @@
  ## Managed Object Context Save Behaviors
 
  The results of the operation can either be 'pushed' to the parent context or saved to the persistent store. Configuration is available via the `savesToPersistentStore` property. If an error is encountered while saving the managed object context, then the operation is considered to have failed and the `error` property will be set to the `NSError` object returned by the failed save.
+ 
+ ## 304 'Not Modified' Responses
+ 
+ In the event that a managed object request operation loads a 304 'Not Modified' response for an HTTP request no object mapping is performed as Core Data is assumed to contain a managed object representation of the resource requested. No object mapping is performed on the cached response body, making a cache hit for a managed object request operation a very lightweight operation. To build the mapping result returned to the caller, all of the fetch request blocks matching the request URL will be invoked and each fetch request returned is executed against the managed object context and the objects returned are added to the mapping result. Please note that all managed objects returned in the mapping result for a 'Not Modified' response will be returned under the `[NSNull null]` key path.
+ 
+ ## Subclassing Notes
+ 
+ This class relies on the following `RKMapperOperationDelegate` method methods to do its work:
+ 
+ 1. `mapperDidFinishMapping:`
+ 
+ If you subclass `RKManagedObjectRequestOperation` and implement any of the above methods then you must call the superclass implementation.
 
  ## Limitations and Caveats
 
- @warning `RKManagedObjectRequestOperation` **does NOT** support object mapping that targets an `NSManagedObjectContext` with a `concurrencyType` of `NSConfinementConcurrencyType`.
+ 1. `RKManagedObjectRequestOperation` **does NOT** support object mapping that targets an `NSManagedObjectContext` with a `concurrencyType` of `NSConfinementConcurrencyType`.
+ 1. `RKManagedObjectRequestOperation` can become deadlocked if configured to perform mapping onto an `NSManagedObjectContext` with the `NSMainQueueConcurrencyType` and is invoked synchronously from the main thread via `start` or an attempt is made to await completion of the operation via `waitUntilFinished`. This occurs because managed object contexts with the `NSMainQueueConcurrencyType` are dependent upon the execution of the main thread's run loop to perform their work and `waitUntilFinished` blocks the calling thread, leading to a deadlock when called from the main thread. Rather than awaiting completion of the operation via `waitUntilFinishes`, consider using a completion block, key-value observation, or spinning the run-loop via `[[NSRunLoop currentRunLoop] runUntilDate:]`.
 
  @see `RKObjectRequestOperation`
  @see `RKEntityMapping`
@@ -143,7 +150,7 @@
 
  Please see the above discussion of 'Deleting Managed Objects for `DELETE` requests' for more details.
 
- **Default**: `NO`
+ **Default**: `YES`
  */
 @property (nonatomic, assign) BOOL deletesOrphanedObjects;
 
@@ -169,3 +176,12 @@
  @return An `NSFetchRequest` object corresponding to the given URL, or nil if the URL could not be processed.
  */
 typedef NSFetchRequest *(^RKFetchRequestBlock)(NSURL *URL);
+
+/**
+ Returns an array of fetch request objects from an array of `RKFetchRequestBlock` objects given a URL.
+ 
+ @param fetchRequestBlocks An array of `RKFetchRequestBlock` blocks to
+ @param URL The URL for which to return a fetch request.
+ @return An array of fetch requests from all blocks that match the given URL.
+ */
+NSArray *RKArrayOfFetchRequestFromBlocksWithURL(NSArray *fetchRequestBlocks, NSURL *URL);

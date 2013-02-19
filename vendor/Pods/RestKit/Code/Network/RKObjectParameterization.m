@@ -24,10 +24,10 @@
 #import "RKMIMETypeSerialization.h"
 #import "RKLog.h"
 #import "RKObjectMappingOperationDataSource.h"
-
 #import "RKObjectMapping.h"
 #import "RKMappingOperation.h"
 #import "RKMappingErrors.h"
+#import "RKPropertyInspector.h"
 
 // Set Logging Component
 #undef RKLogComponent
@@ -98,27 +98,35 @@
     return self.rootKeyPath ? [NSMutableDictionary dictionaryWithObject:dictionary forKey:self.rootKeyPath] : dictionary;
 }
 
-#pragma mark - RKObjectMappingOperationDelegate
+#pragma mark - RKMappingOperationDelegate
 
 - (void)mappingOperation:(RKMappingOperation *)operation didSetValue:(id)value forKeyPath:(NSString *)keyPath usingMapping:(RKAttributeMapping *)mapping
 {
     id transformedValue = nil;
     if ([value isKindOfClass:[NSDate class]]) {
         // Date's are not natively serializable, must be encoded as a string
-        @synchronized(self.mapping.preferredDateFormatter) {
-            transformedValue = [self.mapping.preferredDateFormatter stringForObjectValue:value];
+        @synchronized(mapping.objectMapping.preferredDateFormatter) {
+            transformedValue = [mapping.objectMapping.preferredDateFormatter stringForObjectValue:value];
         }
     } else if ([value isKindOfClass:[NSDecimalNumber class]]) {
         // Precision numbers are serialized as strings to work around Javascript notation limits
         transformedValue = [(NSDecimalNumber *)value stringValue];
+    } else if ([value isKindOfClass:[NSSet class]]) {
+        // NSSets are not natively serializable, so let's just turn it into an NSArray
+        transformedValue = [value allObjects];
     } else if ([value isKindOfClass:[NSOrderedSet class]]) {
         // NSOrderedSets are not natively serializable, so let's just turn it into an NSArray
         transformedValue = [value array];
+    } else {
+        Class propertyClass = RKPropertyInspectorGetClassForPropertyAtKeyPathOfObject(mapping.sourceKeyPath, operation.sourceObject);
+        if ([propertyClass isSubclassOfClass:NSClassFromString(@"__NSCFBoolean")] || [propertyClass isSubclassOfClass:NSClassFromString(@"NSCFBoolean")]) {
+            transformedValue = @([value boolValue]);
+        }
     }
 
     if (transformedValue) {
         RKLogDebug(@"Serialized %@ value at keyPath to %@ (%@)", NSStringFromClass([value class]), NSStringFromClass([transformedValue class]), value);
-        [operation.destinationObject setValue:transformedValue forKey:keyPath];
+        [operation.destinationObject setValue:transformedValue forKeyPath:keyPath];
     }
 }
 

@@ -1,47 +1,42 @@
 
 PODS:
-- AFNetworking (1.0)
+- AFNetworking (1.1.0)
 - CustomBadge (2.0)
-- NVUIGradientButton (1.2.2)
-- RestKit (0.20.0b1):
-  - RestKit/Core (= 0.20.0b1)
-- RestKit/Core (0.20.0b1):
+- NVUIGradientButton (1.3.0)
+- RestKit (0.20.0rc1):
+  - RestKit/Core (= 0.20.0rc1)
+- RestKit/Core (0.20.0rc1):
   - RestKit/CoreData
   - RestKit/Network
   - RestKit/ObjectMapping
-- RestKit/CoreData (0.20.0b1)
-- RestKit/Network (0.20.0b1):
-  - AFNetworking (= 1.0)
+- RestKit/CoreData (0.20.0rc1)
+- RestKit/Network (0.20.0rc1):
+  - AFNetworking (= 1.1.0)
   - RestKit/ObjectMapping
   - RestKit/Support
   - SOCKit
-- RestKit/ObjectMapping (0.20.0b1)
-- RestKit/Support (0.20.0b1)
-- SOCKit (1.0)
+- RestKit/ObjectMapping (0.20.0rc1)
+- RestKit/Support (0.20.0rc1)
+- SOCKit (1.1)
 - SVProgressHUD (0.9)
 
 DEPENDENCIES:
 - CustomBadge
 - NVUIGradientButton
-- RestKit (from `https://github.com/RestKit/RestKit.git', branch `development')
+- RestKit
 - SVProgressHUD
 
-EXTERNAL SOURCES:
-  RestKit:
-    :git: https://github.com/RestKit/RestKit.git
-    :branch: development
-
 SPEC CHECKSUMS:
-  AFNetworking: 204f4b3d3a3ea7b38737c3fbf2646ba8c9719eea
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
   CustomBadge: 07ca87331a9644bc355963ff47c9d1b1f2516acf
-  NVUIGradientButton: 504e478e4d98dff1371c5713a29236b3ff221b2c
-  RestKit: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  RestKit/Core: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  RestKit/CoreData: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  RestKit/Network: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  RestKit/ObjectMapping: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  RestKit/Support: fc06f864e3e40551e1f14b209fc72a0bd5fd105a
-  SOCKit: 9d71b00c699cf5aa2989d6aa12f3392b048123db
+  NVUIGradientButton: d50ae9fcd85a65e2cad9c49c2000798be1e5035f
+  RestKit: 0382132969d823a872b377c1ab2e383f3c74a339
+  RestKit/Core: 0382132969d823a872b377c1ab2e383f3c74a339
+  RestKit/CoreData: 0382132969d823a872b377c1ab2e383f3c74a339
+  RestKit/Network: 0382132969d823a872b377c1ab2e383f3c74a339
+  RestKit/ObjectMapping: 0382132969d823a872b377c1ab2e383f3c74a339
+  RestKit/Support: 0382132969d823a872b377c1ab2e383f3c74a339
+  SOCKit: 179515c1a621dd5652a60e9be02ea4adcd25bc9b
   SVProgressHUD: 98935fbafaf0031df4a9cafca3c66eaf3da06967
 
 COCOAPODS: 0.16.0
